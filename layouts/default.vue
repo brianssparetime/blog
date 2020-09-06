@@ -5,10 +5,21 @@
       <nuxt-link class="logo" to="/">Brian's Spare Time</nuxt-link>
     </nav>
     <Sidebar>
-      <ul class="sidebar-panel-nav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="sidebar-panel-nav" @click="closeSidebarPanel">
+        <li><nuxt-link to="/">Home</nuxt-link></li>
+        <li>&#8226; <nuxt-link to="/posts">All posts</nuxt-link></li>
+        <li>&#8226; <nuxt-link to="/tags">Search by tag</nuxt-link></li>
+        <li>Main Interests:</li>
+        <li>
+          &#8226;
+          <a href="https://www.youtube.com/channel/UCnKrfUKulxwGP51NpVvmolA">
+            BrianGoesFlyin
+          </a>
+        </li>
+        <li>&#8226; <nuxt-link to="/brewing">Brewing</nuxt-link></li>
+        <li>&#8226; <nuxt-link to="/ee">EE</nuxt-link></li>
+        <li>&#8226; <nuxt-link to="/vintcomp">Vintage Computers</nuxt-link></li>
+        <li>&#8226; <nuxt-link to="/wood">Wood Working</nuxt-link></li>
       </ul>
     </Sidebar>
     <div class="wrapper-inner">
@@ -20,10 +31,14 @@
 <script>
 import Burger from "../components/Burger.vue";
 import Sidebar from "../components/Sidebar.vue";
+import { store, mutations } from "../store/drawer.js";
 export default {
   components: {
     Burger,
     Sidebar,
+  },
+  methods: {
+    closeSidebarPanel: mutations.toggleNav,
   },
   head() {
     return {
@@ -66,7 +81,8 @@ p {
 }
 
 .wrapper-inner {
-  max-width: 720px;
+  /*max-width: 720px;*/
+  max-width: 1024px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -82,10 +98,9 @@ ul.sidebar-panel-nav {
   list-style-type: none;
 }
 
-ul.sidebar-panel-nav > li > a {
-  color: #fff;
+ul.sidebar-panel-nav > li {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   display: block;
   padding-bottom: 0.5em;
 }

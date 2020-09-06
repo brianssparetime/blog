@@ -39,6 +39,7 @@ export default {
 }
 .sidebar-backdrop {
   background-color: rgba(19, 15, 64, 0.4);
+
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -47,8 +48,9 @@ export default {
   cursor: pointer;
 }
 .sidebar-panel {
+  /*background-color: #0070fe;*/
+  background-color: #ffffff;
   overflow-y: auto;
-  background-color: #130f40;
   position: fixed;
   left: 0;
   top: 0;
