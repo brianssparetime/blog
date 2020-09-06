@@ -44,12 +44,6 @@ export default {
           content: this.post.description,
         },
       ],
-      link: [
-        {
-          rel: "canonical",
-          href: "https://nuxt-blog.com/" + this.post.dir,
-        },
-      ],
     };
   },
 };

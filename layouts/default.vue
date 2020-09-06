@@ -5,6 +5,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      title: "BriansSpareTime",
+    };
+  },
+};
+</script>
 <style>
 html {
   font-family: "Arial", sans-serif;

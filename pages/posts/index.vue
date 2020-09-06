@@ -23,18 +23,12 @@ export default {
   },
   head() {
     return {
-      title: "Nuxt blog",
+      title: "BST: Posts",
       meta: [
         {
           hid: "description",
           name: "description",
           content: "Cool nuxt blog",
-        },
-      ],
-      link: [
-        {
-          rel: "canonical",
-          href: "https://nuxt-blog.com/",
         },
       ],
     };
