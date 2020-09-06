@@ -1,21 +1,60 @@
 <template>
-  <!-- Top Navbar -->
-  <nav
-    class="top-navbar flex flex-row align-center p-2 fixed w-full"
-    style="z-index: 9001;"
-  >
-    <!-- Logo Brand -->
-    <div class="flex-grow">
-      <router-link :to="{ name: 'HomeView' }">
-        <img alt="ImStallion Logo" :src="logoIcon" class="w-16 ml-3" />
-      </router-link>
-    </div>
-    <!-- /Logo Brand -->
-
-    <!-- Menu Button -->
-    <button class="p-4" @click="toggle">
-      <font-awesome-icon :icon="['fas', 'bars']" size="lg"></font-awesome-icon>
-    </button>
-  </nav>
-  <!-- /Top Navbar -->
+  <div class="sidebar">
+    <div
+      v-if="isPanelOpen"
+      class="sidebar-backdrop"
+      @click="closeSidebarPanel"
+    ></div>
+    <transition name="slide">
+      <div v-if="isPanelOpen" class="sidebar-panel">
+        <slot></slot>
+      </div>
+    </transition>
+  </div>
 </template>
+<script>
+// import { mapGetters, mapMutations } from 'vuex';
+
+import { store, mutations } from "../store/drawer.js";
+export default {
+  computed: {
+    isPanelOpen() {
+      return store.isNavOpen;
+    },
+  },
+  methods: {
+    closeSidebarPanel: mutations.toggleNav,
+  },
+};
+</script>
+<style>
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.2s ease;
+}
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(-100%);
+  transition: all 150ms ease-in 0s;
+}
+.sidebar-backdrop {
+  background-color: rgba(19, 15, 64, 0.4);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.sidebar-panel {
+  overflow-y: auto;
+  background-color: #130f40;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 999;
+  padding: 3rem 20px 2rem 20px;
+  width: 300px;
+}
+</style>
