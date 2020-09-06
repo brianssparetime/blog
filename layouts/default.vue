@@ -21,7 +21,7 @@ p {
   text-align: left;
   display: block;
   color: black;
-  font-size: 20px;
+  font-size: 30px;
   margin: 0 0 2rem 0;
   text-decoration: none;
 }
