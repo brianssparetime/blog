@@ -2,6 +2,8 @@
 
 An experiment in learning NuxtJS and also in trying to document some of the stuff I do.
 
+See the deployed site here: http://www.brianssparetime.com
+
 
 ## The Plan / TODO:
  - main interest static pages
