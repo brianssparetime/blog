@@ -6,14 +6,16 @@
     </nav>
     <Sidebar>
       <ul class="sidebar-panel-nav" @click="closeSidebarPanel">
-        <li><nuxt-link to="/">Home</nuxt-link></li>
+        <li>
+          <nuxt-link to="/"><b>Home</b></nuxt-link>
+        </li>
         <li>&#8226; <nuxt-link to="/posts">All posts</nuxt-link></li>
         <li>&#8226; <nuxt-link to="/tags">Search by tag</nuxt-link></li>
-        <li>Main Interests:</li>
+        <li class="padded"><b>Main Interests:</b></li>
         <li>
           &#8226;
           <a href="https://www.youtube.com/channel/UCnKrfUKulxwGP51NpVvmolA">
-            BrianGoesFlyin
+            BrianGoesFlyin on YT
           </a>
         </li>
         <li>&#8226; <nuxt-link to="/brewing">Brewing</nuxt-link></li>
@@ -102,6 +104,9 @@ ul.sidebar-panel-nav > li {
   text-decoration: none;
   font-size: 1rem;
   display: block;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.5rem;
+}
+.padded {
+  padding-top: 2rem;
 }
 </style>

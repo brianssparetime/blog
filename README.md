@@ -8,7 +8,6 @@ See the deployed site here: http://www.brianssparetime.com
 ## The Plan / TODO:
  - main interest static pages
  - [FEATURE] embed YT or other video content in post
- - [FEATURE] filtering of tags using where
  - [FIX] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages
