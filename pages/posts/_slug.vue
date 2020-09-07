@@ -2,6 +2,9 @@
   <div class="post">
     <h1>{{ post.title }}</h1>
     <p class="lead">{{ post.description }}</p>
+    <p>
+      <i>{{ formatDate(post.date) }}</i>
+    </p>
     <v-tags :tags="post.tags" />
     <v-img class="img" :src="post.image" alt="Featured image"></v-img>
     <nuxt-content :document="post" />
@@ -33,6 +36,12 @@ export default {
   },
   mounted() {
     Prism.highlightAll();
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return new Date(date).toLocaleDateString("en", options);
+    },
   },
   head() {
     return {

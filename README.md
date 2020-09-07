@@ -1,41 +1,36 @@
-# nuxtblog
+# BriansSpareTime blog
 
-derived from https://github.com/regenrek/nuxt-blog-frontmatter-markdown-loader and https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/
+An experiment in learning NuxtJS and also in trying to document some of the stuff I do.
 
 
-## installation:
+## The Plan / TODO:
+ - main interest static pages
+ - [FEATURE] more than 1 image per post
+ - [FEATURE] embed YT or other video content in post
+ - [FIX] fix scaling for postcard thumbnails
+ - [FIX] order posts by date
+ - [FIX] eliminate need for img folder in content
+ - [EVENTUALLY] pagination of all posts
+ - [EVENTUALLY] password protected photos section
 
-1) Download and install yarn from 
-https://classic.yarnpkg.com/en/docs/install/
-or with 
-
-```curl -o- -L https://yarnpkg.com/install.sh | bash```
-
-2) `yarn install`
-
-3) clone repo
-
-4) `yarn dev`
-
-## The Plan:
-
- - want each posts bundled with images and other static content in a folder per post
- - want list of main topics of interest in a left side nav bar (e.g. vintage computers, brewing, photog, BGF, EE...)
- - want tagging of posts
-    - perhaps use some subset of tags as main topics?  Or have a static page per topic, with a list of tagged posts?
-    - inference of additional tags?
-    - search by tag in sidebar
- - search by date in sidebar (or possibly at bottom of main page)
  
 
 
 
-## old readme
-
 
 ### Build Setup
+## installation:
+
+Download and install yarn from 
+https://classic.yarnpkg.com/en/docs/install/
+or with 
+
 
 ``` bash
+
+# install yarn
+curl -o- -L https://yarnpkg.com/install.sh | bash
+
 # install dependencies
 $ yarn install
 
@@ -50,4 +45,8 @@ $ yarn start
 $ yarn run generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+derived from:
+https://github.com/regenrek/nuxt-blog-frontmatter-markdown-loader 
+https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/
+https://github.com/regenrek/vue-sidebar-menu-example/tree/master/src
