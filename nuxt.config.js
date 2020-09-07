@@ -10,6 +10,9 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   components:true, // do I need this?  added for nuxt-content images...
+  env : {
+    brewing_tags : ["brewing", "ale", "beer", "mead", "acerglyn"],
+  },
   head: {
     title: process.env.npm_package_name || "",
     meta: [

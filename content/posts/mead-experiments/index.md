@@ -3,7 +3,7 @@ title: Mead Experiments
 description: How hard could it be?
 date: 2020-09-06
 image: IMG_6371.jpg
-dirp: mead-experiments
+dirp: mead-experiments  # this much match directory name
 tags:
   - mead
   - acerglyn
