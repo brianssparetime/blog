@@ -1,6 +1,7 @@
 <template>
   <div class="img">
-    <nuxt-link tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt"> </nuxt-link>
+    <nuxt-link tag="img" :src="imgSrc()" :to="postlink()" :alt="alt">
+    </nuxt-link>
   </div>
 </template>
 
@@ -15,28 +16,21 @@ export default {
       type: String,
       required: true,
     },
-    dirp: {
-      type: String,
-      required: false,
-      default: null,
-    },
   },
   methods: {
     imgSrc() {
       // const path = require("path");
       try {
         const { post } = this.$parent;
-        console.log("start");
-        if (this.dirp !== null) {
-          console.log("new path");
-          return require(`~/content/posts/${this.dirp}/${this.src}`);
-        } else {
-          console.log("fell through else");
-        }
+        return require(`~/content${post.dir}/${this.src}`);
       } catch (error) {
         console.log("error with finding image  " + this.src);
         return null;
       }
+    },
+    postlink() {
+      const { post } = this.$parent;
+      return post.dir;
     },
   },
 };
@@ -48,8 +42,7 @@ export default {
   border-radius: 5px;
   padding: 5px;
   display: inline-block;
-  margin-bottom: 2rem;
-  margin-top: 1.5rem;
+  max-width: fit-content;
 }
 img {
   /*max-width: 100%;*/

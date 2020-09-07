@@ -1,6 +1,6 @@
 <template>
   <div class="post">
-    <v-img class="img" :src="post.image" alt="Cat"></v-img>
+    <v-img-pc class="img" :src="post.image" alt="Cat"></v-img-pc>
     <div>
       <nuxt-link :to="post.dir">
         <h3 class="heading">{{ post.title }}</h3>
@@ -41,16 +41,19 @@ export default {
 }
 .img {
   width: 200px;
-  min-width: 200px;
+  min-width: 100px;
   margin-right: 10px;
   padding: 0;
+  display: inline-block;
   position: relative;
 }
 .img /deep/ img {
-  position: absolute;
+  /*position: absolute;*/
   width: 100%;
   height: 100%;
+  max-height: 150px;
   /*object-fit: cover;*/
+  display: inline-block;
   object-fit: contain;
 }
 .heading {

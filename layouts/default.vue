@@ -51,7 +51,10 @@ export default {
 </script>
 <style>
 html {
-  font-family: "Arial", sans-serif;
+  /*font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva,
+    "Arial", sans-serif;*/
+  font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman",
+    Times, serif;
   font-size: 16px;
   box-sizing: border-box;
 }
@@ -61,11 +64,17 @@ p {
 }
 
 .logo {
-  font-weight: bold;
+  font-weight: 600;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva,
+    "Arial", sans-serif;
+  /*font-weight: bold;*/
   text-align: left;
   display: block;
   color: black;
-  font-size: 30px;
+  /*font-size: 30px;*/
+  line-height: 40px;
+  font-size: 36px;
+  letter-spacing: -0.022em;
   margin: 0 0 0.5rem 2rem;
   text-decoration: none;
 }
