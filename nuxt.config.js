@@ -71,6 +71,10 @@ export default {
           },
         });
       }
+      config.module.rules.push({
+        test: /\.md$/i,
+        loader: 'ignore-loader'
+      });
     },
   },
 };

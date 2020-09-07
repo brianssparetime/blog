@@ -46,7 +46,8 @@ $ yarn run generate
 ```
 
 
-### derived from:
+### built with significant help from:
 https://github.com/regenrek/nuxt-blog-frontmatter-markdown-loader 
 https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/
 https://github.com/regenrek/vue-sidebar-menu-example/tree/master/src
+https://github.com/nuxt/content/issues/106
