@@ -31,7 +31,7 @@
 <script>
 import Burger from "../components/Burger.vue";
 import Sidebar from "../components/Sidebar.vue";
-import { store, mutations } from "../store/drawer.js";
+import { mutations } from "../store/drawer.js";
 export default {
   components: {
     Burger,
