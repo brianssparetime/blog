@@ -3,6 +3,7 @@ title: Mead Experiments
 description: How hard could it be?
 date: 2020-09-06
 image: IMG_6371.jpg
+dirp: mead-experiments
 tags:
   - mead
   - acerglyn
@@ -11,7 +12,7 @@ tags:
 
 I'm brewing three new batches of mead.
 
-<v-img src="IMG_6371.jpg" alt="foo"></v-img>
+<v-img src="IMG_6371.jpg" alt="bar" :dirp="dirp"></v-img>
 
 
 The first (in the back in the picture) is similar to my previous batches, described below, with clover honey
@@ -21,7 +22,7 @@ The second, on the right in the picture, is made with only 16oz of CA wildflower
 The third batch is made with about 32oz of pure maple syrup, and about 8oz of honey (half gallon).  Never tried this before and curious to see how it comes out.
 
 
-<v-img src="IMG_5785.jpg" alt="foo"></v-img>
+<v-img src="IMG_5785.jpg" alt="foo" :dirp=dirp></v-img>
 
 My earlier batches:
 

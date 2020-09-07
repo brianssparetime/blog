@@ -50,4 +50,6 @@ $ yarn run generate
 https://github.com/regenrek/nuxt-blog-frontmatter-markdown-loader 
 https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/
 https://github.com/regenrek/vue-sidebar-menu-example/tree/master/src
+https://regenrek.com/posts/how-to-create-an-animated-vue-sidebar-menu-with-vue-observable/
 https://github.com/nuxt/content/issues/106
+https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#displaying-your-content

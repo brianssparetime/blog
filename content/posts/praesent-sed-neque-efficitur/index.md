@@ -12,16 +12,6 @@ Ut ut justo arcu. Praesent sed neque efficitur, venenatis diam mollis, lobortis 
 
 Donec porta ipsum mi. Aenean faucibus felis quis risus mattis, vel interdum ex finibus. Praesent porta laoreet tortor non faucibus. Morbi varius sapien erat, ac dictum leo consectetur at. Donec at felis diam. Integer erat leo, semper in dapibus et, facilisis fringilla mi.
 
-```js{1,3-5}[server.js]
-const http = require('http')
-const bodyParser = require('body-parser')
-
-http.createServer((req, res) => {
-  bodyParser.parse(req, (error, body) => {
-    res.end(body)
-  })
-}).listen(3000)
-```
 
 <v-img src="code.jpg" alt="Index"></v-img>
 

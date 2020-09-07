@@ -74,7 +74,7 @@ export default {
       config.module.rules.push({
         test: /\.md$/i,
         loader: 'ignore-loader'
-      });
+      }); // see https://github.com/nuxt/content/issues/106#issuecomment-666283547
     },
   },
 };

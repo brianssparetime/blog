@@ -1,12 +1,14 @@
 <template>
   <div class="post">
+    <!--
     <h1>{{ post.title }}</h1>
     <p class="lead">{{ post.description }}</p>
     <p>
       <i>{{ formatDate(post.date) }}</i>
     </p>
     <v-tags :tags="post.tags" />
-    <v-img class="img" :src="post.image" alt="Featured image"></v-img>
+    -->
+    <PostCard :post="post" />
     <nuxt-content :document="post" />
   </div>
 </template>
@@ -58,4 +60,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.post {
+  margin-bottom: 50px;
+  margin-top: 0px;
+}
+</style>

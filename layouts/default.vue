@@ -64,7 +64,7 @@ p {
   display: block;
   color: black;
   font-size: 30px;
-  margin: 0 0 2rem 2rem;
+  margin: 0 0 0.5rem 2rem;
   text-decoration: none;
 }
 
