@@ -7,7 +7,6 @@ See the deployed site here: http://www.brianssparetime.com
 
 ## The Plan / TODO:
  - main interest static pages
- - [FEATURE] embed YT or other video content in post
  - [FIX] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages
@@ -16,7 +15,8 @@ See the deployed site here: http://www.brianssparetime.com
  - [EVENTUALLY] pagination of all posts
  - [EVENTUALLY] password protected photos section
 
- 
+ ## Accomplished:
+ - ~~images link to full size image~~
 
 
 
