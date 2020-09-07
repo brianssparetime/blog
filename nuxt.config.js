@@ -49,6 +49,7 @@ export default {
         theme: false,
       },
     },
+    nestedProperties: ['post.tags'],
   },
   /*
    ** Build configuration

@@ -12,7 +12,10 @@ export default {
   },
   async asyncData({ params, error, $content }) {
     try {
-      const posts = await $content("posts", { deep: true }).fetch();
+      const posts = await $content("posts", { deep: true })
+        .sortBy("date", "desc")
+        .fetch();
+
       return { posts };
     } catch (err) {
       error({

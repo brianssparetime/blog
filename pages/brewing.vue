@@ -1,7 +1,7 @@
 <template>
   <div class="posts">
     <h3>Brewing</h3>
-    I like to brew beer and mead
+    <!--I like to brew beer and mead-->
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
   </div>
 </template>
@@ -13,7 +13,15 @@ export default {
   },
   async asyncData({ params, error, $content }) {
     try {
-      const posts = await $content("posts", { deep: true }).fetch();
+      // const filttags = ["brewing", "ale", "beer", "mead", "acerglyn"];
+      // const posts = await $content("posts", { deep: true }).fetch();
+      const posts = await $content("posts", { deep: true })
+        // .where({ "post.tags": { $in: ["mead", "brewing"] } })
+        // .where({ tags: { $in: ["mead", "brewing"] } })
+        // .where({ title: "Mead Experiment" })
+        .where({ dirp: "mead-experiment" })
+        .without("body")
+        .fetch();
       return { posts };
     } catch (err) {
       error({

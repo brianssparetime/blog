@@ -22,7 +22,7 @@ The second, on the right in the picture, is made with only 16oz of CA wildflower
 The third batch is made with about 32oz of pure maple syrup, and about 8oz of honey (half gallon).  Never tried this before and curious to see how it comes out.
 
 
-<v-img src="IMG_5785.jpg" alt="foo" :dirp=dirp></v-img>
+<v-img src="IMG_5785.jpg" alt="foo" :dirp="dirp"></v-img>
 
 My earlier batches:
 

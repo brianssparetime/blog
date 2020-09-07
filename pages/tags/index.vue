@@ -12,7 +12,7 @@
 export default {
   async asyncData({ params, error, $content }) {
     // try {
-    const posts = await $content("posts", { deep: true }).fetch();
+    const posts = await $content("posts", { deep: true }).only("tags").fetch();
     const tagset = new Set();
     console.log("debug working now");
     for (const p of posts) {
