@@ -7,6 +7,8 @@ See the deployed site here: http://www.brianssparetime.com
 
 ## The Plan / TODO:
  - main interest static pages
+ - [FIX] figure out why image linking isn't working
+   - see https://medium.com/@wearethreebears/handle-api-driven-content-links-in-nuxt-js-fe2e31ecbeeb
  - [FEATURE] embed YT or other video content in post
  - [FIX] abstract post list into a vue component
    - use this on main page, all posts
