@@ -38,6 +38,7 @@ export default {
 img {
   max-width: 100%;
   width: 100%;
-  object-fit: cover;
+  /*object-fit: cover;*/
+  object-fit: contain;
 }
 </style>

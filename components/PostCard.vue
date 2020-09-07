@@ -50,7 +50,8 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /*object-fit: cover;*/
+  object-fit: contain;
 }
 .heading {
   margin-bottom: 5px;
