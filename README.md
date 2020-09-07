@@ -7,11 +7,13 @@ See the deployed site here: http://www.brianssparetime.com
 
 ## The Plan / TODO:
  - main interest static pages
- - [FEATURE] more than 1 image per post
  - [FEATURE] embed YT or other video content in post
- - [FIX] fix scaling for postcard thumbnails
- - [FIX] order posts by date
- - [FIX] eliminate need for img folder in content
+ - [FEATURE] filtering of tags using where
+ - [FIX] abstract post list into a vue component
+   - use this on main page, all posts
+   - consider adding filter / sort functionality there and using it with topic pages
+ - [FIX] fix ugly css everywhere
+ - [FEATURE] set up search
  - [EVENTUALLY] pagination of all posts
  - [EVENTUALLY] password protected photos section
 
