@@ -7,6 +7,7 @@ See the deployed site here: http://www.brianssparetime.com
 
 ## The Plan / TODO:
  - main interest static pages
+ - [FEATURE] add other interest pages
  - [FIX] still can't figure out wrong border sizing on postcard vimgpc
  - [FIX] abstract post list into a vue component
    - use this on main page, all posts
