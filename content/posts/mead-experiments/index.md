@@ -13,6 +13,7 @@ I'm brewing three new batches of mead.
 
 <v-img src="IMG_6371.jpg"></v-img>
 
+
 The first (in the back in the picture) is similar to my previous batches, described below, with clover honey
 
 The second, on the right in the picture, is made with only 16oz of CA wildflower honey per half gallon (equivalent to 32oz/gal).  The idea is to see if I can make the final product less sweet by letting the yeast get through more of the honey before reaching their max ABV.

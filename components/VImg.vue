@@ -22,6 +22,7 @@ export default {
         const { post } = this.$parent;
         return require(`~/content${post.dir}/img/${this.src}`);
       } catch (error) {
+        console.log("error with finding image  " + this.src);
         return null;
       }
     },
