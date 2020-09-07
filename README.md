@@ -7,6 +7,7 @@ See the deployed site here: http://www.brianssparetime.com
 
 ## The Plan / TODO:
  - main interest static pages
+ - [FIX] still can't figure out wrong border sizing on postcard vimgpc
  - [FIX] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages
@@ -16,7 +17,19 @@ See the deployed site here: http://www.brianssparetime.com
  - [EVENTUALLY] password protected photos section
 
  ## Accomplished:
- - ~~images link to full size image~~
+ - images link to full size image provided by API
+ - interest pages that show only posts related to certain tags
+ - multiple images in a markdown post
+ - sidebar nav that toggles open and closed
+ - embedding YT videos in markdown posts
+ - use postcard at top of post
+ - make images in posts show up with correct border size and aspect ratio
+ - added ignore-loader to suppress webpack warnings 
+ - limit size of images in posts
+ - eliminated need for img folder within each post
+ - deploy site to netlify
+ - make debug work in VSCode
+
 
 
 
