@@ -1,6 +1,13 @@
 <template>
   <div class="img">
-    <nuxt-link tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt"> </nuxt-link>
+    <!--<nuxt-link tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt"> </nuxt-link>-->
+    <!--<v-interpolation tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt">-->
+    <!--<v-interpolation :src="imgSrc()" :to="imgSrc()" :alt="alt">-->
+    <!--<v-interpolation tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt">
+    </v-interpolation>-->
+    <a v-interpolation :href="imgSrc()">
+      <img :src="imgSrc()" :alt="alt" />
+    </a>
   </div>
 </template>
 
@@ -25,7 +32,6 @@ export default {
     imgSrc() {
       // const path = require("path");
       try {
-        const { post } = this.$parent;
         console.log("start");
         if (this.dirp !== null) {
           console.log("new path");

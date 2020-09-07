@@ -6285,6 +6285,11 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
+nuxt-interpolation@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/nuxt-interpolation/-/nuxt-interpolation-0.2.2.tgz#f5b20bb4167a5560bf6fb04a59a13b2dbdac673c"
+  integrity sha512-X7vcdH8YXDgCnbQb1LkcY5P6hM/Ey+Kn2om1oGQfsyPgbfrmg3mEMvj4ShTWUBHq4kD7lt3cTNls57qHLIScsQ==
+
 nuxt@^2.13.0:
   version "2.14.3"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.14.3.tgz#1e1fb762d407dc275253360b87f3257c609b4dfd"

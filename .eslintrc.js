@@ -22,6 +22,7 @@ module.exports = {
     "no-console": "off",
     "vue/no-unused-components": "warn",
     "no-unused-vars": "warn",
+    "no-v-html": "off",
     "prettier/prettier": [
       "error",
       {

@@ -7,8 +7,6 @@ See the deployed site here: http://www.brianssparetime.com
 
 ## The Plan / TODO:
  - main interest static pages
- - [FIX] figure out why image linking isn't working
-   - see https://medium.com/@wearethreebears/handle-api-driven-content-links-in-nuxt-js-fe2e31ecbeeb
  - [FEATURE] embed YT or other video content in post
  - [FIX] abstract post list into a vue component
    - use this on main page, all posts
@@ -58,3 +56,4 @@ https://github.com/regenrek/vue-sidebar-menu-example/tree/master/src
 https://regenrek.com/posts/how-to-create-an-animated-vue-sidebar-menu-with-vue-observable/
 https://github.com/nuxt/content/issues/106
 https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#displaying-your-content
+https://medium.com/@wearethreebears/handle-api-driven-content-links-in-nuxt-js-fe2e31ecbeeb
