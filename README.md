@@ -11,11 +11,12 @@ See the deployed site here: http://www.brianssparetime.com
  - [FIX] still can't figure out wrong border sizing on postcard vimgpc
  - [FEATURE] eliminate redundant data (date, dirp, title maybe) by parsing file structure
    - https://content.nuxtjs.org/advanced#hooks
- - [FIX] abstract post list into a vue component
+ - [FIX, WIP] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages
  - [FIX] fix ugly css everywhere
  - [FEATURE] set up search
+    - https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#add-a-search-field
  - [EVENTUALLY] pagination of all posts
  - [EVENTUALLY] password protected photos section
 
