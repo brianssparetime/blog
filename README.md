@@ -8,6 +8,8 @@ See the deployed site here: http://www.brianssparetime.com
 ## The Plan / TODO:
  - main interest static pages
  - [FEATURE] add other interest pages
+ - [FEATURE] figure out how to auto generate thumbnails or handle different image sizes
+  - https://stackoverflow.com/questions/48606325/how-to-resize-images-for-different-responsive-views
  - [FIX] still can't figure out wrong border sizing on postcard vimgpc
  - [FIX] abstract post list into a vue component
    - use this on main page, all posts
