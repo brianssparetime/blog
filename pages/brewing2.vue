@@ -1,3 +1,6 @@
+<!--
+NOT USED ANYMORE
+-->
 <template>
   <div class="posts">
     <h3>Brewing</h3>

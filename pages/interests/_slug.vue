@@ -2,6 +2,7 @@
   <div class="interest">
     <h1>{{ interest.title }}</h1>
     <!--<p class="lead">{{ interest.description }}</p>-->
+    <!-- TODO:  use some kind of v-if to only show below if there are tags-->
     <div class="tags">
       Tags:
       <v-tags :tags="interest.tags" />
@@ -14,15 +15,11 @@
     </p>
     <hr />
     <h2>Recent related posts:</h2>
-    <!--<li v-for="post in posts" :key="post.title">
-      {{ post.title }}
-    </li>-->
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
   </div>
 </template>
 <script>
 import Prism from "~/plugins/prism";
-// import PostCard from "~/components/PostCard";
 export default {
   async asyncData({ params, error, $content }) {
     try {
@@ -34,26 +31,16 @@ export default {
         .where({ tags: { $containsAny: interestd.tags } }) // this depends on above query
         .without("body")
         .sortBy("date", "desc")
-        // .limit(5)
+        .limit(3)
         .fetch();
       console.log("post data = " + JSON.stringify(posts));
       return { interest: interestd, posts };
-      // return { interest }; // works
-      // return { interest };
-      //, post: post.data };
     } catch (err) {
       error({
         statusCode: 404,
         message: "Page could not be found",
       });
     }
-  },
-  computed: {
-    /* intInfo() {
-      const interest = this.interest || {};
-      const { body, ...rest } = interest;
-      return rest;
-    }, */
   },
   mounted() {
     Prism.highlightAll();

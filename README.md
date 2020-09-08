@@ -6,8 +6,6 @@ See the deployed site here: http://www.brianssparetime.com
 
 
 ## The Plan / TODO:
- - main interest static pages
- - [FEATURE] add other interest pages
  - [FEATURE] figure out how to auto generate thumbnails or handle different image sizes
   - https://stackoverflow.com/questions/48606325/how-to-resize-images-for-different-responsive-views
  - [FIX] still can't figure out wrong border sizing on postcard vimgpc
@@ -22,6 +20,7 @@ See the deployed site here: http://www.brianssparetime.com
  - [EVENTUALLY] password protected photos section
 
  ## Accomplished:
+ - interest pages also built using md files in separate content directory
  - images link to full size image provided by API
  - interest pages that show only posts related to certain tags
  - multiple images in a markdown post
@@ -40,7 +39,6 @@ See the deployed site here: http://www.brianssparetime.com
 
 
 ### Build Setup
-## installation:
 
 Download and install yarn from 
 https://classic.yarnpkg.com/en/docs/install/
@@ -67,7 +65,7 @@ $ yarn run generate
 ```
 
 
-### built with significant help from:
+#### built with significant help from:
 https://github.com/regenrek/nuxt-blog-frontmatter-markdown-loader 
 https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/
 https://github.com/regenrek/vue-sidebar-menu-example/tree/master/src

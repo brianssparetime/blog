@@ -18,10 +18,18 @@
             BrianGoesFlyin on YT
           </a>
         </li>
-        <li>&#8226; <nuxt-link to="/brewing">Brewing</nuxt-link></li>
-        <li>&#8226; <nuxt-link to="/ee">EE</nuxt-link></li>
+        <li>&#8226; <nuxt-link to="/interests/brewing">Brewing</nuxt-link></li>
+        <li>
+          &#8226;
+          <nuxt-link to="/interests/vintage-computing">
+            Vintage Computing</nuxt-link
+          >
+        </li>
+        <!--
+          <li>&#8226; <nuxt-link to="/ee">EE</nuxt-link></li>
         <li>&#8226; <nuxt-link to="/vintcomp">Vintage Computers</nuxt-link></li>
         <li>&#8226; <nuxt-link to="/wood">Wood Working</nuxt-link></li>
+        -->
       </ul>
     </Sidebar>
     <div class="wrapper-inner">

@@ -1,6 +1,7 @@
 <template>
   <div class="posts">
     <h1>Tags: {{ $route.params.slug }}</h1>
+    <div v-if="!posts.length" class="results">No posts found for this tag</div>
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
   </div>
 </template>
@@ -33,3 +34,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.results {
+  padding-top: 20px;
+}
+</style>
