@@ -11,6 +11,8 @@ See the deployed site here: http://www.brianssparetime.com
  - [FEATURE] figure out how to auto generate thumbnails or handle different image sizes
   - https://stackoverflow.com/questions/48606325/how-to-resize-images-for-different-responsive-views
  - [FIX] still can't figure out wrong border sizing on postcard vimgpc
+ - [FEATURE] eliminate redundant data (date, dirp, title maybe) by parsing file structure
+   - https://content.nuxtjs.org/advanced#hooks
  - [FIX] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages

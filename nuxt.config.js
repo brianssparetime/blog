@@ -48,6 +48,11 @@ export default {
    ** Nuxt.js modules
    */
   modules: [["@nuxt/content"], ['nuxt-interpolation'],],
+  /*
+   ** Nuxt Content configuration
+   */
+
+
   content: {
     markdown: {
       prism: {
