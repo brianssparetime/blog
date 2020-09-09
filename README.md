@@ -8,9 +8,11 @@ See the deployed site here: http://www.brianssparetime.com
 ## The Plan / TODO:
  - [FEATURE] figure out how to auto generate thumbnails or handle different image sizes
   - https://stackoverflow.com/questions/48606325/how-to-resize-images-for-different-responsive-views
+  - https://derkinzi.de/optimized-responsive-lazyloading-images-with-nuxt/
+    - also consider making the side bar more like this guy's
+  - https://stackoverflow.com/questions/53921901/responsive-loader-with-nuxt-js
+
  - [FIX] still can't figure out wrong border sizing on postcard vimgpc
- - [FEATURE] eliminate redundant data (date, dirp, title maybe) by parsing file structure
-   - https://content.nuxtjs.org/advanced#hooks
  - [FIX, WIP] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages
@@ -19,8 +21,12 @@ See the deployed site here: http://www.brianssparetime.com
     - https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#add-a-search-field
  - [EVENTUALLY] pagination of all posts
  - [EVENTUALLY] password protected photos section
+ - [EVENTUALLY] eliminate more redundant data (date, title maybe) by parsing file structure
+   - https://content.nuxtjs.org/advanced#hooks
+
 
  ## Accomplished:
+ - eliminated dumb dirp hack for getting image paths
  - interest pages also built using md files in separate content directory
  - images link to full size image provided by API
  - interest pages that show only posts related to certain tags
