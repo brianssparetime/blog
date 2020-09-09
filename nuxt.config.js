@@ -1,20 +1,28 @@
 export default {
   target: "static",
+
+
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
   mode: "universal",
-  /*
-   ** Headers of the page
-   ** See https://nuxtjs.org/api/configuration-head
-   */
-  components:true, // do I need this?  added for nuxt-content images...
+
+
+  // do I need this?  added for nuxt-content images...
+  components:true, 
+
   /* 
   // don't need this atm
   env : {
     brewing_tags : ["brewing", "ale", "beer", "mead", "acerglyn"],
   }, */
+
+
+  /*
+   ** Headers of the page
+   ** See https://nuxtjs.org/api/configuration-head
+   */
   head: {
     title: process.env.npm_package_name || "",
     meta: [
@@ -28,15 +36,21 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
+
+
   /*
    ** Global CSS
    */
   css: [],
+
+
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: ["~/plugins/prism.js", "~/plugins/globalComponents.js"],
+
+
   /*
    ** Nuxt.js dev-modules
    */
@@ -44,15 +58,35 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     "@nuxtjs/eslint-module",
   ],
+
+
   /*
    ** Nuxt.js modules
    */
   modules: [["@nuxt/content"], ['nuxt-interpolation'],],
+
+
+  /* hooks for nuxt content */
+  /*
+  hooks: {
+    /* 
+    extract from filename and path:
+    - the post date?
+    - the title? 
+
+    const dirp_rx = /^/
+
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        document.foo = true;
+      }
+    }
+  },*/
+
+
   /*
    ** Nuxt Content configuration
    */
-
-
   content: {
     markdown: {
       prism: {
@@ -61,6 +95,8 @@ export default {
     },
     nestedProperties: ['post.tags'],
   },
+
+
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
