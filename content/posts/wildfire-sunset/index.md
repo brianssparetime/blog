@@ -3,7 +3,6 @@ title: Wildfire Sunset
 description: Sunset on the first night of the fires, from Treasure Island
 date: 2020-08-19
 image: IMG_6366.jpg
-dirp: wildfire-sunset  # this much match directory name
 tags:
   - drone
   - sunset
@@ -13,11 +12,11 @@ tags:
 
 Sunset:
 
-<v-img src="IMG_6366.jpg" alt="bar" :dirp="dirp"></v-img>
+<v-img src="IMG_6366.jpg" alt="bar" :dirp="dir"></v-img>
 
-Here's the city skyline after sunset (Sony A7ii + CZJ 50mm tessar)
+Here's the city skyline after sunset (Sony A7ii + Penxtax M 100mm f/4 Macro)
 
-<v-img src="IMG_6367.jpg" alt="foo" :dirp="dirp"></v-img>
+<v-img src="IMG_6367.jpg" alt="foo" :dirp="dir"></v-img>
 
 Youtube video:
 

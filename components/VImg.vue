@@ -33,9 +33,10 @@ export default {
       // const path = require("path");
       try {
         console.log("start");
+        console.log("dirp=" + this.dirp);
         if (this.dirp !== null) {
           console.log("new path");
-          return require(`~/content/posts/${this.dirp}/${this.src}`);
+          return require(`~/content${this.dirp}/${this.src}`);
         } else {
           console.log("fell through else");
         }
