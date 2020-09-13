@@ -60,9 +60,20 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+/* not scoped*/
 .post {
   margin-bottom: 50px;
   margin-top: 0px;
+}
+
+.nuxt-content h2 {
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.nuxt-content ol {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
 }
 </style>

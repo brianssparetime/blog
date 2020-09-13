@@ -18,13 +18,17 @@ tags:
  - honey
  - water
 
+
+
+<v-img src="IMG_5785.jpg" alt="foo" :dirp="dir"></v-img>
+
 ## What to do:
 
 1. Clean everything
 
 The single most important thing in brewing is making sure everything is properly sanitized.  Pour half a spoonful or so of the sanitizer into your jub, add a good bit of hot water, and scrub it with the brush.  Get a bowl, and pour some of the mix into the bowl, and use that to sanitize your stopper and airlock.
 
-2.  Add honey
+2. Add honey
 
 Pour your honey into the jug.  Don't heat it.  I usually buy squeeze bottles, so I squeeze out most of the honey, then add cold water, shake vigorously, and squeeze out again.  Repeat a couple times until you've rinsed out all the honey.
 
@@ -32,11 +36,11 @@ How much honey depends on how sweet you want the mead.  I usually about 3-5 poun
 
 What kind of honey also influences the taste.  I've experimented with clove honey, wildflower honey, and New Mexico mesquite honey, and all were great.
 
-3.  Add water
+3. Add water
 
 Fill the rest of the jug, but not quite to the top.  Leave room for about 2 cups of water we're going to add in a minute.
 
-4.  Add yeast
+4. Add yeast
 
 I've used two different yeasts:
 
@@ -57,7 +61,7 @@ Either way, give the jug a little swirl, or a stir or two with a spoon you've sa
 
 Add the stopper, put water in the airlock.
 
-5.  Wait
+5. Wait
 
 At first, it may seem like nothing is happening.  Have patience.
 
@@ -70,7 +74,7 @@ After 2-4 weeks, the bubbling will slow and eventually stop.
 Wait a week or two after all activity stops.  
 
 
-6.  What next?
+6. What next?
 
 You can just change out the stopper/airlock and put the jug in the fridge to drink.
 
