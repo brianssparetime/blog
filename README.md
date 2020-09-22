@@ -12,6 +12,8 @@ See the deployed site here: http://www.brianssparetime.com
     - also consider making the side bar more like this guy's
   - https://stackoverflow.com/questions/53921901/responsive-loader-with-nuxt-js
 
+- [FEATURE]  add content folder for vintage computing
+
  - [FIX] still can't figure out wrong border sizing on postcard vimgpc
  - [FIX, WIP] abstract post list into a vue component
    - use this on main page, all posts
