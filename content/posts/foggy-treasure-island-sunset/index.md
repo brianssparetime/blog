@@ -18,7 +18,7 @@ The air has cleared up from the forest fires, only to be replaced by the fog...
 
 Youtube video:
 
-<iframe width="560" height="315" src="https://youtu.be/Ap6hXQSNV1A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ap6hXQSNV1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Here's some construction equipment just hanging out....
 
