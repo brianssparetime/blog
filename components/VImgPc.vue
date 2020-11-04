@@ -1,6 +1,7 @@
 <template>
   <div class="img">
-    <nuxt-link tag="img" :src="imgSrc()" :to="postlink()" :alt="alt">
+    <nuxt-link :to="postlink()">
+      <nuxt-img tag="img" :src="imgSrc()" image-style="small" alt="alt" />
     </nuxt-link>
   </div>
 </template>

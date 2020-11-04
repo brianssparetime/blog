@@ -63,7 +63,33 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [["@nuxt/content"], ['nuxt-interpolation'],],
+  modules: [
+    ["@nuxt/content"], 
+    ['nuxt-interpolation'],
+    ['@pivale/nuxt-image-loader-module', {
+      imagesBaseDir: 'content',
+      imageStyles: {
+        //thumbnail: { actions: ['gravity|Center', 'resize|320|180^', 'extent|320|180|+0|+90'] },
+        tiny: { macros: ['scaleAndCrop|40|22'] },
+        small: { macros: ['scaleAndCrop|160|90'] },
+        medium: { macros: ['scaleAndCrop|640|360'] },
+      },
+      forceGenerateImages: {
+        // imageStyle: globPattern
+        tiny: '**/*',
+        small: '**/*',
+        medium: '**/*',
+      },
+      // Optional responsive style profiles:
+      responsiveStyles: {
+        thumb: {
+          srcset: 'small 160w, medium 640w',
+          sizes: '(min-width: 1280px) 100vw, 50vw',
+        },
+      },
+    }]
+  ],
+
 
 
   /* hooks for nuxt content */
