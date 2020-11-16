@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-    <h1>Tags: {{ $route.params.slug }}</h1>
+    <h1>Posts for Tag: {{ $route.params.slug }}</h1>
     <div v-if="!posts.length" class="results">
       No posts found for this tag
     </div>
