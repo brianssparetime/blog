@@ -1,7 +1,7 @@
 ---
 title: First Time Taking Pictures on Film in 2 Decades
 description: and I  think it turned out ok
-date: 2020-11-8
+date: 2020-10-15
 image: 000006800014.jpg
 tags:
   - photography

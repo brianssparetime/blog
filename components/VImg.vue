@@ -6,7 +6,7 @@
     <!--<v-interpolation tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt">
     </v-interpolation>-->
     <a v-interpolation :href="imgSrc()">
-      <img :src="imgSrc()" :alt="alt" />
+      <img :src="imgSrc()" :alt="alt">
     </a>
   </div>
 </template>
@@ -16,37 +16,37 @@ export default {
   props: {
     src: {
       type: String,
-      required: true,
+      required: true
     },
     alt: {
       type: String,
-      required: true,
+      required: true
     },
     dirp: {
       type: String,
       required: false,
-      default: null,
-    },
+      default: null
+    }
   },
   methods: {
-    imgSrc() {
+    imgSrc () {
       // const path = require("path");
       try {
-        console.log("start");
-        console.log("dirp=" + this.dirp);
+        console.log('start')
+        console.log('dirp=' + this.dirp)
         if (this.dirp !== null) {
-          console.log("new path");
-          return require(`~/content${this.dirp}/${this.src}`);
+          console.log('new path')
+          return require(`~/content${this.dirp}/${this.src}`)
         } else {
-          console.log("fell through else");
+          console.log('fell through else')
         }
       } catch (error) {
-        console.log("error with finding image  " + this.src);
-        return null;
+        console.log('error with finding image  ' + this.src)
+        return null
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

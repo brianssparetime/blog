@@ -13,61 +13,61 @@
     <p v-if="interest.date" class="ludate">
       <i>Last updated {{ formatDate(interest.date) }}</i>
     </p>
-    <hr />
+    <hr>
     <h2>Recent related posts:</h2>
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
   </div>
 </template>
 <script>
-import Prism from "~/plugins/prism";
+import Prism from '~/plugins/prism'
 export default {
-  async asyncData({ params, error, $content }) {
+  async asyncData ({ params, error, $content }) {
     try {
-      const intPath = `/interests/${params.slug}`;
-      const [interestd] = await $content("interests", { deep: true })
+      const intPath = `/interests/${params.slug}`
+      const [interestd] = await $content('interests', { deep: true })
         .where({ dir: intPath })
-        .fetch();
-      const posts = await $content("posts", { deep: true })
+        .fetch()
+      const posts = await $content('posts', { deep: true })
         .where({ tags: { $containsAny: interestd.tags } }) // this depends on above query
-        .without("body")
-        .sortBy("date", "desc")
+        .without('body')
+        .sortBy('date', 'desc')
         .limit(3)
-        .fetch();
-      console.log("post data = " + JSON.stringify(posts));
-      return { interest: interestd, posts };
+        .fetch()
+      console.log('post data = ' + JSON.stringify(posts))
+      return { interest: interestd, posts }
     } catch (err) {
       error({
         statusCode: 404,
-        message: "Page could not be found",
-      });
+        message: 'Page could not be found'
+      })
     }
   },
-  mounted() {
-    Prism.highlightAll();
+  mounted () {
+    Prism.highlightAll()
   },
   methods: {
-    formatDate(date) {
+    formatDate (date) {
       if (date) {
-        const options = { year: "numeric", month: "long", day: "numeric" };
-        return new Date(date).toLocaleDateString("en", options);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' }
+        return new Date(date).toLocaleDateString('en', options)
       } else {
-        return null;
+        return null
       }
-    },
+    }
   },
-  head() {
+  head () {
     return {
       title: this.interest.title,
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: this.interest.description,
-        },
-      ],
-    };
-  },
-};
+          hid: 'description',
+          name: 'description',
+          content: this.interest.description
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style scoped>

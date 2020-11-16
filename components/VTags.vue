@@ -1,8 +1,7 @@
 <template>
   <p class="tags">
     <span v-for="tag in tags" :key="tag" class="tag">
-      <nuxt-link :to="`/tags/${tag}`">{{ tag }}</nuxt-link
-      >&nbsp;
+      <nuxt-link :to="`/tags/${tag}`">{{ tag }}</nuxt-link>&nbsp;
     </span>
   </p>
 </template>
@@ -12,10 +11,10 @@ export default {
   props: {
     tags: {
       type: Array,
-      default: () => [],
-    },
-  },
-};
+      default: () => []
+    }
+  }
+}
 </script>
 
 <style scoped>

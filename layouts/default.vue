@@ -1,29 +1,47 @@
 <template>
   <div class="wrapper">
     <nav class="main-nav">
-      <Burger></Burger>
-      <nuxt-link class="logo" to="/">Brian's Spare Time</nuxt-link>
+      <Burger />
+      <nuxt-link class="logo" to="/">
+        Brian's Spare Time
+      </nuxt-link>
     </nav>
     <Sidebar>
       <ul class="sidebar-panel-nav" @click="closeSidebarPanel">
         <li>
-          <nuxt-link to="/"><b>Home</b></nuxt-link>
+          <nuxt-link to="/">
+            <b>Home</b>
+          </nuxt-link>
         </li>
-        <li>&#8226; <nuxt-link to="/posts">All posts</nuxt-link></li>
-        <li>&#8226; <nuxt-link to="/tags">Search by tag</nuxt-link></li>
-        <li class="padded"><b>Main Interests:</b></li>
+        <li>
+          &#8226; <nuxt-link to="/posts">
+            All posts
+          </nuxt-link>
+        </li>
+        <li>
+          &#8226; <nuxt-link to="/tags">
+            Search by tag
+          </nuxt-link>
+        </li>
+        <li class="padded">
+          <b>Main Interests:</b>
+        </li>
         <li>
           &#8226;
           <a href="https://www.youtube.com/channel/UCnKrfUKulxwGP51NpVvmolA">
             BrianGoesFlyin on YT
           </a>
         </li>
-        <li>&#8226; <nuxt-link to="/interests/brewing">Brewing</nuxt-link></li>
+        <li>
+          &#8226; <nuxt-link to="/interests/brewing">
+            Brewing
+          </nuxt-link>
+        </li>
         <li>
           &#8226;
           <nuxt-link to="/interests/vintage-computing">
-            Vintage Computing</nuxt-link
-          >
+            Vintage Computing
+          </nuxt-link>
         </li>
         <!--
           <li>&#8226; <nuxt-link to="/ee">EE</nuxt-link></li>
@@ -39,23 +57,23 @@
 </template>
 
 <script>
-import Burger from "../components/Burger.vue";
-import Sidebar from "../components/Sidebar.vue";
-import { mutations } from "../store/drawer.js";
+import Burger from '../components/Burger.vue'
+import Sidebar from '../components/Sidebar.vue'
+import { mutations } from '../store/drawer.js'
 export default {
   components: {
     Burger,
-    Sidebar,
+    Sidebar
   },
   methods: {
-    closeSidebarPanel: mutations.toggleNav,
+    closeSidebarPanel: mutations.toggleNav
   },
-  head() {
+  head () {
     return {
-      title: "BriansSpareTime",
-    };
-  },
-};
+      title: 'BriansSpareTime'
+    }
+  }
+}
 </script>
 <style>
 html {

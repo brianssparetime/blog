@@ -13,51 +13,51 @@
   </div>
 </template>
 <script>
-import Prism from "~/plugins/prism";
+import Prism from '~/plugins/prism'
 export default {
-  async asyncData({ params, error, $content }) {
+  async asyncData ({ params, error, $content }) {
     try {
-      const postPath = `/posts/${params.slug}`;
-      const [post] = await $content("posts", { deep: true })
+      const postPath = `/posts/${params.slug}`
+      const [post] = await $content('posts', { deep: true })
         .where({ dir: postPath })
-        .fetch();
-      return { post };
+        .fetch()
+      return { post }
     } catch (err) {
       error({
         statusCode: 404,
-        message: "Page could not be found",
-      });
+        message: 'Page could not be found'
+      })
     }
   },
   computed: {
-    postInfo() {
-      const post = this.post || {};
-      const { body, ...rest } = post;
-      return rest;
-    },
+    postInfo () {
+      const post = this.post || {}
+      const { body, ...rest } = post
+      return rest
+    }
   },
-  mounted() {
-    Prism.highlightAll();
+  mounted () {
+    Prism.highlightAll()
   },
   methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
+    formatDate (date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('en', options)
+    }
   },
-  head() {
+  head () {
     return {
       title: this.post.title,
       meta: [
         {
-          hid: "description",
-          name: "description",
-          content: this.post.description,
-        },
-      ],
-    };
-  },
-};
+          hid: 'description',
+          name: 'description',
+          content: this.post.description
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style>

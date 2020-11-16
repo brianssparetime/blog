@@ -4,10 +4,10 @@
       v-if="isPanelOpen"
       class="sidebar-backdrop"
       @click="closeSidebarPanel"
-    ></div>
+    />
     <transition name="slide">
       <div v-if="isPanelOpen" class="sidebar-panel">
-        <slot></slot>
+        <slot />
       </div>
     </transition>
   </div>
@@ -15,17 +15,17 @@
 <script>
 // import { mapGetters, mapMutations } from 'vuex';
 
-import { store, mutations } from "../store/drawer.js";
+import { store, mutations } from '../store/drawer.js'
 export default {
   computed: {
-    isPanelOpen() {
-      return store.isNavOpen;
-    },
+    isPanelOpen () {
+      return store.isNavOpen
+    }
   },
   methods: {
-    closeSidebarPanel: mutations.toggleNav,
-  },
-};
+    closeSidebarPanel: mutations.toggleNav
+  }
+}
 </script>
 <style>
 .slide-enter-active,

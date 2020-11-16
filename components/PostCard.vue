@@ -1,9 +1,11 @@
 <template>
   <div class="post">
-    <v-img-pc class="img" :src="post.image" alt="Cat"></v-img-pc>
+    <v-img-pc class="img" :src="post.image" alt="Cat" />
     <div>
       <nuxt-link :to="post.dir">
-        <h3 class="heading">{{ post.title }}</h3>
+        <h3 class="heading">
+          {{ post.title }}
+        </h3>
       </nuxt-link>
       <p>
         <i>{{ formatDate(post.date) }}</i>
@@ -19,16 +21,16 @@ export default {
   props: {
     post: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
   methods: {
-    formatDate(date) {
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      return new Date(date).toLocaleDateString("en", options);
-    },
-  },
-};
+    formatDate (date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('en', options)
+    }
+  }
+}
 </script>
 
 <style scoped>

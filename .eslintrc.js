@@ -10,12 +10,15 @@ module.exports = {
   },
   extends: [
     "@nuxtjs",
+    /*
     "prettier",
     "prettier/vue",
     "plugin:prettier/recommended",
+    */
     "plugin:nuxt/recommended",
   ],
-  plugins: ["prettier"],
+  /* plugins: ["prettier"],*/
+  plugins: [],
   // add your custom rules here
   rules: {
     //"no-console": "warn",
@@ -23,11 +26,13 @@ module.exports = {
     "vue/no-unused-components": "warn",
     "no-unused-vars": "warn",
     "no-v-html": "off",
+    /*
     "prettier/prettier": [
       "error",
       {
         endOfLine: "auto",
       },
     ],
+    */
   },
 };

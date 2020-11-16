@@ -1,7 +1,6 @@
 <template>
   <div class="img">
-    <nuxt-link tag="img" :src="imgSrc()" :to="postlink()" :alt="alt">
-    </nuxt-link>
+    <nuxt-link tag="img" :src="imgSrc()" :to="postlink()" :alt="alt" />
   </div>
 </template>
 
@@ -10,30 +9,30 @@ export default {
   props: {
     src: {
       type: String,
-      required: true,
+      required: true
     },
     alt: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   methods: {
-    imgSrc() {
+    imgSrc () {
       // const path = require("path");
       try {
-        const { post } = this.$parent;
-        return require(`~/content${post.dir}/${this.src}`);
+        const { post } = this.$parent
+        return require(`~/content${post.dir}/${this.src}`)
       } catch (error) {
-        console.log("error with finding image  " + this.src);
-        return null;
+        console.log('error with finding image  ' + this.src)
+        return null
       }
     },
-    postlink() {
-      const { post } = this.$parent;
-      return post.dir;
-    },
-  },
-};
+    postlink () {
+      const { post } = this.$parent
+      return post.dir
+    }
+  }
+}
 </script>
 
 <style scoped>
