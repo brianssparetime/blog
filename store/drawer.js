@@ -15,17 +15,17 @@ export const getters = {
   },
 };
 */
-import Vue from "vue";
+import Vue from 'vue'
 
 export const store = Vue.observable({
-  isNavOpen: false,
-});
+  isNavOpen: false
+})
 
 export const mutations = {
-  setIsNavOpen(yesno) {
-    store.isNavOpen = yesno;
+  setIsNavOpen (yesno) {
+    store.isNavOpen = yesno
   },
-  toggleNav() {
-    store.isNavOpen = !store.isNavOpen;
-  },
-};
+  toggleNav () {
+    store.isNavOpen = !store.isNavOpen
+  }
+}

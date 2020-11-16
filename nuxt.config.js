@@ -1,92 +1,48 @@
 export default {
-  target: "static",
+  // Target (https://go.nuxtjs.dev/config-target)
+  target: 'static',
 
-
-  /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
-  mode: "universal",
-
-
-  // do I need this?  added for nuxt-content images...
-  components:true, 
-
-  /* 
-  // don't need this atm
-  env : {
-    brewing_tags : ["brewing", "ale", "beer", "mead", "acerglyn"],
-  }, */
-
-
-  /*
-   ** Headers of the page
-   ** See https://nuxtjs.org/api/configuration-head
-   */
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: process.env.npm_package_name || "",
+    title: 'bst-blog',
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: process.env.npm_package_description || "",
-      },
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
 
-
-  /*
-   ** Global CSS
-   */
-  css: [],
-
-
-  /*
-   ** Plugins to load before mounting the App
-   ** https://nuxtjs.org/guide/plugins
-   */
-  plugins: ["~/plugins/prism.js", "~/plugins/globalComponents.js"],
-
-
-  /*
-   ** Nuxt.js dev-modules
-   */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    "@nuxtjs/eslint-module",
+  // Global CSS (https://go.nuxtjs.dev/config-css)
+  css: [
   ],
 
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  plugins: ["~/plugins/prism.js", "~/plugins/globalComponents.js"],
 
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [["@nuxt/content"], ['nuxt-interpolation'],],
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
 
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module'
+  ],
 
-  /* hooks for nuxt content */
-  /*
-  hooks: {
-    /* 
-    extract from filename and path:
-    - the post date?
-    - the title? 
+  // Modules (https://go.nuxtjs.dev/config-modules)
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content'
+  ],
 
-    const dirp_rx = /^/
+  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
+  axios: {},
 
-    'content:file:beforeInsert': (document) => {
-      if (document.extension === '.md') {
-        document.foo = true;
-      }
-    }
-  },*/
-
-
-  /*
-   ** Nuxt Content configuration
-   */
+  // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
     markdown: {
       prism: {
@@ -94,13 +50,10 @@ export default {
       },
     },
     nestedProperties: ['post.tags'],
+
   },
 
-
-  /*
-   ** Build configuration
-   ** See https://nuxtjs.org/api/configuration-build/
-   */
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extend(config, ctx) {
       if (ctx.isDev) {
@@ -124,5 +77,4 @@ export default {
       }); // see https://github.com/nuxt/content/issues/106#issuecomment-666283547
     },
   },
-};
-//process.env.DEBUG = 'nuxt:*'
+}
