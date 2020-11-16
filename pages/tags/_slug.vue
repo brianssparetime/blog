@@ -9,10 +9,24 @@
 </template>
 <script>
 export default {
+/*
+  props: {
+    postlimit: {
+      type: int,
+      required: false,
+      default: 5
+    }
+  },
+*/
+  // why error on int here but not in postlist?
   async asyncData ({ params, error, $content }) {
     try {
       const posts = await $content('posts', { deep: true })
         .where({ tags: { $contains: params.slug } })
+        // why error on this but not in postlist.vue?
+        // .limit(this.postlimit)
+        .without('body')
+        .sortBy('date', 'desc')
         .fetch()
       return { posts }
     } catch (err) {
