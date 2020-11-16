@@ -36,9 +36,14 @@ export default {
       })
     }
   },
+  data (params) {
+    return {
+      title: 'Tag: ' + this.$route.params.slug
+    }
+  },
   head () {
     return {
-      title: 'Tags',
+      title: this.title,
       meta: [
         {
           hid: 'description',
