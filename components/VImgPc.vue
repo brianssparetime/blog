@@ -38,7 +38,6 @@ export default {
 <style scoped>
 .img {
   border: 1px solid #eee;
-  border-radius: 5px;
   padding: 5px;
   display: inline-block;
   max-width: fit-content;
