@@ -57,10 +57,15 @@ export default {
   display: inline-block;
   margin-bottom: 2rem;
   margin-top: 1.5rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 img {
   /*max-width: 100%;*/
   max-height: 400px;
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
   /*width: 100%;*/
   /*object-fit: cover;*/
   display: inline-block;
