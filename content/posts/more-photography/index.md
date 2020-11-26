@@ -1,7 +1,7 @@
 ---
 title: More color photography
 date: 2020-11-22
-image: 000036020013.jpg
+image: 000053620027.jpg
 tags:
   - photography
   - film
