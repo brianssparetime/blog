@@ -2,7 +2,7 @@
 title: Healdsburg in the fall
 description:  Flying drones with Ben
 date: 2020-11-23
-image: vidcap.jpg
+image: vidcap.png
 tags:
   - drone
   - photography
