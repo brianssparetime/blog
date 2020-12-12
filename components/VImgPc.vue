@@ -1,5 +1,10 @@
 <template>
   <div class="img">
+    <!--
+    <nuxt-link :to="postlink()">
+      <nuxt-img tag="img" :src="imgSrc()" image-style="small" alt="alt" />
+    </nuxt-link>
+    -->
     <nuxt-link tag="img" :src="imgSrc()" :to="postlink()" :alt="alt" />
   </div>
 </template>
@@ -37,7 +42,7 @@ export default {
 
 <style scoped>
 .img {
-  border: 1px solid #eee;
+  /*border: 1px solid #eee;*/
   border-radius: 5px;
   padding: 5px;
   display: inline-block;
