@@ -2,6 +2,8 @@
   <div class="posts">
     <h3>Posts</h3>
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
+    <BR /><BR />
+    The code that runs this blog is on <a href="https://github.com/brianssparetime/blog">github</a>.
   </div>
 </template>
 <script>
