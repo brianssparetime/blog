@@ -19,4 +19,4 @@ tags:
 <v-img src="000071580001.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000009440007.jpg" alt="bar" :dirp="dir"></v-img>
 
-Kodak Color 200 and Ilford HP5+.
+Kodak ColorPlus 200 and Ilford HP5+.

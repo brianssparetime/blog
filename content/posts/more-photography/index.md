@@ -18,4 +18,4 @@ tags:
 <v-img src="000053610002.jpg" alt="bar" :dirp="dir"></v-img>
 
 
-Kodak Color 200 film
+Kodak ColorPlus 200 film
