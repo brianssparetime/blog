@@ -57,17 +57,15 @@ export default {
   display: inline-block;
   margin-bottom: 2rem;
   margin-top: 1.5rem;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  /* margin-left: 50%; */
+  /* transform: translateX(-50%); */
 }
 img {
-  /*max-width: 100%;*/
-  max-height: 400px;
-  width: auto ;
+  /* max-height: 400px; */
+  width: 100%;
   max-width: 100% ;
+  /* width: auto ; */
   height: auto ;
-  /*width: 100%;*/
-  /*object-fit: cover;*/
   display: inline-block;
   object-fit: contain;
 }
