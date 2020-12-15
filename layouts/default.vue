@@ -3,7 +3,8 @@
     <nav class="main-nav">
       <Burger />
       <nuxt-link class="logo" to="/">
-        Brian's Spare Time
+        <!-- Brian's Spare Time -->
+        <img src="bst logo2.png">
       </nuxt-link>
     </nav>
     <Sidebar>
