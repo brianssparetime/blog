@@ -83,11 +83,12 @@ html {
   font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman",
     Times, serif;
   font-size: 16px;
+  line-height: 1.4;
   box-sizing: border-box;
 }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .logo {
