@@ -51,7 +51,7 @@ export default {
 
 <style scoped>
 .img {
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   border-radius: 5px;
   padding: 5px;
   display: inline-block;
@@ -61,7 +61,7 @@ export default {
   /* transform: translateX(-50%); */
 }
 img {
-  /* max-height: 400px; */
+  max-height: 600px;
   width: 100%;
   max-width: 100% ;
   /* width: auto ; */
