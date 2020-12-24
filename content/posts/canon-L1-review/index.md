@@ -2,18 +2,18 @@
 title: Review of Canon L1 Rangefinder from 1957
 
 date: 2020-12-14
-image: DSC00360.jpg
+image: DSC00374 front.jpg
 description: Who needs a lightmeter anyways?
 tags:
   - photography
   - camera-review
 ---
 
-The <a href="https://www.canonrangefinder.org/Canon_L1_L3.htm">Canon L1</a> is a rangefinder first produced in 1957.  It sits nicely between the earlier rangefinders that were basically Barnack Leica clones, and the later more fully features ones like the Canon P, Canon 7, and Canonette series.  As such, it combines the small size and good looks of the Leica clones (like the earlier <a href= "https://www.canonrangefinder.org/Canon_IVSB.htm">Canon IVSB</a>), with some quality of life features from the later models (like a rewind crank, back instead of bottom loading, faster speeds, and a metal shutter, though mine is cloth).  The L1 was a lower cost version (lacking a self timer) of what in 1958 became the <a href="https://www.canonrangefinder.org/Canon_VL_VL2.htm">Canon V</a> series.
+The <a href="https://www.canonrangefinder.org/Canon_L1_L3.htm">Canon L1</a> is a rangefinder first produced in 1957.  It sits nicely between the earlier rangefinders that were basically Barnack Leica clones, and the later more fully features ones like the Canon P, Canon 7, and Canonette series.  As such, it combines the small size and good looks of the Leica clones (like the earlier <a href= "https://www.canonrangefinder.org/Canon_IVSB.htm">Canon IVSB</a>), with some quality of life features from the later models (like a rewind crank, back instead of bottom loading, faster speeds, and a metal shutter, though mine has cloth).  The L1 was a lower cost version (lacking a self timer) of what in 1958 became the <a href="https://www.canonrangefinder.org/Canon_VL_VL2.htm">Canon V</a> series.  I like that the branding on the L1 and VL cameras is understated - the VI, P, and 7 series all have a giant Canon logo on the front.
 
-<v-img src="DSC00360.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00362.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00361.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="DSC00374 front.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="DSC00373 top.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="DSC00376 back.jpg" alt="bar" :dirp="dir"></v-img>
 
 This camera has speeds up to 1/1000th, a lever wind, rangefinder selector that switches between 50mm, 35m, and a zoomed in focusing mode that is about 135mm (though I've only ever used it on 50mm).  The rangefinder and viewfinders are through a single window, unlike early Leicas.
 
@@ -22,6 +22,8 @@ I've paired it with a cheap Soviet 50mm Jupiter-8 f/2 lens, since it is one of t
 I got this camera for three reasons:  First, I wanted something a little lighter and smaller than the Ricoh Singlex TLS I've been using.  Second, I wanted to try out a rangefinder, without paying an arm and a leg.  I was curious to see if I would like it and to know what the experience of taking a photo was like for most of the 1930s, 40s, and 50s when this basic design dominated the industry.  And third, I was curious if I could handle the lack of a lightmeter.
 
 On that last point, I think the answer is often, but far from always.  Most of the pictures I've taken with this set up have come out well, but a few that I really like were rather poorly exposed, though to be fair, neither featured simple lighting.
+
+I've very much enjoyed using this camera.  I don't find the rangefinder mechanism hard to use, or the patch difficult to see.  It feels very classy and solid, and using it requires an even slower and more thoughtful approach than using an SLR.  I've also been working on zone focusing more for faster street shooting.
 
 The worthy photos from my first few rolls are posted <nuxt-link to="canon-v-photos">here</nuxt-link>.
 
