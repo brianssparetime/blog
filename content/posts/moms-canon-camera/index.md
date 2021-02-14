@@ -29,7 +29,7 @@ Technological progress gives it several big advantages over the older cameras:
 
  - **Zoom lenses**
 
- My mother had two lenses - the kit 28-80mm zoom, and the longer XX-XXmm zoom.  I've mainly used the shorter lens, and it's nice to have zoom again.  All my previous film work has been on 50mm or 85mm primes.
+ My mother had two lenses - the kit 35-80mm f/4-5.6 zoom, and the longer 80-200mm f/4.5-5.6zoom.  I've mainly used the shorter lens, and it's nice to have zoom again.  All my previous film work has been on 50mm or 85mm primes.
 
  - **Autoloading and winding**
 
