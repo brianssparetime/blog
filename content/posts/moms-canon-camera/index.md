@@ -8,7 +8,7 @@ tags:
 ---
 
 
-This Canon EOS Rebel S replaced the Singlex SLR as our family's (aka my mother's) primary camera from the mid 90s through the end of the film era.
+This Canon EOS Rebel S replaced the Singlex SLR as our family's (aka my mother's) primary camera from the mid 90s through the end of the film era.  Photos taken with this camera are in a separate post <nuxt-link to="moms-canon-photos">here</nuxt-link>.
 
 When I was asking if it was still around, I actually recalled it being digital at first - it's quite sophisticated for its time.  And a huge departure from the cameras I've been using (the Singlex SLR from the 60s or 70s and the Canon L1 from the 1950s).  
 

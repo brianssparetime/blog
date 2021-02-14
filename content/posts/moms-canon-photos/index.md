@@ -7,7 +7,7 @@ tags:
   - film
 ---
 
-Mom's Canon camera is a mid 1990s 35mm film camera with auto-everything.  Some I took on auto, some I used aperture priority.
+<nuxt-link to="moms-canon-camera">Mom's Canon camera</nuxt-link> is a mid 1990s 35mm film camera with auto-everything.  Some I took on auto, some I used aperture priority.
 
 <v-img src="000094020016.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000094020026.jpg" alt="bar" :dirp="dir"></v-img>
