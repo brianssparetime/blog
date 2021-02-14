@@ -1,7 +1,7 @@
 ---
 title: February 2021 black and white 
 date: 2021-02-12
-image: 000004090020.jpg
+image: 000004090020_rot.jpg
 tags:
   - photography
   - film
@@ -10,7 +10,7 @@ tags:
 All with the <nuxt-link to="/posts/canon-L1-review">Canon L1</nuxt-link> and Canon 50mm f/1.8 on HP5+.
 
 
-<v-img src="000004090020.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000004090020_rot.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000004090026.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000004070004.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000004100023.jpg" alt="bar" :dirp="dir"></v-img>
