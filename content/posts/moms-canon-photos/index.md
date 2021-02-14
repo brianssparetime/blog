@@ -1,7 +1,7 @@
 ---
 title: Photos with Mom's Canon Film Camera (EOS Rebel S)
 date: 2021-02-13
-image: 000094020029.jpg
+image: 000003880023.jpg
 tags:
   - photography
   - film
