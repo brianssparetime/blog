@@ -7,7 +7,7 @@ tags:
   - film
 ---
 
-All with the <nuxt-link to="/posts/canon-L1-review">Canon L1</nuxt-link> and a Jupiter-8 on HP5+.
+All with the <nuxt-link to="/posts/canon-L1-review">Canon L1</nuxt-link> and Canon 50mm f/1.8 on HP5+.
 
 
 <v-img src="000004090020.jpg" alt="bar" :dirp="dir"></v-img>
