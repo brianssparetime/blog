@@ -4,7 +4,7 @@ date: 2021-02-13
 image: DSC00416.jpg
 tags:
   - photography
-  - film
+  - camera-review
 ---
 
 
