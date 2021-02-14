@@ -13,7 +13,9 @@
   </div>
 </template>
 <script>
+
 import Prism from '~/plugins/prism'
+
 export default {
   async asyncData ({ params, error, $content }) {
     try {
