@@ -4,6 +4,8 @@ An experiment in learning NuxtJS and also in trying to document some of the stuf
 
 See the deployed site here: http://www.brianssparetime.com
 
+Copyright reserved on all photos, videos, prose, and other non-code content included in this repository; no reproduction of such content without written consent in advance.
+
 
 ## The Plan / TODO:
  - [FEATURE] figure out how to auto generate thumbnails or handle different image sizes
