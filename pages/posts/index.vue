@@ -13,6 +13,7 @@ export default {
   async asyncData ({ params, error, $content }) {
     try {
       const posts = await $content('posts', { deep: true })
+        .where({ tags: { $containsNone: ['work-in-progress'] } })
         .sortBy('date', 'desc')
         .fetch()
       return { posts }
