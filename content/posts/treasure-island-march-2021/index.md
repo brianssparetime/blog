@@ -5,6 +5,7 @@ image: DJI_0475.JPG
 tags:
   - photography
   - drone
+  - sunset
 ---
 
 Such a nice day, thought I'd catch the sunset from the Tripod in the Bay.

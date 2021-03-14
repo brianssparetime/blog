@@ -6,7 +6,6 @@ tags:
   - photography
   - pentax-q
   - work-in-progress
-  - inprogress
 ---
 
 
