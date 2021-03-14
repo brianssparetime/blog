@@ -2,8 +2,6 @@
   <div class="posts">
     <h3>Posts</h3>
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
-    <BR /><BR />
-    The code that runs this blog is on <a href="https://github.com/brianssparetime/blog">github</a>.
   </div>
 </template>
 <script>
@@ -15,10 +13,9 @@ export default {
   async asyncData ({ params, error, $content }) {
     try {
       const posts = await $content('posts', { deep: true })
-        .where({ tags: { $containsNone: ['work-in-progress'] } })
+        .where({ tags: { $containsAny: ['work-in-progress'] } })
         .sortBy('date', 'desc')
         .fetch()
-
       return { posts }
     } catch (err) {
       error({
@@ -29,7 +26,7 @@ export default {
   },
   head () {
     return {
-      title: 'BriansSpareTime',
+      title: 'BST: Posts',
       meta: [
         {
           hid: 'description',
