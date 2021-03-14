@@ -1,5 +1,8 @@
 <template>
   <div class="posts">
+    I'm Brian and this is how I spend my spare time...
+    <BR /><BR />
+    <BR /><BR />
     <h3>Posts</h3>
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
     <BR /><BR />
