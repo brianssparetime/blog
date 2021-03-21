@@ -11,6 +11,8 @@ I was disappointed that my favorite 35mm photos couldn't print larger than about
 
 These are among my first few roles of medium format film.  Color is Porta 160 and black and white is Ilford Delta 100.  I took these with a Moskva 5 soviet folding rangefinder as 6x9!  Negatives are big enough to contact print a postcard.
 
+Taken with my <nuxt-link to="moskva5-review">Moskva5</nuxt-link>.
+
 <v-img src="000021920001.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000023040007.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000021920002.jpg" alt="bar" :dirp="dir"></v-img>
