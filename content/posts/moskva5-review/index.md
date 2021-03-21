@@ -16,9 +16,12 @@ The Moskva 5 is exactly that.  For a massive 6x9 negative size, this camera is f
 
 <v-img src="DSC00521 angled.jpg" alt="bar" :dirp="dir"></v-img>
 
-The camera was built between 1956 and 1960, as an interative improvement of a pre-war Zeiss Ikonta camera.  Everything is manual, with shutter speeds up to 250th of a second and f-stops from 3.5 to f/32.  The rangefinder double-image appears when the flip-out front lens is deployed; focusing is done directly on the front of the lens.  The lens is the rough equivalent of a 50mm focal length on 35mm film.  Film advance is manual, via a winding wheel with film alignment done through red windows on the back.
+The camera was built between 1956 and 1960, as an interative improvement of a pre-war Zeiss Ikonta camera.  Everything is manual, with shutter speeds up to 250th of a second and f-stops from 3.5 to f/32.  The rangefinder double-image appears when the flip-out front lens is deployed; focusing is done via the knob on the front assembly near the rangefinder lens, or on the front of the lens directly.  The lens is the rough equivalent of a 50mm focal length on 35mm film.  Film advance is manual, via a winding wheel with film alignment done through red windows on the back.
 
-Oddly, many of the controls feel like they were made for lefthanders.  The viewfinder is on the right side, the shutter button on the left.  Film winds right to left, the door opens to the left.  Taking a photograph with this camera is an ergonomic mess, and requires changing hands several times to open the front, flip up the rangefinder, set aperture and shutter speed, focus, flip down the rangefinder, recompose, and press the shutter without losing the composition.  Winding to advance is hard enough to make your fingers bleed after two rolls on a cold day.
+Oddly, many of the controls feel like they were made for lefthanders.  The viewfinder is on the right side (where the shutter normally is), and the shutter button on the left.  Film winds right to left with the knob on the left to make right-handed winding difficult.  The viewfinder window is on the right, so your nose hits the back of the camera.  
+
+
+Taking a photograph with this camera is an ergonomic mess, and requires changing hands several times to open the front, flip up the rangefinder, set aperture and shutter speed, focus, flip down the rangefinder, recompose, and press the shutter without losing the composition.  Usually at least 30 seconds of button pressing foreplay is required before the cover opens and the lens assembly erects and its ready to shoot.  Winding to advance is hard enough to make your fingers bleed after two rolls on a cold day.
 
 Two safety notes emphasized by my seller and most reputable reviewers, worth repeating here:
  - Change shutter speeds before cocking the shutter.  Don't change speed once it's cocked.
