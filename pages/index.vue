@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-    I'm Brian and this is how I spend my spare time...
+    I'm Brian and this is some stuff I've done in my spare time...
     <BR /><BR />
     <BR /><BR />
     <h3>Posts</h3>
