@@ -6,7 +6,6 @@ description:  Setting up my uncle's old equipment...
 tags:
   - photography
   - film
-  - work-in-progress
 
 ---
 
