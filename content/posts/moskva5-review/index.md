@@ -7,7 +7,7 @@ description:
 tags:
   - photography
   - camera-review
-  - work-in-progress
+
 ---
 
 I wanted to try medium format (120) photography.  I wanted a camera that was both cheap and portable.  
