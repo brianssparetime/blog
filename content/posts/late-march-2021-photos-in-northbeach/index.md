@@ -8,7 +8,7 @@ tags:
 ---
 
 
-Mostly HP5+ on my Canon L1, some Delta 100, and some color Cinestill 50D, shot on the Moskva5 in 6x6 format (instead of the 6x9 I've previously shot with that camera).  Not sure I've shot enough Cinestill 50D to have a real opinion yet, but so far so good.
+Mostly HP5+ on my <nuxt-link to="canon-L1-review">Canon L1 </nuxt-link>,some Delta 100, and some color Cinestill 50D, shot on the <nuxt-link to="moskva5-review">Moskva5</nuxt-link> in 6x6 format (instead of the 6x9 I've previously shot with that camera).  Not sure I've shot enough Cinestill 50D to have a real opinion yet, but so far so good.
 
 <v-img src="000041480011.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000041180032.jpg" alt="bar" :dirp="dir"></v-img>
