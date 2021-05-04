@@ -7,7 +7,7 @@ tags:
   - film
 ---
 
-Some recent San Francisco sunsets on ColorPlus200.
+Some recent San Francisco sunsets on ColorPlus200 with Mom's Canon EOS Rebel S.
 
 
 <v-img src="000079420027 sunset.jpg" alt="bar" :dirp="dir"></v-img>
