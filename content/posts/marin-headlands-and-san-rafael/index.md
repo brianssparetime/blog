@@ -5,7 +5,6 @@ image: 000079740002 marin.jpg
 tags:
   - photography
   - film
-  - work-in-progress
 ---
 
 
