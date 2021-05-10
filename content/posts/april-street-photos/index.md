@@ -1,7 +1,7 @@
 ---
 title: April SF Street Photos
 date: 2021-05-11
-image: 000079740005.jpg
+image: 000079440028 swimmer bw..jpg
 tags:
   - photography
   - film
