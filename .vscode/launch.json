@@ -12,7 +12,7 @@
         }
       },
       {
-        "type": "node",
+        "type": "pwa-node",
         "request": "launch",
         "name": "server: nuxt",
         "args": ["dev"],
@@ -32,5 +32,9 @@
         "name": "fullstack: nuxt",
         "configurations": ["server: nuxt", "client: chrome"]
       }
-    ]
+    ],
+    "resolveSourceMapLocations": [
+      "${workspaceFolder}/**",
+      "!**/node_modules/**"
+  ],
   }
