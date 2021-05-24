@@ -1,7 +1,7 @@
 ---
 title: May SF Street Photos
 date: 2021-05-20
-image: 000079440028 swimmer bw.jpg
+image: 000094960009.jpg
 tags:
   - photography
   - film
