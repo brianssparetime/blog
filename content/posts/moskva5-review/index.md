@@ -2,6 +2,7 @@
 title: Review of Moskva 5 Folding Medium Format Rangefinder
 
 date: 2021-03-20
+updatedAt: 2021-05-25
 image: DSC00521 angled.jpg
 description: 
 tags:
@@ -21,17 +22,17 @@ The camera was built between 1956 and 1960, as an interative improvement of a pr
 Oddly, many of the controls feel like they were made for lefthanders.  The viewfinder is on the right side (where the shutter normally is), and the shutter button on the left.  Film winds right to left with the knob on the left to make right-handed winding difficult.  The viewfinder window is on the right, so your nose hits the back of the camera.  
 
 
-Taking a photograph with this camera is an ergonomic mess, and requires changing hands several times to open the front, flip up the rangefinder, set aperture and shutter speed, focus, flip down the rangefinder, recompose, and press the shutter without losing the composition.  Usually at least 30 seconds of button pressing foreplay is required before the cover opens and the lens assembly erects and its ready to shoot.  Winding to advance is hard enough to make your fingers bleed after two rolls on a cold day.
+Taking a photograph with this camera is an ergonomic mess, and requires changing hands several times to open the front, flip up the rangefinder, set aperture and shutter speed, focus, flip down the rangefinder, recompose, and press the shutter without losing the composition.  Usually at least 30 seconds of button pressing foreplay is required before the cover opens, the lens assembly erects, and its ready to shoot.  Winding to advance is hard enough to make your fingers bleed after two rolls on a cold day.
 
 Two safety notes emphasized by my seller and most reputable reviewers, worth repeating here:
- - Change shutter speeds before cocking the shutter.  Don't change speed once it's cocked.
+ - Change shutter speeds before cocking the shutter.  Remember: Don't change speed once it's cocked and don't cock until you're ready to shoot.
  - Focus to infinity before collapsing the front
 <BR><BR><BR>
   
 
 I like the images I've made with this camera and I generally enjoy a slower process when it comes to taking pictures.  But this camera may be a little too much in that direction.  It takes so long to get everything adjusted that friends will become agitated and then desert you.  I always have trouble reading the numbers in the red windows and often have blanks from where I couldn't remember if I had advanced or not (fortunately, double exposure is prevented, as long as you don't partially wind).  With only 8 shots per roll of 120, that gets expensive.  The flip-up rangefinder lens looks cool, but it blocks the viewfinder, requiring you to flip it down to really compose, which tends to mess up focus at short distances.  I constantly feel (and probably look) like I'm going to drop it.
 
-To shoot in 6x6 mode, insert the adapter plate and change the viewfinder selector on the dial above the viewfinder.
+To shoot in 6x6 mode, insert the adapter plate, change the viewfinder selector on the dial above the viewfinder, and finally move the lever on the back plate to adjust which window is active for seeing the numbers on the back of the film to advance it.
 
 <v-img src="DSC00518 front closed.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="DSC00519 front open.jpg" alt="bar" :dirp="dir"></v-img>
