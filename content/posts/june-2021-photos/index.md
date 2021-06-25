@@ -1,7 +1,7 @@
 ---
 title: June SF Street Photos
 date: 2021-06-25
-image: 000039430028.jpg
+image: 000039430034.jpg
 tags:
   - photography
   - film
@@ -9,7 +9,9 @@ tags:
 
 
 
-Shot during June 2021, all black and white.  Ilford HP5 on Canon L1, and Delta100 on the Moskva5 and Fujica Half.  Despite more than half of the photos being ruined by a shutter problem on the L1, I'm pleased with those that did come out.
+Shot during June 2021, all black and white.  Ilford HP5 on Canon L1, and Delta100 on the Moskva5 and Fujica Half.  
+
+More than half of the photos from this month being ruined by a shutter problem on the L1; of those that survived or were shot on other cameras, more photos  are good but fewer are really good than my previous work.
 
 
 <v-img src="000039430034.jpg" alt="bar" :dirp="dir"></v-img>
