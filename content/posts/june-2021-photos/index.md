@@ -1,5 +1,5 @@
 ---
-title: June SF Street Photos
+title: June 2021 in black and white
 date: 2021-06-25
 image: 000039430034.jpg
 tags:
