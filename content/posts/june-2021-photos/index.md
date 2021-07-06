@@ -11,7 +11,7 @@ tags:
 
 Shot during June 2021, all black and white.  Ilford HP5 on Canon L1, and Delta100 on the Moskva5 and Fujica Half.  
 
-More than half of the photos from this month being ruined by a shutter problem on the L1; of those that survived or were shot on other cameras, more photos  are good but fewer are really good than my previous work.
+More than half of the photos from this month were ruined by a shutter problem on the L1; of those that survived or were shot on other cameras, more photos are good but fewer are really good than my previous work.
 
 
 <v-img src="000039430034.jpg" alt="bar" :dirp="dir"></v-img>
