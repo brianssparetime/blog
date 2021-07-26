@@ -18,7 +18,7 @@ Shot during July 2021, all black and white.  Ilford HP5 on Canon L1, and Delta10
 <v-img src="000058040008.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000058060030.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000058060023.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="dog edit.pngg" alt="bar" :dirp="dir"></v-img>
+<v-img src="dog edit.png" alt="bar" :dirp="dir"></v-img>
 <v-img src="000058050014.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000058050013.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="edit guitar.png" alt="bar" :dirp="dir"></v-img>
