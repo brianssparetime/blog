@@ -5,7 +5,7 @@
     <!--<v-interpolation :src="imgSrc()" :to="imgSrc()" :alt="alt">-->
     <!--<v-interpolation tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt">
     </v-interpolation>-->
-    <a v-interpolation :href="imgSrc()">
+    <a :href="imgSrc()">
       <img :src="imgSrc()" :alt="alt">
     </a>
   </div>

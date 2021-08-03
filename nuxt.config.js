@@ -20,7 +20,7 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ["~/plugins/prism.js", "~/plugins/globalComponents.js"],
+  plugins: ['~/plugins/prism.js', '~/plugins/globalComponents.js'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -33,6 +33,7 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    //'nuxt-interpolation',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
@@ -77,9 +78,9 @@ export default {
       //https://liftcodeplay.com/2019/12/25/how-to-debug-nuxt-js-with-vs-code/
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
-          enforce: "pre",
+          enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: "eslint-loader",
+          loader: 'eslint-loader',
           exclude: /(node_modules)/,
           options: {
             fix: true,
