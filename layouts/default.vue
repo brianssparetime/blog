@@ -44,6 +44,12 @@
             Vintage Computing
           </nuxt-link>
         </li>
+        <li>
+          &#8226;
+          <nuxt-link to="/interests/film-photography">
+            Film Photography
+          </nuxt-link>
+        </li>
         <!--
           <li>&#8226; <nuxt-link to="/ee">EE</nuxt-link></li>
         <li>&#8226; <nuxt-link to="/vintcomp">Vintage Computers</nuxt-link></li>
