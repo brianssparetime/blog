@@ -1,11 +1,10 @@
 ---
 title: July 2021 in color
-date: 2021-07-29
+date: 2021-08-03
 image: .jpg
 tags:
   - photography
   - film
-  - work-in-progress
 ---
 
 

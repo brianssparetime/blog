@@ -6,7 +6,6 @@ image: IMG_7190.jpg
 tags:
   - photography
   - film
-  - work-in-progress
 ---
 
 
