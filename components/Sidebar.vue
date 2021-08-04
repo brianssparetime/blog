@@ -1,12 +1,12 @@
 <template>
   <div class="sidebar">
     <div
-      v-if="isPanelOpen"
+      v-show="isPanelOpen"
       class="sidebar-backdrop"
       @click="closeSidebarPanel"
     />
     <transition name="slide">
-      <div v-if="isPanelOpen" class="sidebar-panel">
+      <div v-show="isPanelOpen" class="sidebar-panel">
         <slot />
       </div>
     </transition>
