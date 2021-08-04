@@ -10,9 +10,9 @@
     <div class="nc">
       <nuxt-content :document="interest" />
     </div>
-    <p v-show="interest.date" class="ludate">
+    <div v-show="interest.date" class="ludate">
       <i>Last updated {{ formatDate(interest.date) }}</i>
-    </p>
+    </div>
     <hr>
     <h2>Recent related posts:</h2>
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
