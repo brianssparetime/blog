@@ -33,7 +33,7 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    //'nuxt-interpolation',
+    // 'nuxt-interpolation',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
@@ -43,15 +43,15 @@ export default {
       imageStyles: {
         thumbnail: { actions: ['gravity|Center', 'resize|320|180^', 'extent|320|180|+0|+90'] },
         small: { macros: ['scaleAndCrop|160|90'] },
-        medium: { macros: ['scaleAndCrop|640|360'] },
+        medium: { macros: ['scaleAndCrop|640|360'] }
       },
       // Optional responsive style profiles:
       responsiveStyles: {
         thumb: {
           srcset: 'small 160w, medium 640w',
-          sizes: '(min-width: 1280px) 100vw, 50vw',
-        },
-      },
+          sizes: '(min-width: 1280px) 100vw, 50vw'
+        }
+      }
     }]
   ],
 
@@ -62,20 +62,20 @@ export default {
   content: {
     markdown: {
       prism: {
-        theme: false,
-      },
+        theme: false
+      }
     },
-    nestedProperties: ['post.tags'],
+    nestedProperties: ['post.tags']
 
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    extend(config, ctx) {
+    extend (config, ctx) {
       if (ctx.isDev) {
         config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
       } // https://medium.com/js-dojo/debugging-nuxt-js-with-vs-code-60a1a9e75cf6
-      //https://liftcodeplay.com/2019/12/25/how-to-debug-nuxt-js-with-vs-code/
+      // https://liftcodeplay.com/2019/12/25/how-to-debug-nuxt-js-with-vs-code/
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -83,18 +83,19 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
           options: {
-            fix: true,
-          },
-        });
+            fix: true
+          }
+        })
       }
+
       config.module.rules.push({
         test: /\.md$/i,
         loader: 'ignore-loader'
-      }), // see https://github.com/nuxt/content/issues/106#issuecomment-666283547
+      }) // see https://github.com/nuxt/content/issues/106#issuecomment-666283547
       config.module.rules.push({
         test: /\.xcf$/i,
         loader: 'ignore-loader'
-      }); 
-    },
-  },
+      })
+    }
+  }
 }
