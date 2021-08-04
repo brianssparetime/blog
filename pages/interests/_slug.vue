@@ -13,9 +13,11 @@
     <div v-show="interest.date" class="ludate">
       <i>Last updated {{ formatDate(interest.date) }}</i>
     </div>
-    <hr>
-    <h2>Recent related posts:</h2>
-    <PostCard v-for="post in posts" :key="post.dir" :post="post" />
+    <div>
+      <hr>
+      <h2>Recent related posts:</h2>
+      <PostCard v-for="post in posts" :key="post.dir" :post="post" />
+    </div>
   </div>
 </template>
 <script>
