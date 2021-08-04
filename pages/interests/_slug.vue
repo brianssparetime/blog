@@ -10,7 +10,7 @@
     <div class="nc">
       <nuxt-content :document="interest" />
     </div>
-    <p v-if="interest.date" class="ludate">
+    <p v-show="interest.date" class="ludate">
       <i>Last updated {{ formatDate(interest.date) }}</i>
     </p>
     <hr>
