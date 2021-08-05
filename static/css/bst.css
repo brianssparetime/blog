@@ -1,0 +1,95 @@
+/* originally from smodica - sorry for where I transmogrified it!  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Montserrat:wght@400&family=Vollkorn:wght@700&display=swap");
+
+p,
+li {
+  font-family: "Montserrat", monospace;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Vollkorn", serif;
+}
+
+i {
+  font-style: italic;
+  font-family: "Montserrat", monospace;
+}
+
+.post i {
+  font-size: 90%;
+}
+
+h3.heading {
+  font-size: 22px;
+  color: black;
+}
+
+.tag a {
+  background: steelblue !important;
+}
+
+.tags {
+  font-family: "Roboto Mono", monospace;
+}
+
+.posts > h3 {
+  font-size: 0;
+}
+
+.posts h3:not(.posts > h3) {
+  font-size: 22px;
+  color: black;
+}
+
+.posts a {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+ul li a {
+  font-family: "Montserrat", monospace;
+  text-decoration: none;
+  color: black;
+}
+
+ul li b {
+  font-family: "Vollkorn", serif;
+  text-decoration: none;
+}
+
+img {
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+p a {
+  color: steelblue;
+}
+
+@media screen and (max-width: 720px) {
+  .logo img {
+    width: 96%;
+    height: 50%;
+  }
+  .logo {
+    margin-top: -5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    margin-top: -10px;
+  }
+}
+
+.posts {
+  font-family: "Montserrat", monospace;
+}
+
+.posts h1 {
+  padding-bottom: 20px;
+  font-size: 20px;
+}
