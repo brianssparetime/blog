@@ -3,7 +3,7 @@
 
 p,
 li {
-  font-family: "Montserrat", monospace;
+  font-family: "Montserrat", serif;
 }
 
 h1,
@@ -15,7 +15,7 @@ h4 {
 
 i {
   font-style: italic;
-  font-family: "Montserrat", monospace;
+  font-family: "Montserrat", serif;
 }
 
 .post i {
@@ -50,7 +50,7 @@ h3.heading {
 }
 
 ul li a {
-  font-family: "Montserrat", monospace;
+  font-family: "Montserrat", serif;
   text-decoration: none;
   color: black;
 }
@@ -86,7 +86,7 @@ p a {
 }
 
 .posts {
-  font-family: "Montserrat", monospace;
+  font-family: "Montserrat", serif;
 }
 
 .posts h1 {
