@@ -31,6 +31,7 @@ export default {
         .fetch()
       const posts = await $content('posts', { deep: true })
         .where({ tags: { $containsAny: interestd.tags } }) // this depends on above query
+        .where({ tags: { $containsNone: ['work-in-progress'] } })
         .without('body')
         .sortBy('date', 'desc')
         .limit(3)
