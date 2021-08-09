@@ -29,6 +29,7 @@ h3.heading {
 
 .tag a {
   background: steelblue !important;
+  padding: 1px 7px 1px 5px;
 }
 
 .tags {
