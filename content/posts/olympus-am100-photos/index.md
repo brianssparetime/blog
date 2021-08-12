@@ -6,7 +6,6 @@ image: 000079430035 street.jpg
 tags:
   - photography
   - film
-  - work-in-progress
 ---
 
 

@@ -7,7 +7,6 @@ tags:
   - photography
   - film
   - camera-review
-  - work-in-progress
 ---
 
 This was the first "real" camera I owned, bought I think as a Christmas present from my parents (thank you!), maybe around 1993-94?  
