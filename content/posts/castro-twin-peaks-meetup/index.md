@@ -11,7 +11,8 @@ tags:
 All pictures developed and scanned at home!
 
 <v-img src="DSC00809.ARW.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00930.ARW.jpg" alt="bar" :dirp="dir"></v-img>
+<!--<v-img src="DSC00930.ARW.jpg" alt="bar" :dirp="dir"></v-img>-->
+<v-img src="pos_DSC01049 edited.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="DSC00933.ARW.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="DSC00932.ARW.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="DSC00788.ARW.jpg" alt="bar" :dirp="dir"></v-img>
