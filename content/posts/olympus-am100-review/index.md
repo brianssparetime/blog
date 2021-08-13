@@ -20,4 +20,4 @@ That said, especially in black and white, this camera can also take some amazing
 <v-img src="DSC01009.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="DSC01008.jpg" alt="bar" :dirp="dir"></v-img>
 
-The worthy pictures from my first two rolls (one color and one bw) are <nuxt-link to="olympus-am100-photos">here.</nuxt-link>
+The worthy pictures from my first two rolls (one color and one bw) are <nuxt-link to="/posts/olympus-am100-photos">here.</nuxt-link>

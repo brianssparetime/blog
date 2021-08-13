@@ -9,7 +9,7 @@ tags:
 ---
 
 
-These were taken with my first real 35mm camera, the Olympus AM-100 (see review  <nuxt-link to="olympus-am100-review">here</nuxt-link>).
+These were taken with my first real 35mm camera, the Olympus AM-100 (see review  <nuxt-link to="/posts/olympus-am100-review">here</nuxt-link>).
 
 
 
