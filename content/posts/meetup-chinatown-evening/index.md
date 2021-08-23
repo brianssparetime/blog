@@ -5,7 +5,6 @@ image: 000002430005.jpg
 tags:
   - photography
   - film
-  - work-in-progress
 
 ---
 

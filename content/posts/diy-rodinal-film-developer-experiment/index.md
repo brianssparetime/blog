@@ -6,7 +6,6 @@ tags:
   - photography
   - film
   - darkroom
-  - work-in-progress
 
 ---
 
