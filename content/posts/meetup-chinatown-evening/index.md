@@ -25,7 +25,8 @@ Thanks to Casey and Philip the organizers.
 <v-img src="pos_DSC01076.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01085.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000002430006.jpg" alt="bar" :dirp="dir"></v-img>
-<BR>
+<BR><BR>
+
 This last one was an accidental (yet retrospectively happy) double exposure.
 
 The color is Cinestill 800T in 6x6, which I metered largely by guess with some estimation help from my cheapo usb meter.  Although I only liked the composition of a few, most came out properly exposed.
