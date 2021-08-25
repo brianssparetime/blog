@@ -12,7 +12,7 @@ tags:
 
 Shot during Auguest 2021, all black and white, all home developed and scanned.  
 
-I've also been working on so more experimental abstract stuff, which I've separated into <nuxt-link to="/posts/august-2021-abstract/">its own post</nuxt-link>.
+I've also been working on some more experimental abstract stuff, which I've separated into <nuxt-link to="/posts/august-2021-abstract/">its own post</nuxt-link>.
 
 
 <v-img src="pos_DSC01101.jpg" alt="bar" :dirp="dir"></v-img>
