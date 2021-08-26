@@ -23,8 +23,8 @@ Shot during August 2021, all black and white, all home developed and scanned.
 <v-img src="DSC00895.ARW.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01139.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01159.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00958.ARW.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="DSC00963.ARW.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="DSC00958.ARW.jpg" alt="bar" :dirp="dir"></v-img>
 <!--<v-img src="pos_DSC01125.jpg" alt="bar" :dirp="dir"></v-img>-->
 <v-img src="pos_DSC01112.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01116.jpg" alt="bar" :dirp="dir"></v-img>
