@@ -10,7 +10,7 @@ tags:
 
 
 
-Shot during Auguest 2021, all black and white, all home developed and scanned.  
+Shot during August 2021, all black and white, all home developed and scanned.  
 
 I've also been working on some more experimental abstract stuff, which I've separated into <nuxt-link to="/posts/august-2021-abstract/">its own post</nuxt-link>.
 

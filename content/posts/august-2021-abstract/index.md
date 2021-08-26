@@ -10,7 +10,7 @@ tags:
 
 I've been enjoying more deliberate and abstract compositions lately...
 
-Shot during Auguest 2021, all black and white, all home developed and scanned.  
+Shot during August 2021, all black and white, all home developed and scanned.  
 
 <v-img src="DSC00809.ARW.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="DSC00788.ARW.jpg" alt="bar" :dirp="dir"></v-img>
