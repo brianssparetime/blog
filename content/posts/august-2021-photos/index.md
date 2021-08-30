@@ -1,7 +1,7 @@
 ---
 title: August 2021 in black and white
 date: 2021-08-30
-image: .jpg
+image: pos_DSC01101.jpg
 tags:
   - photography
   - film
@@ -9,7 +9,7 @@ tags:
 
 
 
-Shot during August 2021, all black and white, all home developed and scanned.  
+All black and white, all home developed and scanned.  
 
 I've also been working on some more experimental abstract stuff, which I've separated into <nuxt-link to="/posts/august-2021-abstract/">its own post</nuxt-link>.
 
