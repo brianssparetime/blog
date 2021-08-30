@@ -5,7 +5,6 @@ image: .jpg
 tags:
   - photography
   - film
-  - work-in-progress
 ---
 
 I've been enjoying more deliberate and abstract compositions lately...

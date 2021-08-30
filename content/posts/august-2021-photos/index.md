@@ -1,11 +1,10 @@
 ---
 title: August 2021 in black and white
-date: 2021-08-25
+date: 2021-08-30
 image: .jpg
 tags:
   - photography
   - film
-  - work-in-progress
 ---
 
 
