@@ -1,7 +1,7 @@
 ---
 title: Abstract August 
 date: 2021-08-25
-image: .jpg
+image: DSC00895.jpg
 tags:
   - photography
   - film
