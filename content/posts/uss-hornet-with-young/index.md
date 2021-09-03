@@ -19,6 +19,8 @@ Last weekend, Young and I visited the USS Hornet and some of the breweries, wine
 <v-img src="pos_DSC01222.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01220.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01218.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="pos_DSC01237.jpg" alt="bar" :dirp="dir"></v-img>
+
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/HphFJyD"  ><a href="//imgur.com/a/HphFJyD">Freshly developed 35mm film</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
