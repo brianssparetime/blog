@@ -1,5 +1,5 @@
 ---
-title: Drone Flight and Sunset Photos on Treasure Island
+title: Drone Flight and Long Exposure Film Photos on Treasure Island
 date: 2021-08-28
 image: pos_DSC01293.jpg
 tags:
@@ -15,7 +15,7 @@ I spent a nice evening on Treasure Island, flying the drone and shooting a roll 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/khqH8h-Iyek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <BR><BR>
-Here are the 8 shots from the roll.  All stand developed in my <nuxt-link to="/posts/diy-rodinal-film-developer-experiment">homemade rodinal</nuxt-link>.  While the rodinal does handle the uncertainty of long night exposures well, I'm not sure the graininess was a good fit for what I wanted from these cityscapes.  And not thrilled with the vertical component of the compositions either.
+Here are the 8 shots from the roll.  All stand developed in my <nuxt-link to="/posts/diy-rodinal-film-developer-experiment">homemade rodinal</nuxt-link>.  While the rodinal does handle the uncertainty of long night exposures well, I'm not sure the graininess was a good fit for what I wanted from these cityscapes.  Probably better for a gritty street nighttime look than this.  Nor am I thrilled with the vertical component of the compositions either.  
 
 <v-img src="pos_DSC01290.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01291.jpg" alt="bar" :dirp="dir"></v-img>
