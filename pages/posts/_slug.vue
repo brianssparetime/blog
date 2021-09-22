@@ -38,6 +38,9 @@ export default {
       return rest
     }
   },
+  /* env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  }, */
   mounted () {
     Prism.highlightAll()
   },
@@ -55,6 +58,12 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.post.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: process.env.baseUrl + this.post.dir + '/' + this.post.image
+          // content: '/foo.png'
         }
       ]
     }

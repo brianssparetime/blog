@@ -38,6 +38,11 @@ export default {
           hid: 'description',
           name: 'description',
           content: 'Cool nuxt blog'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: process.env.baseUrl + '/favicon.ico'
         }
       ]
     }

@@ -31,7 +31,9 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module'
   ],
-
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // 'nuxt-interpolation',
