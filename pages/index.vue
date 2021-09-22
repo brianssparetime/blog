@@ -42,7 +42,8 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: process.env.baseUrl + '/favicon.ico'
+          // content: process.env.baseUrl + '/favicon.ico'
+          content: 'https://brianssparetime.com/favicon.ico'
         }
       ]
     }
