@@ -14,13 +14,9 @@ Copyright reserved on all photos, videos, prose, and other non-code content incl
     - also consider making the side bar more like this guy's
   - https://stackoverflow.com/questions/53921901/responsive-loader-with-nuxt-js
 
-- [FEATURE]  add content folder for vintage computing
-
- - [FIX] still can't figure out wrong border sizing on postcard vimgpc
  - [FIX, WIP] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages
- - [FIX] fix ugly css everywhere
  - [FEATURE] set up search
     - https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#add-a-search-field
  - [EVENTUALLY] pagination of all posts
