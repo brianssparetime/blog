@@ -26,14 +26,13 @@ I want to be more comfortable and better at doing this, without compromising my 
 <v-img src="pos_DSC01512.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01541.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01559.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01560.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01565.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01576.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01650.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="pos_DSC01211.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01689.jpg" alt="bar" :dirp="dir"></v-img>
 
 
-<v-img src="pos_DSC01211.jpg" alt="bar" :dirp="dir"></v-img>
 
 <v-img src="pos_DSC01587.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01554.jpg" alt="bar" :dirp="dir"></v-img>
