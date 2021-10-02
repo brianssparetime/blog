@@ -99,6 +99,10 @@ export default {
         test: /\.xcf$/i,
         loader: 'ignore-loader'
       })
+      config.module.rules.push({
+        test: /\.mov$/i,
+        loader: 'ignore-loader'
+      })
     }
   }
 }
