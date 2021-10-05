@@ -8,47 +8,46 @@ IN PROGRESS
   </div>
 </template>
 <script>
-import PostCard from "~/components/PostCard";
+import PostCard from '~/components/PostCard';
 export default {
   components: {
-    PostCard,
+    PostCard
   },
   props: {
     filttags: {
       type: Array,
       required: false,
-      default: null,
+      default: null
     },
     postlimit: {
       type: int,
       required: false,
-      default: 5,
-    },
+      default: 5
+    }
   },
-  async asyncData({ params, error, $content }) {
+  async asyncData ({ params, error, $content }) {
     /* how do I set this up so that I don't have a million if statements 
     to configure the asycn request?
     */
 
     try {
-      const posts = await $content("posts", { deep: true })
+      const posts = await $content('posts', { deep: true })
         .where({ tags: { $containsAny: this.filttags } })
+        .where({ tags: { $containsNone: ['hidden'] } })
         .limit(this.postlimit)
-        .without("body")
-        .sortBy("date", "desc")
+        .without('body')
+        .sortBy('date', 'desc')
         .fetch();
 
       return { posts };
     } catch (err) {
       error({
         statusCode: 404,
-        message: "Page could not be found",
-      });
+        message: 'Page could not be found',
+      })
     }
-  },
-};
+  }
+}
 </script>
-
-
 <style scoped>
 </style>

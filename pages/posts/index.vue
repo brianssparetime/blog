@@ -14,6 +14,7 @@ export default {
     try {
       const posts = await $content('posts', { deep: true })
         .where({ tags: { $containsNone: ['work-in-progress'] } })
+        .where({ tags: { $containsNone: ['hidden'] } })
         .sortBy('date', 'desc')
         .fetch()
       return { posts }

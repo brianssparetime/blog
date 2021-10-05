@@ -14,6 +14,7 @@ export default {
     try {
       const posts = await $content('posts', { deep: true })
         .where({ tags: { $containsAny: ['work-in-progress'] } })
+        .where({ tags: { $containsNone: ['hidden'] } })
         .sortBy('date', 'desc')
         .fetch()
       return { posts }
@@ -26,7 +27,7 @@ export default {
   },
   head () {
     return {
-      title: 'BST: Posts',
+      title: 'BST: Work-in-progress',
       meta: [
         {
           hid: 'description',

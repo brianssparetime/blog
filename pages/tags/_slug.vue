@@ -1,10 +1,12 @@
 <template>
   <div class="posts">
     <h1>Posts for Tag: {{ $route.params.slug }}</h1>
-    <div v-if="!posts.length" class="results">
-      No posts found for this tag
-    </div>
-    <PostCard v-for="post in posts" :key="post.dir" :post="post" />
+    <cient-only>
+      <div v-if="!posts.length" class="results">
+        No posts found for this tag
+      </div>
+      <PostCard v-for="post in posts" :key="post.dir" :post="post" />
+    </cient-only>
   </div>
 </template>
 <script>
@@ -24,7 +26,8 @@ export default {
       const posts = await $content('posts', { deep: true })
         .where({ tags: { $contains: params.slug } })
         // why error on this but not in postlist.vue?
-        // .limit(this.postlimit)
+        // .limit(this.postlimit)'
+        .where({ tags: { $containsNone: ['hidden'] } })
         .without('body')
         .sortBy('date', 'desc')
         .fetch()

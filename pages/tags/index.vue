@@ -19,8 +19,10 @@ export default {
       console.log('post = ' + p)
       console.log('tags = ' + p.tags)
       for (const t of p.tags) {
-        console.log('tag = ' + t)
-        tagset.add(t)
+        // console.log('tag = ' + t)
+        if (t !== 'hidden') {
+          tagset.add(t)
+        }
       }
     }
     console.log('tagset = ')
