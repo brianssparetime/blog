@@ -23,7 +23,7 @@ tags:
 <v-img src="pos_DSC01485.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01500.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01573.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01529.jpg" alt="bar" :dirp="dir"></v-img>
+<!--<v-img src="pos_DSC01529.jpg" alt="bar" :dirp="dir"></v-img>-->
 <v-img src="pos_DSC01538.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01555.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01574.jpg" alt="bar" :dirp="dir"></v-img>
