@@ -1,11 +1,10 @@
 ---
 title: The Things and Places of September 2021 
-date: 2021-10-03
+date: 2021-10-05
 image: pos_DSC01567.jpg
 tags:
   - photography
   - film
-  - work-in-progress
 ---
 
 <v-img src="pos_DSC01277.jpg" alt="bar" :dirp="dir"></v-img>
@@ -18,10 +17,10 @@ tags:
 <v-img src="pos_DSC01702.jpg" alt="bar" :dirp="dir"></v-img>
 
 <v-img src="pos_DSC01182.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01275.jpg" alt="bar" :dirp="dir"></v-img>
+<!--<v-img src="pos_DSC01275.jpg" alt="bar" :dirp="dir"></v-img>-->
 <v-img src="pos_DSC01347.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01485.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01500.jpg" alt="bar" :dirp="dir"></v-img>
+<!--<v-img src="pos_DSC01500.jpg" alt="bar" :dirp="dir"></v-img>-->
 <v-img src="pos_DSC01573.jpg" alt="bar" :dirp="dir"></v-img>
 <!--<v-img src="pos_DSC01529.jpg" alt="bar" :dirp="dir"></v-img>-->
 <v-img src="pos_DSC01538.jpg" alt="bar" :dirp="dir"></v-img>
