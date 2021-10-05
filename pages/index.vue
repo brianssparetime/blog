@@ -1,11 +1,10 @@
 <template>
   <div class="posts">
-    I'm Brian and this is some stuff I've done in my spare time...
-    <BR /><BR />
-    <BR /><BR />
+    <div class="opener">
+      I'm Brian and this is some stuff I've done in my spare time...
+    </div>
     <h3>Posts</h3>
     <PostCard v-for="post in posts" :key="post.dir" :post="post" />
-    <BR /><BR />
     The code that runs this blog is on <a href="https://github.com/brianssparetime/blog">github</a>.
   </div>
 </template>
@@ -19,6 +18,7 @@ export default {
     try {
       const posts = await $content('posts', { deep: true })
         .where({ tags: { $containsNone: ['work-in-progress'] } })
+        .where({ tags: { $containsNone: ['hidden'] } })
         .sortBy('date', 'desc')
         .fetch()
 
@@ -50,3 +50,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+.opener {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+</style>
