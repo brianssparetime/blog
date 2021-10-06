@@ -1,12 +1,10 @@
 <template>
   <div class="img">
-    <!--<nuxt-link tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt"> </nuxt-link>-->
-    <!--<v-interpolation tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt">-->
-    <!--<v-interpolation :src="imgSrc()" :to="imgSrc()" :alt="alt">-->
-    <!--<v-interpolation tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt">
-    </v-interpolation>-->
-    <a :href="imgSrc()">
+    <!-- <a :href="imgSrc()">
       <img :src="imgSrc()" :alt="alt">
+    </a> -->
+    <a :href="imgSrcFancy('large')">
+      <img :src="imgSrcFancy('large')" :alt="alt">
     </a>
   </div>
 </template>
@@ -42,6 +40,27 @@ export default {
         }
       } catch (error) {
         console.log('error with finding image  ' + this.src)
+        return null
+      }
+    },
+    imgSrcFancy (imgsize) {
+      try {
+        // if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'prod') {
+        if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development' || imgsize === '') {
+          const path = require('path')
+          const ext = path.extname(this.src)
+          const name = path.basename(this.src, ext)
+          const loadstring = `~/content${this.dirp}/.imgs/${name}_${imgsize}${ext}`
+          console.log('fancy load from ' + loadstring)
+          // return require(`~/content${this.dirp}/.imgs/${name}_${imgsize}${ext}`)
+          return require(`~/content${this.dirp}/.imgs/${name}_large${ext}`)
+        } else { // dev
+          console.log('fallback on full-rez load')
+          return require(`~/content${this.dirp}/${this.src}`)
+        }
+      } catch (error) {
+        console.log('error with finding image for:  ' + this.src)
+        console.log(error)
         return null
       }
     }

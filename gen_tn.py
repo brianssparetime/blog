@@ -58,14 +58,14 @@ def test_file(f):
 
 
 def process_img(img_name, img_path):
-    if args.verbose:
-        print ('generating for {}'.format(os.path.join(img_path,img_name)))
     im = Image.open(os.path.join(img_path,img_name))
     for imgsize in img_sizes:
         newname = re.sub(r'\.(\w+)$',r'_'+imgsize+r'.\1', img_name)
         outd = os.path.join(img_path,tn_dir)
         if not args.force and os.path.exists(os.path.join(outd,newname)):
             continue
+        if args.verbose:
+            print ('generating for {}'.format(os.path.join(img_path,img_name)))
         max_dim = img_sizes[imgsize]
         im.thumbnail((max_dim,max_dim))
         os.makedirs(outd,exist_ok=True)
