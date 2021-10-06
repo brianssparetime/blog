@@ -62,9 +62,12 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          // content: process.env.baseUrl + this.post.dir + '/' + this.post.image
-          // not sure why the above doesn't work...
-          content: 'https://brianssparetime.com/_nuxt/content' + this.post.dir + '/' + this.post.image
+          content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/${this.post.image}`)
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://brianssparetime.com' + this.$route.fullPath
         }
       ]
     }
