@@ -1,14 +1,9 @@
 <template>
   <div class="img">
-    <!-- <a :href="imgSrc()">
-      <img :src="imgSrc()" :alt="alt">
     </a> -->
-    <a :href="imgSrcFancy('large')">
+    <a :href="imgSrcFancy('orig')">
       <img :src="imgSrcFancy('large')" :alt="alt">
     </a>
-    <!-- <a :href="imgSrcLarge()">
-      <img :src="imgSrcLarge()" :alt="alt">
-    </a> -->
   </div>
 </template>
 
@@ -30,47 +25,11 @@ export default {
     }
   },
   methods: {
-    imgSrc () {
-      // const path = require("path");
-      try {
-        console.log(process.env.NODE_ENV)
-        console.log('dirp=' + this.dirp)
-        if (this.dirp !== null) {
-          console.log('new path')
-          return require(`~/content${this.dirp}/${this.src}`)
-        } else {
-          console.log('fell through else')
-        }
-      } catch (error) {
-        console.log('error with finding image  ' + this.src)
-        return null
-      }
-    },
-    imgSrcLarge () {
-      try {
-        // if in production, unless no imgsize is specified, use .imgs instead of fullsize
-        // if (process.env.NODE_ENV === 'development') {
-        //   console.log('fallback on full-rez load')
-        //   return require(`~/content${this.dirp}/${this.src}`)
-        // } else { // production and imgsize not empty
-        const loadstring = `~/content${this.dirp}/imgs/${this.src.replace(/\.[^/.]+$/, '')}_large.png`
-        console.log('fancy load from ' + loadstring)
-        // return require(`@content${this.dirp}/.imgs/${name}_${imgsize}.png`)
-        // return require(`~/content${this.dirp}/.imgs/${name}_large.png`)
-        // return require(`~/content${this.dirp}/gen_tn_imgs/${this.src.replace(/\.[^/.]+$/, '')}_large.png`) // working
-        // }
-      } catch (error) {
-        console.log('error with finding image for:  ' + this.src)
-        console.log(error)
-        return null
-      }
-    },
-
     imgSrcFancy (imgsize) {
       try {
         // if in production, unless no imgsize is specified, use .imgs instead of fullsize
-        // if (imgsize === '' || process.env.NODE_ENV === 'development') {
-        if (imgsize === '') { // temporarily force always use .imgs for testing only
+        if (imgsize === '' || imgsize === 'orig' || process.env.NODE_ENV === 'development') {
+        // if (imgsize === '') { // temporarily force always use .imgs for testing only
           console.log('fallback on full-rez load')
           return require(`~/content${this.dirp}/${this.src}`)
         } else { // production and imgsize not empty
@@ -79,7 +38,6 @@ export default {
           const name = path.basename(this.src, ext)
           // const loadstring = `~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`
           // console.log('fancy load from ' + loadstring)
-          // return require(`@content${this.dirp}/imgs/${name}_${imgsize}.png`)
           return require(`~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`) // working
         }
       } catch (error) {
