@@ -1,12 +1,7 @@
 <template>
   <div class="img">
-    <!--<nuxt-link tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt"> </nuxt-link>-->
-    <!--<v-interpolation tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt">-->
-    <!--<v-interpolation :src="imgSrc()" :to="imgSrc()" :alt="alt">-->
-    <!--<v-interpolation tag="img" :src="imgSrc()" :to="imgSrc()" :alt="alt">
-    </v-interpolation>-->
-    <a :href="imgSrc()">
-      <img :src="imgSrc()" :alt="alt">
+    <a :href="imgSrcFancy('orig')">
+      <img :src="imgSrcFancy('large')" :alt="alt">
     </a>
   </div>
 </template>
@@ -29,19 +24,24 @@ export default {
     }
   },
   methods: {
-    imgSrc () {
-      // const path = require("path");
+    imgSrcFancy (imgsize) {
       try {
-        console.log(process.env.NODE_ENV)
-        console.log('dirp=' + this.dirp)
-        if (this.dirp !== null) {
-          console.log('new path')
+        // if in production, unless no imgsize is specified, use .imgs instead of fullsize
+        if (imgsize === '' || imgsize === 'orig' || process.env.NODE_ENV === 'development') {
+        // if (imgsize === '') { // temporarily force always use .imgs for testing only
+          console.log('fallback on full-rez load')
           return require(`~/content${this.dirp}/${this.src}`)
-        } else {
-          console.log('fell through else')
+        } else { // production and imgsize not empty
+          const path = require('path')
+          const ext = path.extname(this.src)
+          const name = path.basename(this.src, ext)
+          const loadstring = `~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`
+          console.log('fancy load from ' + loadstring)
+          return require(`~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`) // working
         }
       } catch (error) {
-        console.log('error with finding image  ' + this.src)
+        console.log('error with finding image for:  ' + this.src)
+        console.log(error)
         return null
       }
     }

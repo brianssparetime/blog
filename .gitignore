@@ -90,4 +90,4 @@ sw.*
 *.swp
 
 # thumbnail directories
-.imgs/
+gen_tn_imgs/

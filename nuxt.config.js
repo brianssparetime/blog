@@ -43,22 +43,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content',
-    ['@pivale/nuxt-image-loader-module', {
-      imagesBaseDir: 'content',
-      imageStyles: {
-        thumbnail: { actions: ['gravity|Center', 'resize|320|180^', 'extent|320|180|+0|+90'] },
-        small: { macros: ['scaleAndCrop|160|90'] },
-        medium: { macros: ['scaleAndCrop|640|360'] }
-      },
-      // Optional responsive style profiles:
-      responsiveStyles: {
-        thumb: {
-          srcset: 'small 160w, medium 640w',
-          sizes: '(min-width: 1280px) 100vw, 50vw'
-        }
-      }
-    }]
+    '@nuxt/content'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

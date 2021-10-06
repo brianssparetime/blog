@@ -21,7 +21,11 @@ args = ap.parse_args()
 
 
 # place generated thumbnails in this folder (relative to original image)
-tn_dir = '.imgs'
+# webpack really didn't like .imgs here... be warned
+# see        https://stackoverflow.com/questions/69471647/vue-nuxt-webpack-resolve-error-on-require-image-file 
+tn_dir = 'gen_tn_imgs'
+
+output_format = 'png'
 
 # generate these sizes
 img_sizes = {
@@ -36,7 +40,8 @@ img_exts = [
 ]
 
 ignore_patterns = [
-    r'\sx$'
+    r'\sx\\.\w+$',
+    r'^x\s+'
 ]
 
 # for use if none specified in args
@@ -51,25 +56,34 @@ if args.dirs:
 
 
 exts_re = '(?:' + '|'.join(img_exts) + ')$' 
-ig_re = '(?:' + '|'.join(ignore_patterns) + ')\.w+$' 
+ig_re = '(?:' + '|'.join(ignore_patterns) + ')' 
 
 def test_file(f):
     return re.search(exts_re, f, re.I) and not re.search(ig_re, f, re.I)
 
 
 def process_img(img_name, img_path):
-    if args.verbose:
-        print ('generating for {}'.format(os.path.join(img_path,img_name)))
     im = Image.open(os.path.join(img_path,img_name))
     for imgsize in img_sizes:
+        # insert imgsize
         newname = re.sub(r'\.(\w+)$',r'_'+imgsize+r'.\1', img_name)
+        # split fname and fext
+        nfn, nfe = os.path.splitext(newname)
+        newname = '.'.join([nfn, output_format])
         outd = os.path.join(img_path,tn_dir)
         if not args.force and os.path.exists(os.path.join(outd,newname)):
+            if args.verbose:
+                print(f"ignoring existing file: {os.path.join(outd,newname)}")
             continue
+        if args.verbose:
+            print ('generating {} for {}'.format(
+                os.path.join(tn_dir,newname),
+                os.path.join(img_path,img_name)
+                ))
         max_dim = img_sizes[imgsize]
         im.thumbnail((max_dim,max_dim))
         os.makedirs(outd,exist_ok=True)
-        im.save(os.path.join(outd,newname))
+        im.save(os.path.join(outd,newname),  format=output_format)
 
 
 for td in target_dirs:
@@ -79,6 +93,10 @@ for td in target_dirs:
         sys.exit()
     print(f'Examining {td} at {tdq}')
     for root, dirs, files in os.walk(tdq):
+        # do not breathe our own farts and make tns for tns in the tn_dir
+        if re.search(tn_dir+'$',root):
+            print(f"ignoring {root}")
+            continue
         imgs = [ f for f in files if  test_file(f)]
         for img in imgs:
             process_img(img,root)
