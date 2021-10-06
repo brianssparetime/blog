@@ -20,6 +20,9 @@ export default {
     '~/static/css/bst.css'
   ],
 
+  // env variables set up in package.json
+  //     see https://github.com/nuxt/nuxt.js/issues/1789
+
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['~/plugins/prism.js', '~/plugins/globalComponents.js'],
 
