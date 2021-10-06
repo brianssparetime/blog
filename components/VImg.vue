@@ -6,6 +6,9 @@
     <a :href="imgSrcFancy('large')">
       <img :src="imgSrcFancy('large')" :alt="alt">
     </a>
+    <!-- <a :href="imgSrcLarge()">
+      <img :src="imgSrcLarge()" :alt="alt">
+    </a> -->
   </div>
 </template>
 
@@ -43,6 +46,26 @@ export default {
         return null
       }
     },
+    imgSrcLarge () {
+      try {
+        // if in production, unless no imgsize is specified, use .imgs instead of fullsize
+        // if (process.env.NODE_ENV === 'development') {
+        //   console.log('fallback on full-rez load')
+        //   return require(`~/content${this.dirp}/${this.src}`)
+        // } else { // production and imgsize not empty
+        const loadstring = `~/content${this.dirp}/imgs/${this.src.replace(/\.[^/.]+$/, '')}_large.png`
+        console.log('fancy load from ' + loadstring)
+        // return require(`@content${this.dirp}/.imgs/${name}_${imgsize}.png`)
+        // return require(`~/content${this.dirp}/.imgs/${name}_large.png`)
+        // return require(`~/content${this.dirp}/gen_tn_imgs/${this.src.replace(/\.[^/.]+$/, '')}_large.png`) // working
+        // }
+      } catch (error) {
+        console.log('error with finding image for:  ' + this.src)
+        console.log(error)
+        return null
+      }
+    },
+
     imgSrcFancy (imgsize) {
       try {
         // if in production, unless no imgsize is specified, use .imgs instead of fullsize
@@ -54,9 +77,10 @@ export default {
           const path = require('path')
           const ext = path.extname(this.src)
           const name = path.basename(this.src, ext)
-          const loadstring = `~/content${this.dirp}/.imgs/${name}_${imgsize}${ext}`
-          console.log('fancy load from ' + loadstring)
-          return require(`~/content${this.dirp}/.imgs/${name}_${imgsize}${ext}`)
+          // const loadstring = `~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`
+          // console.log('fancy load from ' + loadstring)
+          // return require(`@content${this.dirp}/imgs/${name}_${imgsize}.png`)
+          return require(`~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`) // working
         }
       } catch (error) {
         console.log('error with finding image for:  ' + this.src)
