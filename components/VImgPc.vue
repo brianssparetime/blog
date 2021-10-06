@@ -1,11 +1,6 @@
 <template>
   <div class="img">
-    <!--
-    <nuxt-link :to="postlink()">
-      <nuxt-img tag="img" :src="imgSrc()" image-style="small" alt="alt" />
-    </nuxt-link>
-    -->
-    <nuxt-link tag="img" :src="imgSrc()" :to="postlink()" :alt="alt" />
+    <nuxt-link tag="img" :src="imgSrcFancy('tn')" :to="postlink()" :alt="alt" />
   </div>
 </template>
 
@@ -22,13 +17,25 @@ export default {
     }
   },
   methods: {
-    imgSrc () {
-      // const path = require("path");
+    imgSrcFancy (imgsize) {
       try {
+        // if in production, unless no imgsize is specified, use .imgs instead of fullsize
         const { post } = this.$parent
-        return require(`~/content${post.dir}/${this.src}`)
+        if (imgsize === '' || imgsize === 'orig' || process.env.NODE_ENV === 'development') {
+        // if (imgsize === '') { // temporarily force always use .imgs for testing only
+          console.log('fallback on full-rez load')
+          return require(`~/content${post.dir}/${this.src}`)
+        } else { // production and imgsize not empty
+          const path = require('path')
+          const ext = path.extname(this.src)
+          const name = path.basename(this.src, ext)
+          const loadstring = `~/content${post.dir}/gen_tn_imgs/${name}_${imgsize}.png`
+          console.log('fancy load from ' + loadstring)
+          return require(`~/content${post.dir}/gen_tn_imgs/${name}_${imgsize}.png`) // working
+        }
       } catch (error) {
-        console.log('error with finding image  ' + this.src)
+        console.log('error with finding image for:  ' + this.src)
+        console.log(error)
         return null
       }
     },
