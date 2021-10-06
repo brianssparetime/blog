@@ -13,7 +13,7 @@ import sys
 
 ap = argparse.ArgumentParser()
 ap.add_argument('-v', '--verbose', action='store_true', help='show more output')
-ap.add_argument('-f', '--force', action='store_true', help='force regeneration of thumnails even if files already exist')
+ap.add_argument('-f', '--force', action='store_true', default=False, help='force regeneration of thumnails even if files already exist')
 ap.add_argument('dirs', nargs='*', help='directories to look for images')
 
 args = ap.parse_args()
