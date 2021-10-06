@@ -32,7 +32,7 @@ export default {
     imgSrc () {
       // const path = require("path");
       try {
-        console.log('start')
+        console.log(process.env.NODE_ENV)
         console.log('dirp=' + this.dirp)
         if (this.dirp !== null) {
           console.log('new path')
