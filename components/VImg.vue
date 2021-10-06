@@ -1,6 +1,5 @@
 <template>
   <div class="img">
-    </a> -->
     <a :href="imgSrcFancy('orig')">
       <img :src="imgSrcFancy('large')" :alt="alt">
     </a>
