@@ -12,6 +12,7 @@ import sys
 # build command "python3 gen_tn.py && nuxt build && nuxt generate"
 
 ap = argparse.ArgumentParser()
+ap.add_argument('-v', '--verbose', action='store_true')
 ap.add_argument('dirs', nargs='*', )
 
 args = ap.parse_args()
@@ -49,6 +50,8 @@ def test_file(f):
 
 
 def process_img(img_name, img_path):
+    if args.verbose:
+        print ('generating for {}'.format(os.path.join(img_path,img_name)))
     im = Image.open(os.path.join(img_path,img_name))
     for imgsize in img_sizes:
         max_dim = img_sizes[imgsize]
@@ -77,5 +80,4 @@ for td in target_dirs:
     for root, dirs, files in os.walk(tdq):
         imgs = [ f for f in files if  test_file(f)]
         for img in imgs:
-            print ('generating for {}'.format(os.path.join(root,img)))
             process_img(img,root)

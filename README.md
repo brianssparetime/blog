@@ -17,16 +17,25 @@ Copyright reserved on all photos, videos, prose, and other non-code content incl
  - [FIX, WIP] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages
+ - [FEATURE] pagination of all posts
  - [FEATURE] set up search
     - https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#add-a-search-field
- - [EVENTUALLY] pagination of all posts
  - [EVENTUALLY] password protected photos section
  - [EVENTUALLY] eliminate more redundant data (date, title maybe) by parsing file structure
    - https://content.nuxtjs.org/advanced#hooks
+ - [EVENTUALLY] considering using git submodule to contain /content or use netlify LargeMedia
+   - https://docs.netlify.com/large-media/overview/
+   - https://mayashavin.com/articles/git-submodule-nuxt
+ - [EVENTUALLY] move to configuration via build file 
+   - https://docs.netlify.com/configure-builds/file-based-configuration/
+   - https://serverless-stack.com/chapters/create-a-netlify-build-script.html
+ - [EVENTUALLY] speed up deploy
+   - https://serverless-stack.com/chapters/create-a-netlify-build-script.html
+
 
 
  ## Accomplished:
- - eliminated dumb dirp hack for getting image paths
+ - added og:image support for proper thumbnails in shares
  - interest pages also built using md files in separate content directory
  - images link to full size image provided by API
  - interest pages that show only posts related to certain tags
