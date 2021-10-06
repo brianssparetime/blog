@@ -35,8 +35,8 @@ export default {
           const path = require('path')
           const ext = path.extname(this.src)
           const name = path.basename(this.src, ext)
-          // const loadstring = `~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`
-          // console.log('fancy load from ' + loadstring)
+          const loadstring = `~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`
+          console.log('fancy load from ' + loadstring)
           return require(`~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`) // working
         }
       } catch (error) {
