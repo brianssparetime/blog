@@ -45,18 +45,18 @@ export default {
     },
     imgSrcFancy (imgsize) {
       try {
-        // if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'prod') {
-        if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development' || imgsize === '') {
+        // if in production, unless no imgsize is specified, use .imgs instead of fullsize
+        // if (imgsize === '' || process.env.NODE_ENV === 'development') {
+        if (imgsize === '') { // temporarily force always use .imgs for testing only
+          console.log('fallback on full-rez load')
+          return require(`~/content${this.dirp}/${this.src}`)
+        } else { // production and imgsize not empty
           const path = require('path')
           const ext = path.extname(this.src)
           const name = path.basename(this.src, ext)
           const loadstring = `~/content${this.dirp}/.imgs/${name}_${imgsize}${ext}`
           console.log('fancy load from ' + loadstring)
-          // return require(`~/content${this.dirp}/.imgs/${name}_${imgsize}${ext}`)
-          return require(`~/content${this.dirp}/.imgs/${name}_large${ext}`)
-        } else { // dev
-          console.log('fallback on full-rez load')
-          return require(`~/content${this.dirp}/${this.src}`)
+          return require(`~/content${this.dirp}/.imgs/${name}_${imgsize}${ext}`)
         }
       } catch (error) {
         console.log('error with finding image for:  ' + this.src)
