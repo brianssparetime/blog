@@ -7,6 +7,9 @@ tags:
   - film
 ---
 
+I had two goals for this month's photography.  My first goal is covered <nuxt-link to="posts/sept-2021-photos-people">here</nuxt-link>.  Second was to get more comfortable with low-light situations as the sun sets earlier each day.  A few of these images resulted from that effort but many more were just visuals I liked.
+
+
 <v-img src="pos_DSC01277.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01571.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01594.jpg" alt="bar" :dirp="dir"></v-img>

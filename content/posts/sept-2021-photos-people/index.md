@@ -5,12 +5,11 @@ image: pos_DSC01689.jpg
 tags:
   - photography
   - film
-  - work-in-progress
 ---
 
-I had two goals for this month's photography.  First was to shoot more photographs of people, and portaits especially.  My second goal is covered here.
+I had two goals for this month's photography.  First was to shoot more photographs of people, and portaits especially.  My second goal is covered <nuxt-link to="posts/sept-2021-photos-things">here</nuxt-link>.
 
-I want to be more comfortable and better at doing this, without compromising my sense of aesthetic and producing a bunch of generic lookng crap.  
+I want to get more comfortable and better at doing this, without compromising my sense of aesthetic. 
 
 <v-img src="pos_DSC01459.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC01465.jpg" alt="bar" :dirp="dir"></v-img>
