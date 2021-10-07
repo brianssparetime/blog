@@ -8,16 +8,13 @@ Copyright reserved on all photos, videos, prose, and other non-code content incl
 
 
 ## The Plan / TODO:
- - [FEATURE] figure out how to auto generate thumbnails or handle different image sizes
-  - https://stackoverflow.com/questions/48606325/how-to-resize-images-for-different-responsive-views
-  - https://derkinzi.de/optimized-responsive-lazyloading-images-with-nuxt/
-    - also consider making the side bar more like this guy's
-  - https://stackoverflow.com/questions/53921901/responsive-loader-with-nuxt-js
+ - [fix] investigate eliminating dirp thing again.
+ - [FEATURE] pagination of all posts
 
  - [FIX, WIP] abstract post list into a vue component
    - use this on main page, all posts
    - consider adding filter / sort functionality there and using it with topic pages
- - [FEATURE] pagination of all posts
+
  - [FEATURE] set up search
     - https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#add-a-search-field
  - [EVENTUALLY] password protected photos section
@@ -31,10 +28,13 @@ Copyright reserved on all photos, videos, prose, and other non-code content incl
    - https://serverless-stack.com/chapters/create-a-netlify-build-script.html
  - [EVENTUALLY] speed up deploy
    - https://serverless-stack.com/chapters/create-a-netlify-build-script.html
+  - also consider making the side bar more like this guy's
+    - https://derkinzi.de/optimized-responsive-lazyloading-images-with-nuxt/
 
 
 
  ## Accomplished:
+ - support for automatically generating thumbnails for images, as part of deploy, and serving those instead of full size where it makes sense.
  - added og:image support for proper thumbnails in shares
  - interest pages also built using md files in separate content directory
  - images link to full size image provided by API
