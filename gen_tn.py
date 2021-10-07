@@ -35,9 +35,9 @@ img_sizes = {
 
 # proess files with these extensions
 img_exts = [
-    r'\.jpg',
-    r'\.jpeg'
-    r'\.png'
+    r'\.jpg$',
+    r'\.jpeg$',
+    r'\.png$'
 ]
 
 ignore_patterns = [
@@ -56,11 +56,21 @@ if args.dirs:
         target_dirs = args.dirs
 
 
-exts_re = '(?:' + '|'.join(img_exts) + ')$' 
+exts_re = '(?:' + '|'.join(img_exts) + ')' 
 ig_re = '(?:' + '|'.join(ignore_patterns) + ')' 
 
 def test_file(f):
     return re.search(exts_re, f, re.I) and not re.search(ig_re, f, re.I)
+    # print(f'testing {f}')
+    # for ext in img_exts:
+    #     if re.search(ext, f, re.I):
+    #         print(f"{f} has right extension")
+    #         for ig in ignore_patterns:
+    #             if re.search(ig, f, re.I):
+    #                 print(f"{f} contains ignore pattern")
+    #                 return False
+    #         return True
+    # return False
 
 
 def process_img(img_name, img_path):
@@ -81,12 +91,11 @@ def process_img(img_name, img_path):
                 os.path.join(tn_dir,newname),
                 os.path.join(img_path,img_name)
                 ))
-        nim = im.copy()
-        w, h = nim.size
+        w, h = im.size
         if (max(w,h) > img_sizes[imgsize]):
-            nim.thumbnail((img_sizes[imgsize], img_sizes[imgsize]))
+            im.thumbnail((img_sizes[imgsize], img_sizes[imgsize]))
         os.makedirs(outd,exist_ok=True)
-        nim.save(os.path.join(outd,newname),  format=output_format)
+        im.save(os.path.join(outd,newname),  format=output_format)
 
 
 for td in target_dirs:
