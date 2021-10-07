@@ -1,6 +1,6 @@
 ---
 title: The People of September 2021
-date: 2021-10-02
+date: 2021-10-07
 image: pos_DSC01689.jpg
 tags:
   - photography
