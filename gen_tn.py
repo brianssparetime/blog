@@ -37,6 +37,7 @@ img_sizes = {
 img_exts = [
     r'\.jpg',
     r'\.jpeg'
+    r'\.png'
 ]
 
 ignore_patterns = [
@@ -80,10 +81,12 @@ def process_img(img_name, img_path):
                 os.path.join(tn_dir,newname),
                 os.path.join(img_path,img_name)
                 ))
-        max_dim = img_sizes[imgsize]
-        im.thumbnail((max_dim,max_dim))
+        nim = im.copy()
+        w, h = nim.size
+        if (max(w,h) > img_sizes[imgsize]):
+            nim.thumbnail((img_sizes[imgsize], img_sizes[imgsize]))
         os.makedirs(outd,exist_ok=True)
-        im.save(os.path.join(outd,newname),  format=output_format)
+        nim.save(os.path.join(outd,newname),  format=output_format)
 
 
 for td in target_dirs:

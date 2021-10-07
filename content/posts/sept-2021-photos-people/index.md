@@ -7,7 +7,7 @@ tags:
   - film
 ---
 
-I had two goals for this month's photography.  First was to shoot more photographs of people, and portaits especially.  My second goal is covered <nuxt-link to="posts/sept-2021-photos-things">here</nuxt-link>.
+I had two goals for this month's photography.  First was to shoot more photographs of people, and portaits especially.  My second goal is covered <nuxt-link to="/posts/sept-2021-photos-things">here</nuxt-link>.
 
 I want to get more comfortable and better at doing this, without compromising my sense of aesthetic. 
 
