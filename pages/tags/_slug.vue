@@ -1,12 +1,12 @@
 <template>
   <div class="posts">
     <h1>Posts for Tag: {{ $route.params.slug }}</h1>
-    <cient-only>
+    <client-only>
       <div v-if="!posts.length" class="results">
         No posts found for this tag
       </div>
       <PostCard v-for="post in posts" :key="post.dir" :post="post" />
-    </cient-only>
+    </client-only>
   </div>
 </template>
 <script>

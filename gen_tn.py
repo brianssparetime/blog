@@ -29,8 +29,8 @@ output_format = 'png'
 
 # generate these sizes
 img_sizes = {
-    'large' : 1024,
-    'tn' : 256
+    'large' : 800,
+    'tn' : 200
 }
 
 # proess files with these extensions
