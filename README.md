@@ -7,6 +7,26 @@ See the deployed site here: http://www.brianssparetime.com
 Copyright reserved on all photos, videos, prose, and other non-code content included in this repository; no reproduction of such content without written consent in advance.
 
 
+
+
+ ## Features currently implemented:
+ - support for automatically generating thumbnails for images, as part of deploy, and serving those instead of full size where it makes sense.
+ - added og:image support for proper thumbnails in shares
+ - interest pages also built using md files in separate content directory
+ - interest pages show only posts related to certain tags
+ - multiple images in a markdown post
+ - sidebar nav that toggles open and closed
+ - embedding YT videos in markdown posts
+ - use postcard at top of post
+ - make images in posts show up with correct border size and aspect ratio
+ - added ignore-loader to suppress webpack warnings 
+ - limit dimensions of images in posts
+ - eliminated need for img folder within each post
+ - deploy site to netlify
+ - make debug work in VSCode
+
+
+
 ## The Plan / TODO:
  - [fix] investigate eliminating dirp thing again.
  - [FEATURE] pagination of all posts
@@ -31,24 +51,6 @@ Copyright reserved on all photos, videos, prose, and other non-code content incl
   - also consider making the side bar more like this guy's
     - https://derkinzi.de/optimized-responsive-lazyloading-images-with-nuxt/
 
-
-
- ## Accomplished:
- - support for automatically generating thumbnails for images, as part of deploy, and serving those instead of full size where it makes sense.
- - added og:image support for proper thumbnails in shares
- - interest pages also built using md files in separate content directory
- - images link to full size image provided by API
- - interest pages that show only posts related to certain tags
- - multiple images in a markdown post
- - sidebar nav that toggles open and closed
- - embedding YT videos in markdown posts
- - use postcard at top of post
- - make images in posts show up with correct border size and aspect ratio
- - added ignore-loader to suppress webpack warnings 
- - limit size of images in posts
- - eliminated need for img folder within each post
- - deploy site to netlify
- - make debug work in VSCode
 
 
 
@@ -82,10 +84,10 @@ $ yarn run generate
 
 
 #### built with significant help from:
-https://github.com/regenrek/nuxt-blog-frontmatter-markdown-loader 
-https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/
-https://github.com/regenrek/vue-sidebar-menu-example/tree/master/src
-https://regenrek.com/posts/how-to-create-an-animated-vue-sidebar-menu-with-vue-observable/
-https://github.com/nuxt/content/issues/106
-https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#displaying-your-content
-https://medium.com/@wearethreebears/handle-api-driven-content-links-in-nuxt-js-fe2e31ecbeeb
+ - https://github.com/regenrek/nuxt-blog-frontmatter-markdown-loader 
+ - https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/
+ - https://github.com/regenrek/vue-sidebar-menu-example/tree/master/src
+ - https://regenrek.com/posts/how-to-create-an-animated-vue-sidebar-menu-with-vue-observable/
+ - https://github.com/nuxt/content/issues/106
+ - https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#displaying-your-content
+ - https://medium.com/@wearethreebears/handle-api-driven-content-links-in-nuxt-js-fe2e31ecbeeb
