@@ -86,6 +86,10 @@ export default {
   margin-top: 2rem;
 }
 
+.nuxt-content h1 {
+  margin-bottom: 1.5rem;
+  margin-top: 3.5rem;
+}
 .nuxt-content h2 {
   margin-bottom: 1.5rem;
   margin-top: 2rem;
