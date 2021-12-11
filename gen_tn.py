@@ -7,6 +7,7 @@ import argparse
 import sys
 
 # generate thumbnails for images
+print("gen_tn starting...")
 
 # this is invoked manually when running locally, and by Netlify's 
 # build command "python3 gen_tn.py && nuxt build && nuxt generate"
@@ -18,7 +19,8 @@ ap.add_argument('dirs', nargs='*', help='directories to look for images')
 
 args = ap.parse_args()
 
-
+# TODO: consider feature to skip tn generation for images not referenced in an .md file 
+#       or referenced only in commented out html
 
 # place generated thumbnails in this folder (relative to original image)
 # webpack really didn't like .imgs here... be warned
