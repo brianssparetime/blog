@@ -37,7 +37,8 @@ export default {
           const name = path.basename(this.src, ext)
           const loadstring = `~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`
           console.log('fancy load from ' + loadstring)
-          return require(`~/content${this.dirp}/gen_tn_imgs/${name}_${imgsize}.png`) // working
+          return require(`~/content${this.dirp}/gen_tn_imgs/${name}_large.png`) // working
+          // hacked to make large literal for performance hopefully
         }
       } catch (error) {
         console.log('error with finding image for:  ' + this.src)

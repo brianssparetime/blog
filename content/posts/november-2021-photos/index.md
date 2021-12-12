@@ -38,6 +38,6 @@ tags:
 <v-img src="pos_DSC02387.jpg" alt="bar" :dirp="dir"></v-img>
 
 
-<div>And a happy mistake (the photo, not Mac!)</div>
+<span>And a happy mistake (the photo, not Mac!)</span>
 
 <v-img src="pos_DSC02093.jpg" alt="bar" :dirp="dir"></v-img>

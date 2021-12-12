@@ -31,7 +31,8 @@ export default {
           const name = path.basename(this.src, ext)
           const loadstring = `~/content${post.dir}/gen_tn_imgs/${name}_${imgsize}.png`
           console.log('fancy load from ' + loadstring)
-          return require(`~/content${post.dir}/gen_tn_imgs/${name}_${imgsize}.png`) // working
+          return require(`~/content${post.dir}/gen_tn_imgs/${name}_tn.png`) // working
+          // hacked to make tn literal for memory usage maybe?
         }
       } catch (error) {
         console.log('error with finding image for:  ' + this.src)

@@ -163,7 +163,7 @@ if __name__ == '__main__':
     last_time = timings[-1] - timings[-2]
     print("    time elapsed (crawl): {}".format(strfdelta(last_time, '{hours}h {minutes}m {seconds}s')))
 
-    with Pool(4) as pool:
+    with Pool(2) as pool:
         results = pool.map(process_img, imgs)
         pool.close()
         pool.join()
