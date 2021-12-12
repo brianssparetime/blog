@@ -85,7 +85,7 @@ if __name__ == '__main__':
     ap.add_argument('-v', '--verbose', action='store_true', help='show more output')
     ap.add_argument('-f', '--force', action='store_true', default=False, 
         help='force regeneration of thumnails even if files already exist')
-    ap.add_argument('-e', '--make-unused', action='store_true', default=False, 
+    ap.add_argument('-e', '--make-unused', action='store_true', default=True, 
         help='generate thumnails even if files not referenced in local index.md')
     ap.add_argument('dirs', nargs='*', help='directories to look for images')
 
