@@ -6,6 +6,20 @@ from PIL import Image
 import argparse
 import sys
 from multiprocessing import Pool 
+import datetime, time
+
+timings = []
+timings.append(datetime.datetime.now())
+
+
+def strfdelta(tdelta, fmt):
+    d = {"days": tdelta.days}
+    d["hours"], rem = divmod(tdelta.seconds, 3600)
+    d["minutes"], d["seconds"] = divmod(rem, 60)
+    return fmt.format(**d)
+
+
+# https://stackoverflow.com/questions/8631076/what-is-the-fastest-way-to-generate-image-thumbnails-in-python
 
 # place generated thumbnails in this folder (relative to original image)
 # webpack really didn't like .imgs here... be warned
@@ -134,6 +148,7 @@ if __name__ == '__main__':
                         text = fd.read()
                         # strip html comments
                         text = re.sub(r'(?=<!--)([\s\S]*?)-->', '',text)
+                        # https://stackoverflow.com/questions/1084741/regexp-to-strip-html-comments
 
             for f in files:
                 if test_file(f):
@@ -143,5 +158,18 @@ if __name__ == '__main__':
             #for img in imgs:
             #    process_img(img,root)
 
-    pool = Pool(8)
+
+    timings.append(datetime.datetime.now())
+    last_time = timings[-1] - timings[-2]
+    print("    time elapsed (crawl): {}".format(strfdelta(last_time, '{hours}h {minutes}m {seconds}s')))
+
+    pool = Pool(2)
     results = pool.map(process_img, imgs)
+
+    timings.append(datetime.datetime.now())
+    last_time = timings[-1] - timings[-2]
+    print("    time elapsed (image generation): {}".format(strfdelta(last_time, '{hours}h {minutes}m {seconds}s')))
+
+
+    total_time = timings[-1] - timings[0]
+    print("    time elapsed (overall): {}".format(strfdelta(last_time, '{hours}h {minutes}m {seconds}s')))
