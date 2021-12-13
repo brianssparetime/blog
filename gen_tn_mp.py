@@ -5,6 +5,7 @@ import re
 from PIL import Image
 import argparse
 import sys
+from multiprocessing import Pool 
 import datetime, time
 
 timings = []
@@ -98,7 +99,7 @@ if __name__ == '__main__':
     ap.add_argument('-v', '--verbose', action='store_true', help='show more output')
     ap.add_argument('-f', '--force', action='store_true', default=False, 
         help='force regeneration of thumnails even if files already exist')
-    ap.add_argument('-e', '--make-unused', action='store_true', default=False, 
+    ap.add_argument('-e', '--make-unused', action='store_true', default=True, 
         help='generate thumnails even if files not referenced in local index.md')
     ap.add_argument('dirs', nargs='*', help='directories to look for images')
 
@@ -137,20 +138,17 @@ if __name__ == '__main__':
         for root, dirs, files in os.walk(tdq):
             # do not breathe our own farts and make tns for tns in the tn_dir
             if re.search(tn_dir+'$',root):
-                continue
-            # skip folders without markdown
-            if not os.path.exists(os.path.join(root, 'index.md')):
-                if args.verbose:
-                    print(f"skipping {root} for lacking index.md")
+                print(f"ignoring {root}")
                 continue
             # ignore images not referenced in markdown
             text = []
             if not args.make_unused:
-                with open(os.path.join(root, 'index.md'), 'r') as fd:
-                    text = fd.read()
-                    # strip html comments
-                    text = re.sub(r'(?=<!--)([\s\S]*?)-->', '',text)
-                    # https://stackoverflow.com/questions/1084741/regexp-to-strip-html-comments
+                if os.path.exists(os.path.join(tdq, 'index.md')):
+                    with open(os.path.join(tdq, 'index.md'), 'r') as fd:
+                        text = fd.read()
+                        # strip html comments
+                        text = re.sub(r'(?=<!--)([\s\S]*?)-->', '',text)
+                        # https://stackoverflow.com/questions/1084741/regexp-to-strip-html-comments
 
             for f in files:
                 if test_file(f):
@@ -165,14 +163,10 @@ if __name__ == '__main__':
     last_time = timings[-1] - timings[-2]
     print("    time elapsed (crawl): {}".format(strfdelta(last_time, '{hours}h {minutes}m {seconds}s')))
 
-    """
     with Pool(2) as pool:
         results = pool.map(process_img, imgs)
         pool.close()
         pool.join()
-    """
-    for i in imgs:
-        process_img(i)
 
     timings.append(datetime.datetime.now())
     last_time = timings[-1] - timings[-2]

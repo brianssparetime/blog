@@ -91,6 +91,10 @@ export default {
         test: /\.mov$/i,
         loader: 'ignore-loader'
       })
+      config.module.rules.push({
+        test: /\.mp4$/i,
+        loader: 'ignore-loader'
+      })
     }
   }
 }
