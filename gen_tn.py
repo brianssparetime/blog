@@ -82,7 +82,8 @@ def process_img(params):
             if (max(w,h) > img_sizes[imgsize]):
                 im.thumbnail((img_sizes[imgsize], img_sizes[imgsize]))
             os.makedirs(outd,exist_ok=True)
-            im.save(os.path.join(outd,newname),  format=output_format)
+            #im.save(os.path.join(outd,newname),  format=output_format)
+            im.save(os.path.join(outd,newname),  format=output_format, optimize=True, quality=90)
     except Exception as e:
         return e
 
