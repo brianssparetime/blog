@@ -102,6 +102,8 @@ if __name__ == '__main__':
         help='force regeneration of thumnails even if files already exist')
     ap.add_argument('-e', '--make-unused', action='store_true', default=False, 
         help='generate thumnails even if files not referenced in local index.md')
+    ap.add_argument('-p', '--multi-pool', type=int, default=False, required = False,
+        help='use a multprocessing pool of N workers')
     ap.add_argument('dirs', nargs='*', help='directories to look for images')
 
     args = ap.parse_args()
@@ -167,14 +169,16 @@ if __name__ == '__main__':
     last_time = timings[-1] - timings[-2]
     print("    time elapsed (crawl): {}".format(strfdelta(last_time, '{hours}h {minutes}m {seconds}s')))
 
-    """
-    with Pool(2) as pool:
-        results = pool.map(process_img, imgs)
-        pool.close()
-        pool.join()
-    """
-    for i in imgs:
-        process_img(i)
+    if args.multi_pool:
+        from multiprocessing import Pool 
+        print("using pool with {args.mult_pool} workers")
+        with Pool(args.multi_pool) as pool:
+            results = pool.map(process_img, imgs)
+            pool.close()
+            pool.join()
+    else:
+        for i in imgs:
+            process_img(i)
 
     timings.append(datetime.datetime.now())
     last_time = timings[-1] - timings[-2]
