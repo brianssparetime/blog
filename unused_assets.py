@@ -10,7 +10,7 @@ timings = []
 timings.append(datetime.datetime.now())
 
 unused_name = 'unused'
-
+exts = []
 
 def strfdelta(tdelta, fmt):
     d = {"days": tdelta.days}
@@ -113,6 +113,11 @@ if __name__ == '__main__':
                         if args.rename:
                             old_name = os.path.join(root,f)
                             (base, ext) = os.path.splitext(f)
+                            if ext not in exts:
+                                exts.append(ext)
                             new_name = ''.join([base,'.',unused_name,ext])
                             print("newname: {}".format(new_name))
+                            new_name = os.path.join(root,new_name)
+                            os.rename(old_name,new_name)
 
+    print("saw extensions:  {}".format(exts))

@@ -95,6 +95,10 @@ export default {
         test: /\.mp4$/i,
         loader: 'ignore-loader'
       })
+      config.module.rules.push({
+        test: /\.unused\.jpg$/i,
+        loader: 'ignore-loader'
+      })
     }
   }
 }
