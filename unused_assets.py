@@ -9,6 +9,8 @@ import datetime, time
 timings = []
 timings.append(datetime.datetime.now())
 
+unused_name = 'unused'
+
 
 def strfdelta(tdelta, fmt):
     d = {"days": tdelta.days}
@@ -52,8 +54,8 @@ if __name__ == '__main__':
     #ap.add_argument('-v', '--verbose', action='store_true', help='show more output')
     #ap.add_argument('-f', '--force', action='store_true', default=False, 
     #    help='force regeneration of thumnails even if files already exist')
-    #ap.add_argument('-e', '--make-unused', action='store_true', default=True, 
-    #    help='generate thumnails even if files not referenced in local index.md')
+    ap.add_argument('--rename', action='store_true', default=False, 
+        help='rename unused assets with .unused before extension')
     ap.add_argument('dirs', nargs='*', help='directories to look for images')
     args = ap.parse_args()
 
@@ -108,4 +110,9 @@ if __name__ == '__main__':
                 if test_file(f):
                     if f not in text:
                         print("Unused asset: {}".format(os.path.join(root,f)))
+                        if args.rename:
+                            old_name = os.path.join(root,f)
+                            (base, ext) = os.path.splitext(f)
+                            new_name = ''.join([base,'.',unused_name,ext])
+                            print("newname: {}".format(new_name))
 

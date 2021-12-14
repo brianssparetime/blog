@@ -85,6 +85,7 @@ def process_img(params):
             #im.save(os.path.join(outd,newname),  format=output_format)
             #im.save(os.path.join(outd,newname),  format=output_format, optimize=True, quality=90)
             im.save(os.path.join(outd,newname),  format=output_format, quality=85)
+        im.close()
     except Exception as e:
         return e
 
