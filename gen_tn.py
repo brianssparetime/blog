@@ -43,7 +43,7 @@ img_exts = [
 ignore_patterns = [
     r'\sx\\.\w+$',
     r'^x\s+',
-    r'unused\\.\w+$',
+    #r'unused\\.\w+$',
 ]
 
 # for use if none specified in args
@@ -117,6 +117,7 @@ if __name__ == '__main__':
 
     # safety third
     if args.delete_after:
+        print("delete_after IS ENABLED!!!")
         if 'darwin' in os.uname().sysname.lower():
             print("You probably didn't mean to invoke delete-after...")
             sys.exit()
