@@ -36,6 +36,14 @@ export default {
       const post = this.post || {}
       const { body, ...rest } = post
       return rest
+    },
+    ogImageLoc () {
+      if (process.env.NODE_ENV === 'development') {
+        return this.post.image
+      } else {
+        const newname = this.post.image.replace(/\.\w+$/, '_tn.png')
+        return 'gen_tn_imgs/' + newname
+      }
     }
   },
   /* env: {
@@ -62,7 +70,8 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/${this.post.image}`)
+          // content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/gen_tn_imgs/${this.post.image.replace(/\.\w+$/, '_tn.png')}`)
+          content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/${this.ogImageLoc}`)
         },
         {
           hid: 'og:url',
