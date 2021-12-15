@@ -42,7 +42,8 @@ img_exts = [
 
 ignore_patterns = [
     r'\sx\\.\w+$',
-    r'^x\s+'
+    r'^x\s+',
+    r'unused\\.\w+$',
 ]
 
 # for use if none specified in args
@@ -57,7 +58,7 @@ ig_re = '(?:' + '|'.join(ignore_patterns) + ')'
 
 
 def process_img(params):
-    img_name, img_path, bForce, bDebug = params
+    img_name, img_path, bForce, bDebug, bDeleteAfter = params
     try:
         im = Image.open(os.path.join(img_path,img_name))
         for imgsize in img_sizes:
@@ -86,6 +87,8 @@ def process_img(params):
             #im.save(os.path.join(outd,newname),  format=output_format, optimize=True, quality=90)
             im.save(os.path.join(outd,newname),  format=output_format, quality=85)
         im.close()
+        if bDeleteAfter:
+            os.remove(os.path.join(img_path,img_name))
     except Exception as e:
         return e
 
@@ -94,6 +97,7 @@ if __name__ == '__main__':
     # generate thumbnails for images
     print("gen_tn starting...")
 
+
     # this is invoked manually when running locally, and by Netlify's 
     # build command "python3 gen_tn.py && nuxt build && nuxt generate"
 
@@ -101,6 +105,8 @@ if __name__ == '__main__':
     ap.add_argument('-v', '--verbose', action='store_true', help='show more output')
     ap.add_argument('-f', '--force', action='store_true', default=False, 
         help='force regeneration of thumnails even if files already exist')
+    ap.add_argument('--delete-after', action='store_true', default=False, 
+        help='delete original after conversion')
     ap.add_argument('-e', '--make-unused', action='store_true', default=False, 
         help='generate thumnails even if files not referenced in local index.md')
     ap.add_argument('-p', '--multi-pool', type=int, default=False, required = False,
@@ -108,6 +114,12 @@ if __name__ == '__main__':
     ap.add_argument('dirs', nargs='*', help='directories to look for images')
 
     args = ap.parse_args()
+
+    # safety third
+    if args.delete_after:
+        if 'darwin' in os.uname().sysname.lower():
+            print("You probably didn't mean to invoke delete-after...")
+            sys.exit()
 
     if args.dirs:
         if len(args.dirs) == 1:
@@ -160,7 +172,7 @@ if __name__ == '__main__':
             for f in files:
                 if test_file(f):
                     if args.make_unused or f in text:
-                        imgs.append([f, root, args.force, args.verbose])
+                        imgs.append([f, root, args.force, args.verbose, args.delete_after])
             #imgs += [ [f,root, args.force, args.verbose] for f in files if  test_file(f)]
             #for img in imgs:
             #    process_img(img,root)
