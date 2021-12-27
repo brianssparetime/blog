@@ -39,6 +39,8 @@ if __name__ == '__main__':
     #    help='force regeneration of thumnails even if files already exist')
     ap.add_argument('--move', action='store_true', default=False, 
         help='move  original assets')
+    ap.add_argument('--gitrm', action='store_true', default=False, 
+        help='git rm --cached  original assets')
     ap.add_argument('dirs', nargs='*', help='directories to look for images')
     args = ap.parse_args()
 
@@ -69,9 +71,10 @@ if __name__ == '__main__':
                     old_name = os.path.join(root,f)
                     print("oldname: {}".format(old_name))
                     #(base, ext) = os.path.splitext(f)
-                    new_name = os.path.join(root,orig_dir,f)
-                    print("newname: {}".format(new_name))
+                    if args.gitrm:
+                        _ = subprocess.run(["git", "rm", "--cached", old_name])
                     if args.move:
-                        #os.makedirs(os.path.join(root,orig_dir),exist_ok=True)
-                        #os.rename(old_name,new_name)
-                        list_files = subprocess.run(["git", "rm", "--cached", old_name])
+                        new_name = os.path.join(root,orig_dir,f)
+                        print("newname: {}".format(new_name))
+                        os.makedirs(os.path.join(root,orig_dir),exist_ok=True)
+                        os.rename(old_name,new_name)

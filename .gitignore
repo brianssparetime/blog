@@ -93,11 +93,15 @@ sw.*
 # gen_tn_imgs/
 
 # big file directories
-/content/posts/**/*.jpg
-/content/posts/**/*.JPG
-/content/posts/**/*.png
-/content/posts/**/*.PNG
-/content/interests/**/*.jpg
-/content/interests/**/*.JPG
-/content/interests/**/*.png
-/content/interests/**/*.PNG
+/content/posts/*/*.jpg
+/content/posts/*/*.JPG
+/content/posts/*/*.png
+/content/posts/*/*.PNG
+/content/posts/*/*.mov
+/content/posts/*/*.MOV
+/content/posts/*/*.mp4
+/content/posts/*/*.MP4
+/content/interests/*/*.jpg
+/content/interests/*/*.JPG
+/content/interests/*/*.png
+/content/interests/*/*.PNG

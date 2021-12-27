@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/opt/local/bin/python3.9
 
 import os
 import re
@@ -56,19 +56,19 @@ target_dirs = [
 exts_re = '(?:' + '|'.join(img_exts) + ')' 
 ig_re = '(?:' + '|'.join(ignore_patterns) + ')' 
 
-# https://stackoverflow.com/a/4213255/16594351 - see for new pythons 
-def md5sum(file):
-    md5 = hashlib.md5()
-    with open(file,'rb') as f:
-        for chunk in iter(lambda: f.read(128*md5.block_size),b''):
-            md5.update(chunk)
-    return md5.hexdigest()
+# # https://stackoverflow.com/a/4213255/16594351 - see for new pythons 
+# def md5sum(file):
+#     md5 = hashlib.md5()
+#     with open(file,'rb') as f:
+#         for chunk in iter(lambda: f.read(128*md5.block_size),b''):
+#             md5.update(chunk)
+#     return md5.hexdigest()
 
-def update_hash(file, file_hash):
-    file_hash[md5sum(file)] = {
-        'mtime' : datetime.datetime.now(),
-        'name' : file
-    }
+# def update_hash(file, file_hash):
+#     file_hash[md5sum(file)] = {
+#         'mtime' : datetime.datetime.now(),
+#         'name' : file
+#     }
 
 
 def get_tn_fname(fn, imgsize):
@@ -118,17 +118,16 @@ def test_file(root,f):
 
     # ignore images not referenced in markdown
     text = []
-    if not args.make_unused:
-        with open(os.path.join(root, 'index.md'), 'r') as fd:
-            text = fd.read()
-            # strip html comments
-            text = re.sub(r'(?=<!--)([\s\S]*?)-->', '',text)
-            # https://stackoverflow.com/questions/1084741/regexp-to-strip-html-comments
-            if f not in text:
-                return False
+    with open(os.path.join(root, 'index.md'), 'r') as fd:
+        text = fd.read()
+        # strip html comments
+        text = re.sub(r'(?=<!--)([\s\S]*?)-->', '',text)
+        # https://stackoverflow.com/questions/1084741/regexp-to-strip-html-comments
+        if f not in text:
+            return False
     return True
 
-def crawl(file_hash):
+def crawl():
     print("starting crawl...")
     imgs = []
     tdq = os.path.join(os.getcwd(),args.target)
@@ -142,33 +141,34 @@ def crawl(file_hash):
             for f in files:
                 if test_file(root,f):
                         imgs.append([f, root])
-                        update_hash(f, file_hash)
+                        #update_hash(f, file_hash)
 
     # TODO: consider replacing with non MP version so update_hash can happen
     #       after successful completion
     
     from multiprocessing import Pool 
-    print("using pool with {args.mult_pool} workers")
-    with Pool(args.multi_pool) as pool:
+    multi_pool = 8
+    print("using pool with {mult_pool} workers")
+    with Pool(multi_pool) as pool:
         results = pool.map(process_img, imgs)
         pool.close()
         pool.join()
 
-    save_out(file_hash, name=saved_state_file)
+    #save_out(file_hash, name=saved_state_file)
 
 
-def save_out(obj, name):
-    with open(name+'.db', 'wb') as f:
-        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+# def save_out(obj, name):
+#     with open(name+'.db', 'wb') as f:
+#         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
         
-def load_in(name):
-    filename = name+'.pkl'
-    if os.path.isfile(filename):
-        with open(filename, 'rb') as f:
-            return pickle.load(f)
-    else: 
-        print("saved state {} not found".format(filename))
-        return None
+# def load_in(name):
+#     filename = name+'.pkl'
+#     if os.path.isfile(filename):
+#         with open(filename, 'rb') as f:
+#             return pickle.load(f)
+#     else: 
+#         print("saved state {} not found".format(filename))
+#         return None
 
 
 
@@ -184,8 +184,9 @@ class Watcher(FileSystemEventHandler):
 
     def on_created(self, event):
         self.catch_all_handler(event)
-        if test_file(* os.path.split(event.src_path)):
-            process_img(event.src_path)
+        f,root = os.path.split(event.src_path)
+        if test_file(f,root):
+            process_img([f,root])
 
     def on_deleted(self, event):
         self.catch_all_handler(event)
@@ -196,8 +197,9 @@ class Watcher(FileSystemEventHandler):
 
     def on_modified(self, event):
         self.catch_all_handler(event)
-        if test_file(* os.path.split(event.src_path)):
-            process_img(event.src_path)
+        f,root = os.path.split(event.src_path)
+        if test_file(f,root):
+            process_img([f,root])
 
     # TODO:  check for md changes and remove unused tns
 
@@ -217,6 +219,8 @@ if __name__ == '__main__':
 
     ap = argparse.ArgumentParser()
     ap.add_argument('-v', '--verbose', action='store_true', help='show more output')
+    ap.add_argument('-b', '--rebuild', action='store_true', help='rebuild all existing tns')
+    ap.add_argument('-o', '--rebuild-only', action='store_true', help='rebuild all existing tns and quit')
     #ap.add_argument('dirs', nargs='*', help='directories to look for images')
     ap.add_argument('target', help="directory to watch for changed files")
 
@@ -234,6 +238,16 @@ if __name__ == '__main__':
             file_hash[k] = v
     """
 
+
+    if args.rebuild or args.rebuild_only:
+        print("Rebuilding tns via crawl....")
+        crawl()
+
+
+    if args.rebuild_only:
+        sys.exit()
+
+    print("Starting watcher....")
     event_handler = Watcher()
     observer = Observer()
     observer.schedule(event_handler, args.target, recursive=True)
