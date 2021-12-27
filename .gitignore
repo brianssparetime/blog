@@ -90,4 +90,14 @@ sw.*
 *.swp
 
 # thumbnail directories
-gen_tn_imgs/
+# gen_tn_imgs/
+
+# big file directories
+/content/posts/**/*.jpg
+/content/posts/**/*.JPG
+/content/posts/**/*.png
+/content/posts/**/*.PNG
+/content/interests/**/*.jpg
+/content/interests/**/*.JPG
+/content/interests/**/*.png
+/content/interests/**/*.PNG

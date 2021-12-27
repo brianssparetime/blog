@@ -70,8 +70,11 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
+          content: ((process.env.NODE_ENV === 'development') ? 'https://brianssparetime.com' + require(`@/content${this.post.dir}/${this.post.image}`) : 'https://brianssparetime.com' + require(`@/content${this.post.dir}/gen_tn_imgs/${this.post.image.replace(/\.\w+$/, '')}_tn.png`))
+          // content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/gen_tn_imgs/${this.post.image.replace(/\.\w+$/, '')}_tn.png`)
           // content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/gen_tn_imgs/${this.post.image.replace(/\.\w+$/, '_tn.png')}`)
-          content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/${this.ogImageLoc}`)
+          // content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/${this.ogImageLoc}`)
+          // content: 'https://brianssparetime.com' + require(`@/content${this.post.dir}/${this.post.image}`)
         },
         {
           hid: 'og:url',
