@@ -77,7 +77,7 @@ def get_tn_fname(fn, imgsize):
 
 
 def process_img(params):
-    img_name, img_path = params
+    img_name, img_path, bForce = params
     im = Image.open(os.path.join(img_path,img_name))
     for imgsize in img_sizes:
         # insert imgsize
@@ -86,7 +86,7 @@ def process_img(params):
         outd = os.path.join(img_path,tn_dir)
 
         # skip existing
-        if os.path.exists(os.path.join(outd,newname)):
+        if not bForce and os.path.exists(os.path.join(outd,newname)):
             continue
 
         print('  generating {} for {}'.format(
@@ -140,7 +140,7 @@ def crawl():
     for root, dirs, files in os.walk(tdq):
             for f in files:
                 if test_file(root,f):
-                        imgs.append([f, root])
+                        imgs.append([f, root, args.rebuild_force])
                         #update_hash(f, file_hash)
 
     # TODO: consider replacing with non MP version so update_hash can happen
@@ -186,7 +186,7 @@ class Watcher(FileSystemEventHandler):
         self.catch_all_handler(event)
         f,root = os.path.split(event.src_path)
         if test_file(f,root):
-            process_img([f,root])
+            process_img([f,root, True])
 
     def on_deleted(self, event):
         self.catch_all_handler(event)
@@ -199,7 +199,7 @@ class Watcher(FileSystemEventHandler):
         self.catch_all_handler(event)
         f,root = os.path.split(event.src_path)
         if test_file(f,root):
-            process_img([f,root])
+            process_img([f,root, True])
 
     # TODO:  check for md changes and remove unused tns
 
@@ -220,6 +220,7 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('-v', '--verbose', action='store_true', help='show more output')
     ap.add_argument('-b', '--rebuild', action='store_true', help='rebuild all existing tns')
+    ap.add_argument('-f', '--rebuild-force', action='store_true', help='rebuild all existing tns, overwriting, and quit')
     ap.add_argument('-o', '--rebuild-only', action='store_true', help='rebuild all existing tns and quit')
     #ap.add_argument('dirs', nargs='*', help='directories to look for images')
     ap.add_argument('target', help="directory to watch for changed files")
@@ -239,12 +240,12 @@ if __name__ == '__main__':
     """
 
 
-    if args.rebuild or args.rebuild_only:
+    if args.rebuild or args.rebuild_only or args.rebuild_force:
         print("Rebuilding tns via crawl....")
         crawl()
 
 
-    if args.rebuild_only:
+    if args.rebuild_only or args.rebuild_force:
         sys.exit()
 
     print("Starting watcher....")
