@@ -26,6 +26,7 @@ from multiprocessing import Manager
 tn_dir = 'gen_tn_imgs'
 output_format = 'png'
 saved_state_file = 'tn_watcher.state'
+image_quality = 82
 
 # generate these sizes
 img_sizes = {
@@ -99,7 +100,7 @@ def process_img(params):
         os.makedirs(outd,exist_ok=True)
         #im.save(os.path.join(outd,newname),  format=output_format)
         #im.save(os.path.join(outd,newname),  format=output_format, optimize=True, quality=90)
-        im.save(os.path.join(outd,newname),  format=output_format, quality=85)
+        im.save(os.path.join(outd,newname),  format=output_format, quality=image_quality)
     im.close()
 
 
