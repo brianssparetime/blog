@@ -25,13 +25,28 @@
           </nuxt-link>
         </li>
         <li class="padded">
-          <b>Main Interests:</b>
+          <b>Platforms:</b>
         </li>
         <li>
           &#8226;
           <a href="https://www.youtube.com/channel/UCnKrfUKulxwGP51NpVvmolA">
             BrianGoesFlyin on YT
           </a>
+        </li>
+        <li>
+          &#8226;
+          <a href="https://www.youtube.com/channel/UC89gOhyXFIsy8-HU_sfiXkA">
+            BriansSpareTime on YT
+          </a>
+        </li>
+        <li>
+          &#8226;
+          <a href="https://www.flickr.com/people/brianssparetime/">
+            BriansSpareTime on Flickr
+          </a>
+        </li>
+        <li class="padded">
+          <b>Main Interests:</b>
         </li>
         <li>
           &#8226; <nuxt-link to="/interests/brewing">
