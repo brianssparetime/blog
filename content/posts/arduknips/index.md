@@ -1,7 +1,7 @@
 ---
 title: Ardu-knips!  For when the cable release is jammed
 date: 2022-01-08
-image: 3 - 380a0hh.jpg
+image: 380a0hh.jpg
 tags:
   - photography
   - film
@@ -17,8 +17,8 @@ Powered by a standard usb powerbank, works just like a cable release for my Mosk
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="7CR61P2"><a href="https://imgur.com/7CR61P2">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
-<v-img src="3 - 380a0hh.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="4 - I4wCixB.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="5 - LBJnMaW.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="380a0hh.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="I4wCixB.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="LBJnMaW.jpg" alt="bar" :dirp="dir"></v-img>
 
 Code on [github](https://github.com/brianssparetime/arduknips).
