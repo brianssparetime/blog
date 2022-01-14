@@ -1,5 +1,5 @@
 ---
-title: Ardu-knips!  For when the cable release is jammed.
+title: Ardu-knips!  For when the cable release is jammed
 date: 2022-01-08
 image: 3 - 380a0hh.jpg
 tags:
