@@ -1,5 +1,5 @@
 ---
-title: New Years Day Photowalk
+title: New Years Photowalks
 date: 2022-01-10
 image: pos_DSC02627.jpg
 tags:
