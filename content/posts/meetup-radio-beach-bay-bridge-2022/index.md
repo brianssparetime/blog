@@ -1,7 +1,7 @@
 ---
 title: Photo Meetup Radio Beach (Bay Bridge at Low Tide)
 date: 2022-02-14
-image: pos_DSC02987.jpg
+image: pos_DSC02987a.jpg
 tags:
   - photography
   - film
@@ -11,7 +11,7 @@ tags:
 <v-img src="pos_DSC02983.jpg" alt="bar" :dirp="dir"></v-img>
 
 <v-img src="pos_DSC02984.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC02987.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="pos_DSC02987a.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC02988.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC02991.jpg" alt="bar" :dirp="dir"></v-img>
 
