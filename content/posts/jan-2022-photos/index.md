@@ -65,6 +65,11 @@ Met their new dog as well
 <v-img src="000083150027.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC02673.jpg" alt="bar" :dirp="dir"></v-img>
 
+I ate the finest bagels in all the lands
+
+<v-img src="000099830003.jpg" alt="bar" :dirp="dir"></v-img>
+
+
 This is not their dog, but I thought he looked quite regal
 
 <v-img src="pos_DSC02657.jpg" alt="bar" :dirp="dir"></v-img>
@@ -73,5 +78,10 @@ Then it was time to go home again
 
 <v-img src="pos_DSC02679.jpg" alt="bar" :dirp="dir"></v-img>
 
-
+<v-img src="000099830017.jpg" alt="bar" :dirp="dir"></v-img>
+ 
+ 
+ 
+ 
+ 
 Moskva5 / Portra160, Pentax MX / HP5,  Agat 18k / ColorPlus200
