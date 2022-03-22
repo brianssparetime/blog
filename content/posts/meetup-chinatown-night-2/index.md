@@ -1,7 +1,7 @@
 ---
 title: Photo Meetup Chinatown Evening (second time)
 date: 2022-03-21
-image: 000041840001.jpg
+image: 000041840011.jpg
 tags:
   - photography
   - film
