@@ -26,4 +26,19 @@ tags:
 <v-img src="pos_DSC03228.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="pos_DSC03227.jpg" alt="bar" :dirp="dir"></v-img>
 
-HP5 and Ektar100 on Singlex TLS with 35mm Flektogon; ColorPlus200 on Agat18k
+
+<v-img src="000044440002.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044440005.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044440010.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044440013.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044440014.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044440015.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044440019.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044440020.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044450072.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044450077.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="000044450079.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="IMGP7214.jpg" alt="bar" :dirp="dir"></v-img>
+<v-img src="IMGP7221.jpg" alt="bar" :dirp="dir"></v-img>
+
+HP5 and Ektar100 on Singlex TLS with 35mm Flektogon; ColorPlus200 on Agat18k; Pentax Q digital
