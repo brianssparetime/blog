@@ -1,6 +1,6 @@
 ---
 title: April 2022 Photos
-date: 2022-05-11
+date: 2022-05-13
 image: 000051440060.jpg
 tags:
   - photography
@@ -21,7 +21,7 @@ tags:
 
 <v-img src="pos_DSC03324.jpg" alt="bar" :dirp="dir"></v-img>
 <v-img src="000024850047.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="000024850038.jpg" alt="bar" :dirp="dir"></v-img>
+<!--<v-img src="000024850038.jpg" alt="bar" :dirp="dir"></v-img>-->
 <!--<v-img src="000024850051.jpg" alt="bar" :dirp="dir"></v-img>-->
 <v-img src="pos_DSC03355.jpg" alt="bar" :dirp="dir"></v-img>
 
