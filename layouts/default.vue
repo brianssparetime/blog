@@ -1,79 +1,82 @@
 <template>
-  <div class="wrapper">
-    <nav class="main-nav">
-      <Burger />
-      <nuxt-link class="logo" to="/">
-        <!-- Brian's Spare Time -->
-        <img src="/bst logo2.png">
-      </nuxt-link>
-    </nav>
-    <Sidebar>
-      <ul class="sidebar-panel-nav" @click="closeSidebarPanel">
-        <li>
-          <nuxt-link to="/">
-            <b>Home</b>
-          </nuxt-link>
-        </li>
-        <li>
-          &#8226; <nuxt-link to="/posts">
-            All posts
-          </nuxt-link>
-        </li>
-        <li>
-          &#8226; <nuxt-link to="/tags">
-            Search by tag
-          </nuxt-link>
-        </li>
-        <li class="padded">
-          <b>Platforms:</b>
-        </li>
-        <li>
-          &#8226;
-          <a href="https://www.youtube.com/channel/UCnKrfUKulxwGP51NpVvmolA">
-            BrianGoesFlyin on YT
-          </a>
-        </li>
-        <li>
-          &#8226;
-          <a href="https://www.youtube.com/channel/UC89gOhyXFIsy8-HU_sfiXkA">
-            BriansSpareTime on YT
-          </a>
-        </li>
-        <li>
-          &#8226;
-          <a href="https://www.flickr.com/people/brianssparetime/">
-            BriansSpareTime on Flickr
-          </a>
-        </li>
-        <li class="padded">
-          <b>Main Interests:</b>
-        </li>
-        <li>
-          &#8226; <nuxt-link to="/interests/brewing">
-            Brewing
-          </nuxt-link>
-        </li>
-        <li>
-          &#8226;
-          <nuxt-link to="/interests/vintage-computing">
-            Vintage Computing
-          </nuxt-link>
-        </li>
-        <li>
-          &#8226;
-          <nuxt-link to="/interests/film-photography">
-            Film Photography
-          </nuxt-link>
-        </li>
-        <!--
-          <li>&#8226; <nuxt-link to="/ee">EE</nuxt-link></li>
-        <li>&#8226; <nuxt-link to="/vintcomp">Vintage Computers</nuxt-link></li>
-        <li>&#8226; <nuxt-link to="/wood">Wood Working</nuxt-link></li>
-        -->
-      </ul>
-    </Sidebar>
-    <div class="wrapper-inner">
-      <nuxt />
+  <div>
+    <CookieAlert />
+    <div class="wrapper">
+      <nav class="main-nav">
+        <Burger />
+        <nuxt-link class="logo" to="/">
+          <!-- Brian's Spare Time -->
+          <img src="/bst logo2.png">
+        </nuxt-link>
+      </nav>
+      <Sidebar>
+        <ul class="sidebar-panel-nav" @click="closeSidebarPanel">
+          <li>
+            <nuxt-link to="/">
+              <b>Home</b>
+            </nuxt-link>
+          </li>
+          <li>
+            &#8226; <nuxt-link to="/posts">
+              All posts
+            </nuxt-link>
+          </li>
+          <li>
+            &#8226; <nuxt-link to="/tags">
+              Search by tag
+            </nuxt-link>
+          </li>
+          <li class="padded">
+            <b>Platforms:</b>
+          </li>
+          <li>
+            &#8226;
+            <a href="https://www.youtube.com/channel/UCnKrfUKulxwGP51NpVvmolA">
+              BrianGoesFlyin on YT
+            </a>
+          </li>
+          <li>
+            &#8226;
+            <a href="https://www.youtube.com/channel/UC89gOhyXFIsy8-HU_sfiXkA">
+              BriansSpareTime on YT
+            </a>
+          </li>
+          <li>
+            &#8226;
+            <a href="https://www.flickr.com/people/brianssparetime/">
+              BriansSpareTime on Flickr
+            </a>
+          </li>
+          <li class="padded">
+            <b>Main Interests:</b>
+          </li>
+          <li>
+            &#8226; <nuxt-link to="/interests/brewing">
+              Brewing
+            </nuxt-link>
+          </li>
+          <li>
+            &#8226;
+            <nuxt-link to="/interests/vintage-computing">
+              Vintage Computing
+            </nuxt-link>
+          </li>
+          <li>
+            &#8226;
+            <nuxt-link to="/interests/film-photography">
+              Film Photography
+            </nuxt-link>
+          </li>
+          <!--
+            <li>&#8226; <nuxt-link to="/ee">EE</nuxt-link></li>
+          <li>&#8226; <nuxt-link to="/vintcomp">Vintage Computers</nuxt-link></li>
+          <li>&#8226; <nuxt-link to="/wood">Wood Working</nuxt-link></li>
+          -->
+        </ul>
+      </Sidebar>
+      <div class="wrapper-inner">
+        <nuxt />
+      </div>
     </div>
   </div>
 </template>
