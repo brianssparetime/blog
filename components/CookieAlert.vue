@@ -18,6 +18,8 @@
   </div>
 </template>
 
+<!-- https://www.carlcassar.com/articles/add-google-analytics-to-a-nuxt-js-app/#tracking-page-views -->
+
 <script>
 
 import { bootstrap } from 'vue-gtag'
