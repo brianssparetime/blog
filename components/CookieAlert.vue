@@ -4,7 +4,7 @@
     class="cookieBar"
   >
     <div>
-      I use cookies because I'm curious who comes here.
+      I'm using cookies because I'm curious who comes here.
       <BR />
       No commercial use of your data.
       This is my spare time after all...
