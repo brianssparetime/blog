@@ -24,7 +24,12 @@ export default {
   //     see https://github.com/nuxt/nuxt.js/issues/1789
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/prism.js', '~/plugins/globalComponents.js'],
+  plugins: ['~/plugins/prism.js', '~/plugins/globalComponents.js',
+    {
+      src: './plugins/GoogleAnalytics.js',
+      mode: 'client'
+    }
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
