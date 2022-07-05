@@ -89,6 +89,7 @@ export default {
   margin: 5px 0;
   border-radius: 3px;
   float: left;
+  cursor:pointer;
 }
 .priv-button-no {
   color: white;
@@ -99,5 +100,6 @@ export default {
   margin: 5px 0;
   border-radius: 3px;
   float: right;
+  cursor:pointer;
 }
 </style>
