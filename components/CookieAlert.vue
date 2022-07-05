@@ -6,8 +6,7 @@
     <div>
       I'm using cookies because I'm curious who comes here.
       <BR />
-      No commercial use of your data.
-      This is my spare time after all...
+      No commercial use of your data. This is my spare time after all...
       <div class="priv-button-yes" @click="accept">
         Yeah, sure
       </div>
