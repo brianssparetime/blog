@@ -1,7 +1,7 @@
 ---
 title: Guo Pei Exhibition at Legion of Honor
 date: 2022-07-18
-image: pos_DSC03869.jpg
+image: pos_DSC03875.jpg
 tags:
   - photography
   - film

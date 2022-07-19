@@ -1,7 +1,7 @@
 ---
 title: Mission Bay Meetup
 date: 2022-07-19
-image: pos_DSC03823.jpg
+image: pos_DSC03861.jpg
 tags:
   - photography
   - film
