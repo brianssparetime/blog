@@ -15,9 +15,9 @@ I remember wanting something mostly automatic, but I think I chose this one beca
 
 That said, especially in black and white, this camera can also take some amazing pictures.  And the portability/convenience is still as good as it was in the 90s.
 
-<v-img src="DSC01007.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC01006.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC01009.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC01008.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC01007.jpg" alt="bar">
+<img src="DSC01006.jpg" alt="bar">
+<img src="DSC01009.jpg" alt="bar">
+<img src="DSC01008.jpg" alt="bar">
 
 The worthy pictures from my first two rolls (one color and one bw) are <nuxt-link to="/posts/olympus-am100-photos">here.</nuxt-link>

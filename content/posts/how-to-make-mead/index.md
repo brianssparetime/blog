@@ -20,7 +20,7 @@ tags:
 
 
 
-<v-img src="IMG_5785.jpg" alt="foo" :dirp="dir"></v-img>
+<img src="IMG_5785.jpg" alt="foo">
 
 ## What to do:
 

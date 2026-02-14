@@ -50,13 +50,13 @@ I'm also toying with making a copy stand from speed-rail/kee-clamp/steeltek fitt
 
 
 
-<v-img src="IMG_7190.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMG_7192.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="IMG_7190.jpg" alt="bar">
+<img src="IMG_7192.jpg" alt="bar">
 
-<v-img src="DSC00779.ARW.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00756.ARW.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00752.ARW.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00754.ARW.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC00779.ARW.jpg" alt="bar">
+<img src="DSC00756.ARW.jpg" alt="bar">
+<img src="DSC00752.ARW.jpg" alt="bar">
+<img src="DSC00754.ARW.jpg" alt="bar">
 
 
 

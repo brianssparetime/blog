@@ -13,12 +13,12 @@ Such a nice day, thought I'd catch the sunset from the Tripod in the Bay.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7oId6rTBMnU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<v-img src="DJI_0462.JPG" alt="bar" :dirp="dir"></v-img>
-<v-img src="DJI_0466.JPG" alt="bar" :dirp="dir"></v-img>
-<v-img src="DJI_0475.JPG" alt="bar" :dirp="dir"></v-img>
-<v-img src="DJI_0479.JPG" alt="bar" :dirp="dir"></v-img>
+<img src="DJI_0462.JPG" alt="bar">
+<img src="DJI_0466.JPG" alt="bar">
+<img src="DJI_0475.JPG" alt="bar">
+<img src="DJI_0479.JPG" alt="bar">
 <!-- Pentax Q below-->
-<v-img src="IMGP7051.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMGP7057.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMGP7063.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMGP7061.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="IMGP7051.jpg" alt="bar">
+<img src="IMGP7057.jpg" alt="bar">
+<img src="IMGP7063.jpg" alt="bar">
+<img src="IMGP7061.jpg" alt="bar">

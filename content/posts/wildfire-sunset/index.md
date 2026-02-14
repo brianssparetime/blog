@@ -12,11 +12,11 @@ tags:
 
 Sunset:
 
-<v-img src="IMG_6366.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="IMG_6366.jpg" alt="bar">
 
 Here's the city skyline after sunset (Sony A7ii + Penxtax M 100mm f/4 Macro)
 
-<v-img src="IMG_6367.jpg" alt="foo" :dirp="dir"></v-img>
+<img src="IMG_6367.jpg" alt="foo">
 
 Youtube video:
 

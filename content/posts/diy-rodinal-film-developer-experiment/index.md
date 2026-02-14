@@ -26,4 +26,4 @@ Start with 360 ml water in a mixing vessel.  Add the 90g sodium sulfite and stir
 
 Bottle, and wait 72 hours before using.
 
-<v-img src="IMG_7315.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="IMG_7315.jpg" alt="bar">

@@ -48,15 +48,15 @@ All said, I'm looking forward to keeping this camera in the regular rotation!
 
 
 
-<v-img src="DSC00416.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00418.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00420.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC00416.jpg" alt="bar">
+<img src="DSC00418.jpg" alt="bar">
+<img src="DSC00420.jpg" alt="bar">
 
 
 ## Auto mode vs my guesswork
 
 My work to the left, auto to the right (I'm about 80% confident that's right).  I think I prefer a halfstop or stop darker than auto usually produces.
-<v-img src="000094020030 combined.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="000094020030 combined.jpg" alt="bar">
 
 
 I've posted some photos I've taken with this camera <nuxt-link to="moms-canon-photos">here</nuxt-link>.

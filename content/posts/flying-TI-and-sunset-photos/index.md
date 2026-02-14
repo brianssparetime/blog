@@ -17,11 +17,11 @@ I spent a nice evening on Treasure Island, flying the drone and shooting a roll 
 <BR><BR>
 Here are the 8 shots from the roll.  All stand developed in my <nuxt-link to="/posts/diy-rodinal-film-developer-experiment">homemade rodinal</nuxt-link>.  While the rodinal does handle the uncertainty of long night exposures well, I'm not sure the graininess was a good fit for what I wanted from these cityscapes.  Probably better for a gritty street nighttime look than this.  Nor am I thrilled with the vertical component of the compositions either.  
 
-<v-img src="pos_DSC01290.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01291.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01292.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01293.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01294.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01295.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01296.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="pos_DSC01297.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="pos_DSC01290.jpg" alt="bar">
+<img src="pos_DSC01291.jpg" alt="bar">
+<img src="pos_DSC01292.jpg" alt="bar">
+<img src="pos_DSC01293.jpg" alt="bar">
+<img src="pos_DSC01294.jpg" alt="bar">
+<img src="pos_DSC01295.jpg" alt="bar">
+<img src="pos_DSC01296.jpg" alt="bar">
+<img src="pos_DSC01297.jpg" alt="bar">

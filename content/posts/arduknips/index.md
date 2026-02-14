@@ -17,8 +17,8 @@ Powered by a standard usb powerbank, works just like a cable release for my Mosk
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="7CR61P2"><a href="https://imgur.com/7CR61P2">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
-<v-img src="380a0hh.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="I4wCixB.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="LBJnMaW.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="380a0hh.jpg" alt="bar">
+<img src="I4wCixB.jpg" alt="bar">
+<img src="LBJnMaW.jpg" alt="bar">
 
 Code on [github](https://github.com/brianssparetime/arduknips).

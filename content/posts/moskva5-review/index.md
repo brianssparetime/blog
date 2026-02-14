@@ -15,7 +15,7 @@ I wanted to try medium format (120) photography.  I wanted a camera that was bot
 
 The Moskva 5 is exactly that.  For a massive 6x9 negative size, this camera is far lighter, much smaller, and waaaay cheaper than anything else in that class.  Mine cost less than $100 (including the original box, manual and case, as well as an adapter plate that allows 6x6 format).
 
-<v-img src="DSC00521 angled.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC00521 angled.jpg" alt="bar">
 
 The camera was built between 1956 and 1960, as an interative improvement of a pre-war Zeiss Ikonta camera.  Everything is manual, with shutter speeds up to 250th of a second and f-stops from 3.5 to f/32.  The rangefinder double-image appears when the flip-out front lens is deployed; focusing is done via the knob on the front assembly near the rangefinder lens, or on the front of the lens directly.  The lens is the rough equivalent of a 50mm focal length on 35mm film.  Film advance is manual, via a winding wheel with film alignment done through red windows on the back.
 
@@ -34,14 +34,14 @@ I like the images I've made with this camera and I generally enjoy a slower proc
 
 To shoot in 6x6 mode, insert the adapter plate, change the viewfinder selector on the dial above the viewfinder, and finally move the lever on the back plate to adjust which window is active for seeing the numbers on the back of the film to advance it.
 
-<v-img src="DSC00518 front closed.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00519 front open.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00516 top.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00517 back.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00513 vertical.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC00518 front closed.jpg" alt="bar">
+<img src="DSC00519 front open.jpg" alt="bar">
+<img src="DSC00516 top.jpg" alt="bar">
+<img src="DSC00517 back.jpg" alt="bar">
+<img src="DSC00513 vertical.jpg" alt="bar">
 
 My copy came with the original box and manual.
-<v-img src="DSC00514 box.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC00514 box.jpg" alt="bar">
 
 The worthy photos from my first few rolls are posted <nuxt-link to="moskva5-photos">here</nuxt-link>.
 

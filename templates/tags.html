@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Tags - BST{% endblock %}
+{% block meta_description %}<meta name="description" content="Browse posts by tag on {{ site.title }}">{% endblock %}
+{% block og_tags %}
+<meta property="og:title" content="Tags - {{ site.title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}/tags/">
+{% endblock %}
+{% block content %}
+<div class="posts">
+  <h2>Tags:</h2>
+  <p class="tags">
+    {% for tag in tags %}
+    <span class="tag"><a href="/tags/{{ tag }}/">{{ tag }}</a></span>
+    {% endfor %}
+  </p>
+</div>
+{% endblock %}

@@ -18,7 +18,7 @@ tags:
 
 This is a Gralabs darkroom timer, probably from the 1950s or 60s. 
 
-<v-img src="gralabs s-l1600.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="gralabs s-l1600.jpg" alt="bar">
 
 The timer is used to turn on and off the enlarger at precise times.  You need to do this to get the right exposure (and with test strips to figure out what that correct exposure time should be).
 
@@ -26,7 +26,7 @@ Of course I looked at this elegant and time-tested design (which is still being 
 
 So I build my own timer.
 
-<v-img src="IMG_6833.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="IMG_6833.jpg" alt="bar">
 
 It has switches for manually controlling the enlarger and safelight.  The LED display and rotary knob/button change the timer interval.
 

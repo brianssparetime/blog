@@ -10,6 +10,6 @@ tags:
 
 Union and Larkin Streets, San Francisco, at noon on September 9, 2020
 
-<v-img src="DSC00223.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00240.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00230.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC00223.jpg" alt="bar">
+<img src="DSC00240.jpg" alt="bar">
+<img src="DSC00230.jpg" alt="bar">
