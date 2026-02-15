@@ -10,7 +10,7 @@ tags:
 
 ---
 
-This camera originally belonged to my aunt's first husband, then to my aunt herself, who eventually gave it to my mother, who eventually replaced it with the <nuxt-link to="moms-canon-camera">Canon EOS Rebel S</nuxt-link>.  Most of the early childhood photos of me were taken with this camera.  I think my mother gave it to me sometime in the late 90s or early 2000s, but I don't recall exactly.
+This camera originally belonged to my aunt's first husband, then to my aunt herself, who eventually gave it to my mother, who eventually replaced it with the [Canon EOS Rebel S](/posts/moms-canon-camera).  Most of the early childhood photos of me were taken with this camera.  I think my mother gave it to me sometime in the late 90s or early 2000s, but I don't recall exactly.
 
 <img src="DSC00544 front.jpg" alt="bar">
 
@@ -29,4 +29,4 @@ Excited to have it back now that I know a little bit more about what I'm doing.
 <img src="DSC00547 back.jpg" alt="bar">
 
 
-The worthy photos from my first few rolls are posted <nuxt-link to="first-time-using-film-in-2-decades">here</nuxt-link> and <nuxt-link to="some-color-film-photography">here</nuxt-link>.
+The worthy photos from my first few rolls are posted [here](/posts/first-time-using-film-in-2-decades).

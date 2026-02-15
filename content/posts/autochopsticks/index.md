@@ -35,4 +35,4 @@ By combining a servo motor, some springs, and a laser range sensor, the chopstic
 The original prototype:
 <img src="DSC00708.jpg" alt="bar">
 
-Code for this project on github is <a href="https://github.com/brianssparetime/autochopsticks/tree/main"> here</nuxt-link>
+Code for this project on github is [here](https://github.com/brianssparetime/autochopsticks/tree/main).

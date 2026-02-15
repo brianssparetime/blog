@@ -8,7 +8,7 @@ tags:
 ---
 
 
-This Canon EOS Rebel S replaced the Singlex SLR as our family's (aka my mother's) primary camera from the mid 90s through the end of the film era.  Photos taken with this camera are in a separate post <nuxt-link to="moms-canon-photos">here</nuxt-link>.
+This Canon EOS Rebel S replaced the Singlex SLR as our family's (aka my mother's) primary camera from the mid 90s through the end of the film era.
 
 When I was asking if it was still around, I actually recalled it being digital at first - it's quite sophisticated for its time.  And a huge departure from the cameras I've been using (the Singlex SLR from the 60s or 70s and the Canon L1 from the 1950s).  
 
@@ -58,7 +58,5 @@ All said, I'm looking forward to keeping this camera in the regular rotation!
 My work to the left, auto to the right (I'm about 80% confident that's right).  I think I prefer a halfstop or stop darker than auto usually produces.
 <img src="000094020030 combined.jpg" alt="bar">
 
-
-I've posted some photos I've taken with this camera <nuxt-link to="moms-canon-photos">here</nuxt-link>.
 
 

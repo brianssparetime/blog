@@ -43,6 +43,6 @@ To shoot in 6x6 mode, insert the adapter plate, change the viewfinder selector o
 My copy came with the original box and manual.
 <img src="DSC00514 box.jpg" alt="bar">
 
-The worthy photos from my first few rolls are posted <nuxt-link to="moskva5-photos">here</nuxt-link>.
+The worthy photos from my first few rolls are posted [here](https://www.flickr.com/photos/brianssparetime/albums/72177720295611696).
 
 

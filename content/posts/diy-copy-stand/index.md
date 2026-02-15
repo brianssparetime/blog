@@ -11,7 +11,7 @@ tags:
 ---
 
 
-My <nuxt-link to="/posts/first-time-film-scanning">initial home scanning set up</nuxt-link> was janky and finnicky and consumed too much space.
+My [initial home scanning set up](/posts/first-time-film-scanning) was janky and finnicky and consumed too much space.
 
 This is less janky, much smaller, easier not to bump into, but still quite finnicky to adjust.  Made with 3/4" SteelTek pipe fittings from Lowe's and some 3/4" playwood I had around.  Total cost under $50.
 

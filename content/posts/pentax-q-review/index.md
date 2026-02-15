@@ -9,7 +9,7 @@ tags:
 ---
 
 
-<nuxt-link to="pentax-q-review">Here</nuxt-link> are some photos I took - both with Q lenses, and others with vintage 8mm film lenses (the difference is clear).
+[Here](/posts/pentax-q-photos) are some photos I took - both with Q lenses, and others with vintage 8mm film lenses (the difference is clear).
 
 
 <img src="DSC00359.jpg" alt="bar">

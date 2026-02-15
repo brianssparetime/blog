@@ -12,7 +12,7 @@ tags:
 
 I wanted to try stand or semi-stand development for its promise of handling a wide range of ISO ratings on the same roll.  I've read that Rodinal is the stuff that works best for this.
 
-But as of early Auguest 2021, Rodinal seems sold out in the US.  So I followed the recipe from <a href="https://varezers.org/rodiynal/">Kaspar at Varezers.org</a>, and produced the black and white images from <nuxt-link to="/posts/meetup-chinatown-evening">this post</nuxt-link>.
+But as of early Auguest 2021, Rodinal seems sold out in the US.  So I followed the recipe from <a href="https://varezers.org/rodiynal/">Kaspar at Varezers.org</a>, and produced the black and white images from a chinatown evening meetup.
 
 
 

@@ -10,7 +10,7 @@ tags:
 
 
 
-Powered by a standard usb powerbank, works just like a cable release for my Moskva5.  Built in under 2 hours for a night photowalk (though I heavily recycled parts from an <nuxt-link to="/posts/autochopsticks">previous project</nuxt-link>).
+Powered by a standard usb powerbank, works just like a cable release for my Moskva5.  Built in under 2 hours for a night photowalk (though I heavily recycled parts from a [previous project](/posts/autochopsticks)).
 
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="qW72i9v"><a href="https://imgur.com/qW72i9v">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
