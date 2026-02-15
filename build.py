@@ -410,7 +410,7 @@ def build():
     print("Collecting posts...")
     posts = collect_pages("posts", "post")
     for p in posts:
-        print(f"  {p['title']}")
+        print(f"  {p['title']} ({len(p['images'])} images)")
         image_info = process_images(p)
         p["html"] = rewrite_post_images(p["html"], image_info)
         hero = p.get("image", "")
@@ -428,7 +428,7 @@ def build():
     print("Collecting interests...")
     interests = collect_pages("interests", "interest")
     for p in interests:
-        print(f"  {p['title']}")
+        print(f"  {p['title']} ({len(p['images'])} images)")
         image_info = process_images(p)
         p["html"] = rewrite_post_images(p["html"], image_info)
         hero = p.get("image", "")
