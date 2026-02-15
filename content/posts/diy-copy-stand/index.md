@@ -17,9 +17,9 @@ This is less janky, much smaller, easier not to bump into, but still quite finni
 
 I likely need to replace the SteelTek flange attached to the base with a screw-mount because there is way too much play in it.  Or maybe I'll just JB weld it in place....
 
-<v-img src="IMG_7228.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMG_7230.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMG_7232.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMG_7233.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMG_7234.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMG_7283.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="IMG_7228.jpg" alt="bar">
+<img src="IMG_7230.jpg" alt="bar">
+<img src="IMG_7232.jpg" alt="bar">
+<img src="IMG_7233.jpg" alt="bar">
+<img src="IMG_7234.jpg" alt="bar">
+<img src="IMG_7283.jpg" alt="bar">

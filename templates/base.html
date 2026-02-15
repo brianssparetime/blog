@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}BST{% endblock %}</title>
+  {% block meta_description %}{% endblock %}
+  {% block og_tags %}{% endblock %}
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="Brian's Spare Time" href="/feed.xml">
+  <link rel="stylesheet" href="/static/css/bst.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+    }
+    .site-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      padding: 20px 20px 10px;
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+    .logo {
+      margin-left: 1rem;
+    }
+    .logo img {
+      max-width: 400px;
+      width: 100%;
+    }
+    .content {
+      padding: 10px 0 40px;
+    }
+    .content img {
+      max-width: 100%;
+      height: auto;
+    }
+    footer {
+      border-top: 1px solid #ddd;
+      padding: 20px 0;
+      font-family: "Montserrat", serif;
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+    }
+
+    /* Burger button */
+    .burger-button {
+      position: relative;
+      height: 30px;
+      width: 32px;
+      display: block;
+      z-index: 999;
+      border: 0;
+      border-radius: 0;
+      background-color: transparent;
+      pointer-events: all;
+      cursor: pointer;
+      padding: 0;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .burger-button:focus {
+      outline: 0;
+    }
+    .burger-bar {
+      background-color: #130f40;
+      position: absolute;
+      top: 50%;
+      right: 6px;
+      left: 6px;
+      height: 2px;
+      width: auto;
+      margin-top: -1px;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+        opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+        background-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .burger-bar--1 {
+      transform: translateY(-6px);
+    }
+    .burger-bar--2 {
+      transform-origin: 100% 50%;
+      transform: scaleX(0.8);
+    }
+    .burger-button:hover .burger-bar--2 {
+      transform: scaleX(1);
+    }
+    .burger-bar--3 {
+      transform: translateY(6px);
+    }
+    .burger.active .burger-button {
+      transform: rotate(-180deg);
+    }
+    .burger.active .burger-bar {
+      background-color: #fff;
+    }
+    .burger.active .burger-bar--1 {
+      transform: rotate(45deg);
+    }
+    .burger.active .burger-bar--2 {
+      opacity: 0;
+    }
+    .burger.active .burger-bar--3 {
+      transform: rotate(-45deg);
+    }
+
+    /* Sidebar */
+    .sidebar-backdrop {
+      background-color: rgba(19, 15, 64, 0.4);
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+      z-index: 998;
+      display: none;
+    }
+    .sidebar-backdrop.open {
+      display: block;
+    }
+    .sidebar-panel {
+      background-color: #ffffff;
+      overflow-y: auto;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      z-index: 999;
+      padding: 3rem 20px 2rem 20px;
+      width: 300px;
+      transform: translateX(-100%);
+      transition: transform 0.2s ease;
+    }
+    .sidebar-panel.open {
+      transform: translateX(0);
+    }
+    ul.sidebar-panel-nav {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.sidebar-panel-nav > li {
+      text-decoration: none;
+      font-size: 1rem;
+      display: block;
+      padding-bottom: 0.5rem;
+    }
+    ul.sidebar-panel-nav a {
+      color: inherit;
+    }
+    .sidebar-panel-nav .padded {
+      padding-top: 2rem;
+    }
+
+    /* Cookie consent banner */
+    .cookie-bar {
+      position: fixed;
+      z-index: 99;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #130f40;
+      color: #fff;
+      font-family: "Montserrat", serif;
+      font-size: 14px;
+      padding: 14px 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .cookie-bar button {
+      font-family: "Montserrat", serif;
+      font-size: 14px;
+      border: none;
+      border-radius: 3px;
+      padding: 6px 18px;
+      margin: 6px 4px 0;
+      cursor: pointer;
+      color: #fff;
+    }
+    .cookie-bar .cookie-yes { background: #27ae60; }
+    .cookie-bar .cookie-no { background: #c0392b; }
+  </style>
+</head>
+<body>
+  <!-- Sidebar backdrop -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <!-- Sidebar panel -->
+  <div class="sidebar-panel" id="sidebar-panel">
+    <ul class="sidebar-panel-nav" id="sidebar-nav">
+      <li><a href="/"><b>Home</b></a></li>
+      <li>&#8226; <a href="/">All posts</a></li>
+      <li>&#8226; <a href="/search/">Search</a></li>
+      <li>&#8226; <a href="/tags/">Search by tag</a></li>
+      <li class="padded"><b>Platforms:</b></li>
+      <li>&#8226; <a href="https://www.flickr.com/people/brianssparetime/">BriansSpareTime on Flickr</a></li>
+      <li>&#8226; <a href="https://www.youtube.com/channel/UCnKrfUKulxwGP51NpVvmolA">BrianGoesFlyin on YT</a></li>
+      <li>&#8226; <a href="https://www.youtube.com/channel/UC89gOhyXFIsy8-HU_sfiXkA">BriansSpareTime on YT</a></li>
+      <li class="padded"><b>Main Interests:</b></li>
+      <li>&#8226; <a href="/interests/brewing">Brewing</a></li>
+      <li>&#8226; <a href="/interests/vintage-computing">Vintage Computing</a></li>
+      <li>&#8226; <a href="/interests/film-photography">Film Photography</a></li>
+    </ul>
+  </div>
+
+  <header>
+    <nav class="main-nav">
+      <div class="burger" id="burger">
+        <button type="button" class="burger-button" title="Menu">
+          <span class="burger-bar burger-bar--1"></span>
+          <span class="burger-bar burger-bar--2"></span>
+          <span class="burger-bar burger-bar--3"></span>
+        </button>
+      </div>
+      <div class="logo">
+        <a href="/"><img src="/static/bst%20logo2.png" alt="BST"></a>
+      </div>
+    </nav>
+  </header>
+  <div class="site-container">
+    <div class="content">
+      {% block content %}{% endblock %}
+    </div>
+    <footer>
+      Copyright 2026 BriansSpareTime
+    </footer>
+  </div>
+  <!-- Cookie consent banner -->
+  <div class="cookie-bar" id="cookie-bar" style="display:none">
+    I'm using cookies because I'm curious who comes here.<br>
+    No commercial use of your data. This is my spare time after all...
+    <br>
+    <button class="cookie-yes" id="cookie-yes">Yeah, sure</button>
+    <button class="cookie-no" id="cookie-no">Nope</button>
+  </div>
+
+  <script>
+    (function() {
+      var burger = document.getElementById('burger');
+      var panel = document.getElementById('sidebar-panel');
+      var backdrop = document.getElementById('sidebar-backdrop');
+      var nav = document.getElementById('sidebar-nav');
+      var isOpen = false;
+
+      function toggle() {
+        isOpen = !isOpen;
+        burger.classList.toggle('active', isOpen);
+        panel.classList.toggle('open', isOpen);
+        backdrop.classList.toggle('open', isOpen);
+      }
+
+      burger.addEventListener('click', toggle);
+      backdrop.addEventListener('click', toggle);
+      nav.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') toggle();
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      var GA_ID = 'G-JDHYEEB466';
+      var consent = localStorage.getItem('GDPR:accepted');
+
+      if (consent === 'true') {
+        loadGtag();
+      } else if (consent !== 'false') {
+        document.getElementById('cookie-bar').style.display = '';
+      }
+
+      document.getElementById('cookie-yes').addEventListener('click', function() {
+        localStorage.setItem('GDPR:accepted', 'true');
+        document.getElementById('cookie-bar').style.display = 'none';
+        loadGtag();
+      });
+
+      document.getElementById('cookie-no').addEventListener('click', function() {
+        localStorage.setItem('GDPR:accepted', 'false');
+        document.getElementById('cookie-bar').style.display = 'none';
+      });
+
+      function loadGtag() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -18,7 +18,13 @@ i {
   font-family: "Montserrat", serif;
 }
 
-.post i {
+.post {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.post i,
+.post-card i {
   font-size: 90%;
 }
 
@@ -27,9 +33,15 @@ h3.heading {
   color: black;
 }
 
-.tag a {
-  background: steelblue !important;
+.tag a,
+.tag span {
+  background: steelblue;
+  color: white;
   padding: 1px 7px 1px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 3px;
 }
 
 .tags {
@@ -48,6 +60,10 @@ h3.heading {
 .posts a {
   text-decoration: underline;
   text-decoration-color: black;
+}
+
+.posts .tag a {
+  text-decoration: none;
 }
 
 ul li a {
@@ -93,4 +109,45 @@ p a {
 .posts h1 {
   padding-bottom: 20px;
   font-size: 20px;
+}
+
+.opener {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media screen and (min-width: 900px) {
+  .post-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.post-card {
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px 0 rgba(32, 33, 36, 0.1);
+  padding: 15px 20px;
+}
+
+.post-card-img {
+  margin-bottom: 10px;
+}
+
+.post-card-img img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.post-card-body h3.heading {
+  margin-bottom: 5px;
+}
+
+.post-card .tags {
+  margin-top: 5px;
 }

@@ -13,9 +13,9 @@ First time developing film in more than 20 years... and it mostly came out ok.
 
 The remainder of this post is more notes to my future self.
 
-<v-img src="IMG_7107.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMG_7116.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="IMG_7117.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="IMG_7107.jpg" alt="bar">
+<img src="IMG_7116.jpg" alt="bar">
+<img src="IMG_7117.jpg" alt="bar">
 
 
 Prep:

@@ -24,15 +24,15 @@ By combining a servo motor, some springs, and a laser range sensor, the chopstic
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/mrW2ATl"  ><a href="//imgur.com/a/mrW2ATl">Autochopsticks</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 
-<v-img src="DSC00703.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00704.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00705.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00706.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00707.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00709.jpg" alt="bar" :dirp="dir"></v-img>
-<v-img src="DSC00710.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC00703.jpg" alt="bar">
+<img src="DSC00704.jpg" alt="bar">
+<img src="DSC00705.jpg" alt="bar">
+<img src="DSC00706.jpg" alt="bar">
+<img src="DSC00707.jpg" alt="bar">
+<img src="DSC00709.jpg" alt="bar">
+<img src="DSC00710.jpg" alt="bar">
 
 The original prototype:
-<v-img src="DSC00708.jpg" alt="bar" :dirp="dir"></v-img>
+<img src="DSC00708.jpg" alt="bar">
 
 Code for this project on github is <a href="https://github.com/brianssparetime/autochopsticks/tree/main"> here</nuxt-link>

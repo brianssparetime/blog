@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Search - BST{% endblock %}
+{% block meta_description %}<meta name="description" content="Search posts on {{ site.title }}">{% endblock %}
+{% block og_tags %}
+<meta property="og:title" content="Search - {{ site.title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}/search/">
+{% endblock %}
+{% block content %}
+<div class="posts">
+  <h2>Search</h2>
+  <input type="text" id="search-input" placeholder="Search posts by title, description, or tag..." autofocus>
+  <div id="search-results"></div>
+</div>
+<style>
+  #search-input {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: "Montserrat", serif;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 10px 0 rgba(32, 33, 36, 0.1);
+  }
+  #search-input:focus {
+    outline: none;
+    border-color: steelblue;
+  }
+  .search-message {
+    font-family: "Montserrat", serif;
+    color: #888;
+    padding: 20px 0;
+  }
+</style>
+<script src="/static/js/search.js"></script>
+{% endblock %}

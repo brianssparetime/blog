@@ -1,1 +1,5 @@
-Pillow==8.3.2
+markdown
+mdx_linkify
+Jinja2
+Pillow
+PyYAML

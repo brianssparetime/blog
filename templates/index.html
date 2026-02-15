@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}BST{% endblock %}
+{% block meta_description %}<meta name="description" content="{{ site.description }}">{% endblock %}
+{% block og_tags %}
+<meta property="og:title" content="{{ site.title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}/">
+<meta property="og:description" content="{{ site.description }}">
+{% endblock %}
+{% block content %}
+<div class="posts">
+  <div class="opener">
+    I'm Brian and this is some stuff I've done in my spare time...
+  </div>
+
+  <div class="post-grid">
+    {% for post in posts %}
+    <div class="post-card">
+      {% if post.image %}
+      <div class="post-card-img">
+        <a href="/{{ post.output_dir }}/"><img src="/{{ post.output_dir }}/{{ post.thumbnail }}" alt="{{ post.title }}"{% if post.thumb_width %} width="{{ post.thumb_width }}" height="{{ post.thumb_height }}"{% endif %} loading="lazy"></a>
+      </div>
+      {% endif %}
+      <div class="post-card-body">
+        <a href="/{{ post.output_dir }}/">
+          <h3 class="heading">{{ post.title }}</h3>
+        </a>
+        <p><i>{{ post.date | format_date }}</i></p>
+        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+        {% if post.tags %}
+        <p class="tags">
+          {% for tag in post.tags %}
+          <span class="tag"><a href="/tags/{{ tag }}/">{{ tag }}</a></span>
+          {% endfor %}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <p>
+    The code that runs this blog is on <a href="https://github.com/brianssparetime/blog">github</a>.
+  </p>
+</div>
+{% endblock %}

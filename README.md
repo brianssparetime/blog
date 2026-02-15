@@ -1,93 +1,77 @@
-# BriansSpareTime blog
+# Brian's Spare Time
 
-An experiment in learning NuxtJS and also in trying to document some of the stuff I do.
+A static blog built with Python. Generates optimized HTML from Markdown content with image processing, tag pages, search, RSS feed, and sitemap.
 
-See the deployed site here: http://www.brianssparetime.com
+## Setup
 
-Copyright reserved on all photos, videos, prose, and other non-code content included in this repository; no reproduction of such content without written consent in advance.
+Requires Python 3.12+ and [uv](https://github.com/astral-sh/uv).
 
-
-
-
- ## Features currently implemented:
- - support for automatically generating thumbnails for images, as part of deploy, and serving those instead of full size where it makes sense.
- - added og:image support for proper thumbnails in shares
- - interest pages also built using md files in separate content directory
- - interest pages show only posts related to certain tags
- - multiple images in a markdown post
- - sidebar nav that toggles open and closed
- - embedding YT videos in markdown posts
- - use postcard at top of post
- - make images in posts show up with correct border size and aspect ratio
- - added ignore-loader to suppress webpack warnings 
- - limit dimensions of images in posts
- - eliminated need for img folder within each post
- - deploy site to netlify
- - make debug work in VSCode
-
-
-
-## The Plan / TODO:
- - [fix] investigate eliminating dirp thing again.
- - [FEATURE] pagination of all posts
-
- - [FIX, WIP] abstract post list into a vue component
-   - use this on main page, all posts
-   - consider adding filter / sort functionality there and using it with topic pages
-
- - [FEATURE] set up search
-    - https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#add-a-search-field
- - [EVENTUALLY] password protected photos section
- - [EVENTUALLY] eliminate more redundant data (date, title maybe) by parsing file structure
-   - https://content.nuxtjs.org/advanced#hooks
- - [EVENTUALLY] considering using git submodule to contain /content or use netlify LargeMedia
-   - https://docs.netlify.com/large-media/overview/
-   - https://mayashavin.com/articles/git-submodule-nuxt
- - [EVENTUALLY] move to configuration via build file 
-   - https://docs.netlify.com/configure-builds/file-based-configuration/
-   - https://serverless-stack.com/chapters/create-a-netlify-build-script.html
- - [EVENTUALLY] speed up deploy
-   - https://serverless-stack.com/chapters/create-a-netlify-build-script.html
-  - also consider making the side bar more like this guy's
-    - https://derkinzi.de/optimized-responsive-lazyloading-images-with-nuxt/
-
-
-
-
-
-
-### Build Setup
-
-Download and install yarn from 
-https://classic.yarnpkg.com/en/docs/install/
-or with 
-
-
-``` bash
-
-# install yarn
-curl -o- -L https://yarnpkg.com/install.sh | bash
-
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
+```sh
+uv venv .venv
+uv pip install -r requirements.txt
 ```
 
+## Development
 
-#### built with significant help from:
- - https://github.com/regenrek/nuxt-blog-frontmatter-markdown-loader 
- - https://regenrek.com/posts/create-a-frontmatter-markdown-powered-blog-with-nuxt.js/
- - https://github.com/regenrek/vue-sidebar-menu-example/tree/master/src
- - https://regenrek.com/posts/how-to-create-an-animated-vue-sidebar-menu-with-vue-observable/
- - https://github.com/nuxt/content/issues/106
- - https://nuxtjs.org/blog/creating-blog-with-nuxt-content/#displaying-your-content
- - https://medium.com/@wearethreebears/handle-api-driven-content-links-in-nuxt-js-fe2e31ecbeeb
+Start the dev server (auto-rebuilds on changes to content/, templates/, static/):
+
+```sh
+./test-serve.sh
+```
+
+Serves at http://localhost:8000.
+
+## Build
+
+Generate the static site into `dist/`:
+
+```sh
+.venv/bin/python build.py
+```
+
+## Project structure
+
+```
+content/
+  posts/          # Blog posts (each in its own directory with index.md + images)
+  interests/      # Interest pages (same structure)
+templates/        # Jinja2 HTML templates
+static/           # CSS, JS, favicon, logo
+dist/             # Build output (git-ignored)
+.image-cache/     # Optimized image cache (git-ignored)
+build.py          # Static site generator
+serve.py          # Dev server with file watching
+```
+
+## Adding a post
+
+Create a directory under `content/posts/` with an `index.md` file:
+
+```
+content/posts/my-new-post/
+  index.md
+  photo1.jpg
+  photo2.jpg
+```
+
+Frontmatter format:
+
+```yaml
+---
+title: "My New Post"
+date: 2026-01-15
+description: "A short description for meta tags and search."
+image: "photo1.jpg"
+tags:
+  - photography
+  - film
+---
+```
+
+Images referenced in the markdown are automatically optimized into multiple sizes with srcset.
+
+## Deployment
+
+Configured for Netlify via `netlify.toml`. Push to the repo and Netlify will build and deploy automatically.
+
+The site URL is configured in `build.py` as `SITE_URL` (used for sitemap, RSS feed, and OG tags).
