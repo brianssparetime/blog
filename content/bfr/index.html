@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BriansFlix Remote Pairing</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #1a1a1a; color: #fff;
+  display: flex; justify-content: center; align-items: center;
+  min-height: 100vh; padding: 20px;
+}
+.card {
+  text-align: center; max-width: 340px; width: 100%;
+}
+h1 { font-size: 20px; margin-bottom: 8px; font-weight: 600; }
+.sub { color: #999; font-size: 14px; margin-bottom: 32px; }
+.digits {
+  display: flex; justify-content: center; gap: 12px;
+  margin-bottom: 24px;
+}
+.digits input {
+  width: 60px; height: 72px; font-size: 32px; text-align: center;
+  border: 2px solid #444; border-radius: 10px;
+  background: #2a2a2a; color: #fff; outline: none;
+  -webkit-appearance: none;
+}
+.digits input:focus { border-color: #48f; }
+.msg { font-size: 14px; min-height: 20px; }
+.msg.err { color: #f55; }
+.msg.ok { color: #4a4; }
+.spinner {
+  display: inline-block; width: 18px; height: 18px;
+  border: 2px solid #555; border-top-color: #48f;
+  border-radius: 50%; animation: spin 0.6s linear infinite;
+  vertical-align: middle; margin-right: 6px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.retry { color: #48f; cursor: pointer; text-decoration: underline;
+         font-size: 14px; margin-top: 12px; display: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>BriansFlix</h1>
+  <p class="sub">Enter the 3-digit code shown on your TV</p>
+  <div class="digits">
+    <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="d0" autofocus>
+    <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="d1">
+    <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]" id="d2">
+  </div>
+  <div class="msg" id="msg"></div>
+  <div class="retry" id="retry" onclick="reset()">Try again</div>
+</div>
+<script>
+var inputs = [document.getElementById('d0'), document.getElementById('d1'), document.getElementById('d2')];
+var msgEl = document.getElementById('msg');
+var retryEl = document.getElementById('retry');
+
+inputs.forEach(function(inp, i) {
+  inp.addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+    if (this.value && i < 2) inputs[i + 1].focus();
+    var code = inputs.map(function(el) { return el.value; }).join('');
+    if (code.length === 3) submit(code);
+  });
+  inp.addEventListener('keydown', function(e) {
+    if (e.key === 'Backspace' && !this.value && i > 0) {
+      inputs[i - 1].focus();
+    }
+  });
+});
+
+function submit(code) {
+  inputs.forEach(function(el) { el.disabled = true; });
+  msgEl.className = 'msg';
+  msgEl.innerHTML = '<span class="spinner"></span>Connecting...';
+  retryEl.style.display = 'none';
+
+  fetch('/api/pair?code=' + encodeURIComponent(code))
+    .then(function(r) { return r.json().then(function(d) { return {ok: r.ok, data: d}; }); })
+    .then(function(res) {
+      if (res.ok && res.data.ip) {
+        msgEl.className = 'msg ok';
+        msgEl.textContent = 'Redirecting...';
+        window.location.href = 'http://' + res.data.ip + ':' + res.data.port +
+          '/pair/complete?token=' + encodeURIComponent(res.data.token);
+      } else {
+        showError(res.data.error || 'Code not found or expired');
+      }
+    })
+    .catch(function() { showError('Network error -- check your connection'); });
+}
+
+function showError(msg) {
+  msgEl.className = 'msg err';
+  msgEl.textContent = msg;
+  retryEl.style.display = 'block';
+  inputs.forEach(function(el) { el.disabled = false; });
+}
+
+function reset() {
+  inputs.forEach(function(el) { el.value = ''; el.disabled = false; });
+  msgEl.className = 'msg';
+  msgEl.textContent = '';
+  retryEl.style.display = 'none';
+  inputs[0].focus();
+}
+</script>
+</body>
+</html>

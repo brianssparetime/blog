@@ -461,6 +461,13 @@ def build():
     print("Generating robots.txt...")
     render_robots_txt()
 
+    # Copy standalone pages (no template processing)
+    bfr_src = os.path.join(CONTENT_DIR, "bfr", "index.html")
+    if os.path.isfile(bfr_src):
+        bfr_dest = os.path.join(DIST_DIR, "bfr")
+        os.makedirs(bfr_dest, exist_ok=True)
+        shutil.copy2(bfr_src, os.path.join(bfr_dest, "index.html"))
+
     total = len(posts) + len(interests)
     print(f"Built {total} pages + index -> dist/")
 
