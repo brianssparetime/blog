@@ -20,5 +20,8 @@ fi
 echo "Installing dependencies..."
 uv pip install -r requirements.txt
 
+echo "Installing Node dependencies for Netlify Functions..."
+npm install
+
 echo "Running build..."
 .venv/bin/python build.py
