@@ -83,10 +83,12 @@ function submit(code) {
     .then(function(r) { return r.json().then(function(d) { return {ok: r.ok, data: d}; }); })
     .then(function(res) {
       if (res.ok && res.data.ip) {
-        msgEl.className = 'msg ok';
-        msgEl.textContent = 'Redirecting...';
-        window.location.href = 'http://' + res.data.ip + ':' + res.data.port +
+        var url = 'http://' + res.data.ip + ':' + res.data.port +
           '/pair/complete?token=' + encodeURIComponent(res.data.token);
+        msgEl.className = 'msg ok';
+        /* Try auto-redirect; if the browser blocks HTTPS->HTTP, show a tap link */
+        msgEl.innerHTML = '<a href="' + url + '" style="color:#4a4;font-weight:600;font-size:16px;">Tap here to open BriansFlix Remote</a>';
+        window.location.href = url;
       } else {
         showError(res.data.error || 'Code not found or expired');
       }
