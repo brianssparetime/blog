@@ -33,7 +33,14 @@ export default async (req, context) => {
       );
     }
 
-    await store.setJSON(code, { ip, port, token, timestamp: Date.now() });
+    try {
+      await store.setJSON(code, { ip, port, token, timestamp: Date.now() });
+    } catch (e) {
+      return new Response(JSON.stringify({ error: "blob store error" }), {
+        status: 502,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
 
     return new Response(JSON.stringify({ ok: true }), {
       headers: { "Content-Type": "application/json" },
@@ -65,7 +72,7 @@ export default async (req, context) => {
     }
 
     if (Date.now() - entry.timestamp > TTL_MS) {
-      await store.delete(code);
+      try { await store.delete(code); } catch (e) {}
       return new Response(
         JSON.stringify({ error: "Invalid or expired code" }),
         { status: 404, headers: { "Content-Type": "application/json" } }
@@ -73,7 +80,7 @@ export default async (req, context) => {
     }
 
     // One-time use: delete after successful lookup
-    await store.delete(code);
+    try { await store.delete(code); } catch (e) {}
 
     return new Response(
       JSON.stringify({ ip: entry.ip, port: entry.port, token: entry.token }),
