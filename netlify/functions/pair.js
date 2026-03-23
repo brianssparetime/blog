@@ -1,7 +1,7 @@
 import { getStore } from "@netlify/blobs";
 
 const SECRET = process.env.BFR_PAIR_SECRET || "bfr_7Xm9kP2wQ4nR8vJ5";
-const TTL_MS = 5 * 60 * 1000;
+const TTL_MS = 60 * 60 * 1000; // 1 hour -- generous for local renewals
 
 export default async (req, context) => {
   const store = getStore("bfr-pairing");
