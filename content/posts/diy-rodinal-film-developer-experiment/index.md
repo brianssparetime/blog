@@ -17,10 +17,11 @@ But as of early Auguest 2021, Rodinal seems sold out in the US.  So I followed t
 
 
 To make 450ml of Rodinal (perfect for storage in a kombucha bottle):
- - 360 ml water + 90ml 
- - 90g sodium sulfite
- - 36g sodium hydroxide
- - 27g acetominaphen pills, crushed
+
+- 360 ml water + 90ml
+- 90g sodium sulfite
+- 36g sodium hydroxide
+- 27g acetominaphen pills, crushed
 
 Start with 360 ml water in a mixing vessel.  Add the 90g sodium sulfite and stir.  Then slowly add the sodium sulfite, stirring, until dissolved.  Add acetominaphen while still hot, stir in.
 

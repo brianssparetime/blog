@@ -25,8 +25,10 @@ Oddly, many of the controls feel like they were made for lefthanders.  The viewf
 Taking a photograph with this camera is an ergonomic mess, and requires changing hands several times to open the front, flip up the rangefinder, set aperture and shutter speed, focus, flip down the rangefinder, recompose, and press the shutter without losing the composition.  Usually at least 30 seconds of button pressing foreplay is required before the cover opens, the lens assembly erects, and its ready to shoot.  Winding to advance is hard enough to make your fingers bleed after two rolls on a cold day.
 
 Two safety notes emphasized by my seller and most reputable reviewers, worth repeating here:
- - Change shutter speeds before cocking the shutter.  Remember: Don't change speed once it's cocked and don't cock until you're ready to shoot.
- - Focus to infinity before collapsing the front
+
+- Change shutter speeds before cocking the shutter.  Remember: Don't change speed once it's cocked and don't cock until you're ready to shoot.
+- Focus to infinity before collapsing the front
+
 <BR><BR><BR>
   
 

@@ -13,12 +13,14 @@ tags:
 My filmholder just arrived, and I wanted to give it a shot.
 
 I'm using:
- - Sony A7ii camera with wired remote on 2 sec delay
- - Pentax-M 100mm F4 Macro lens
- - 28mm of no-name crap extension tube
- - The least janky of my janky tripods
- - The EFH
- - a Raleno Led Video Light(3200K-5600K Bi-Color Dimmable) I got on Amazon for about $40
+
+- Sony A7ii camera with wired remote on 2 sec delay
+- Pentax-M 100mm F4 Macro lens
+- 28mm of no-name crap extension tube
+- The least janky of my janky tripods
+- The EFH
+- a Raleno Led Video Light(3200K-5600K Bi-Color Dimmable) I got on Amazon for about $40
+
 <BR><BR>
 
 The Raleno light has two knobs on the back that prevent it from sitting level, so I stuck a rubber foot on to get it approximately right.  Put the Raleno in a cardboard box into which I had cut an approximately 6x9cm sized hole, around which I punched holes for the EFH's feet.  The box height got the EFH about the right distance from the light I think.  I leveled the setup with a cheap survival mirror and beer-coaster/microfiber shims, though I'm far from confident it's actually level.
