@@ -82,6 +82,17 @@ img {
   cursor: pointer;
 }
 
+.post img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.post img + img {
+  margin-top: 32px;
+}
+
 p a {
   color: steelblue;
 }
