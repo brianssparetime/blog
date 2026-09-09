@@ -16,9 +16,12 @@ I'm much better at making things though, so I decided to build a plant watering 
 
 My friend has a strong aesthetic sense, a preference for minimalism, stainless steel, and glass.  
 
-So rather than build my own enclosure, I found one that fit the bill - a simple and elegant cylinder, gleaming stainless steel, that even had a raisable lid built in.
+Wires and tubes everywhere would be unacceptable.  So rather than build my own enclosure, I found the perfect one - a simple and elegant cylinder, gleaming stainless steel, that even had a raisable lid built in.  Only the screen and knob (and 3 bolts in a geometric triangular shape) would mar the exterior surface.
 
-A trash can.
+Steve Jobs would be proud.
+
+Except that it was a trash can.
+
 
 ![Fully assembled](IMG_8472-fully-assembled.jpeg)
 
@@ -40,16 +43,17 @@ The code for the darkroom timer is a hideous mess I'm ashamed to have written - 
 
 There are deeply nested if statements, and code for particular states is scattered across teh file.  Keeping track of timers and not blocking was even more confusing.
 
-For the water bot, I wanted a cleaner more advanced architecture.  
+For the water bot, I cut the noodle into one object per hardware unit, one object per UI screen.
 
+Each sensor, output, or subsystem gets its own file and object.  That object provides an initial setup function, and an update function (that gets called in the loop).  Thus all code related to a particular function lives in the same place.
 
-Basically, each sensor, output, or subsystem gets its own file and object.  That object provides a initial setup function, and an update function (that gets called in the loop).
+UI states work the same way, each providing an init, update, and their own handling of any inputs.
 
-UI states are also defined, each providing an init, update, and their own handling of any inputs.
+Each update routine holds and checks its own timers independently without blocking (no delay() calls, only checking whether millis() is >= some interval plus a stored start time from millis() earlier, and some counters rolling minutes to hours).
 
-The running state's update code checks to see if it needs to transition to another state (e.g. the inactive state checks for a button press to change to the active state, which checks for a button press to select a menu item)
+The running state's update code handles state transitions by checking inputs and calling the new state (e.g. the inactive state checks for a button press to change to the active state, which checks for a button press to select a menu item...).
 
-This keeps all related code together, keeps the organization simple and resuable, and is infinitely a better way to make an Arduino project.
+This modular state machine approach keeps all related code together, keeps the organization simple and reusable, and is infinitely better for an Arduino project.
 
 
 A barebones example of this setup is [here](https://github.com/brianssparetime/UI_FSM_example).
