@@ -73,6 +73,10 @@ def collect_pages(subdir, page_type):
 
         meta, body = parse_frontmatter(raw)
 
+        if meta.get("draft"):
+            print(f"  skipping draft: {name}")
+            continue
+
         body = convert_v_img_tags(body)
         html = render_markdown(body)
 
