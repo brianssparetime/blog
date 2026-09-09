@@ -30,3 +30,8 @@ There's also a debug mode that gives you a strip showing bare helicoid extension
 I've deployed it at [brianssparetime.pythonanywhere.com](https://brianssparetime.pythonanywhere.com/) so you can easily generate and download strips without any install, but you are also welcome to download the script and run it locally.
 
 [Source code is here on github](https://github.com/brianssparetime/BronicaHelicoidScaleMaker)
+
+
+Additional resources:
+
+ - [Disassembling and repairing Bronica S2 helicoids](https://richardhaw.com/2017/09/24/repair-bronica-helicoids/)
