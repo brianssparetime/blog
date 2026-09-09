@@ -179,7 +179,8 @@ def process_images(page):
             versions = {}
 
             for target_w in OPTIMIZED_WIDTHS:
-                if orig_w <= target_w:
+                native = orig_w <= target_w
+                if native:
                     out_w, out_h = orig_w, orig_h
                     resized = im
                 else:
@@ -201,6 +202,11 @@ def process_images(page):
                     "width": out_w,
                     "height": out_h,
                 }
+
+                # Wider targets would be byte-identical copies carrying the same
+                # srcset width descriptor, so stop at the first native-size one.
+                if native:
+                    break
 
             with open(meta_path, "w") as f:
                 json.dump(versions, f)
