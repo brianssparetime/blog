@@ -23,6 +23,7 @@ SITE_TITLE = "Brian's Spare Time"
 SITE_DESCRIPTION = "I'm Brian and this is some stuff I've done in my spare time..."
 
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif"}
+MEDIA_EXTS = {".mp4", ".webm", ".mov"}
 OPTIMIZED_WIDTHS = [400, 1000, 2000]
 JPEG_QUALITY = 80
 
@@ -71,12 +72,18 @@ def collect_pages(subdir, page_type):
             raw = f.read()
 
         meta, body = parse_frontmatter(raw)
+
         body = convert_v_img_tags(body)
         html = render_markdown(body)
 
         images = [
             fn for fn in os.listdir(page_dir)
             if os.path.splitext(fn)[1].lower() in IMAGE_EXTS
+        ]
+
+        media = [
+            fn for fn in os.listdir(page_dir)
+            if os.path.splitext(fn)[1].lower() in MEDIA_EXTS
         ]
 
         output_dir = os.path.join(subdir, name)
@@ -89,12 +96,23 @@ def collect_pages(subdir, page_type):
             "tags": meta.get("tags", []),
             "html": html,
             "images": images,
+            "media": media,
             "source_dir": page_dir,
             "output_dir": output_dir,
             "page_type": page_type,
         })
 
     return pages
+
+
+def copy_page_media(page):
+    """Copy video/audio files referenced by a page straight through to dist."""
+    if not page["media"]:
+        return
+    dest_dir = os.path.join(DIST_DIR, page["output_dir"])
+    os.makedirs(dest_dir, exist_ok=True)
+    for fn in page["media"]:
+        shutil.copy2(os.path.join(page["source_dir"], fn), os.path.join(dest_dir, fn))
 
 
 def process_images(page):
@@ -412,6 +430,7 @@ def build():
     for p in posts:
         print(f"  {p['title']} ({len(p['images'])} images)")
         image_info = process_images(p)
+        copy_page_media(p)
         p["html"] = rewrite_post_images(p["html"], image_info)
         hero = p.get("image", "")
         if hero and hero in image_info:
@@ -430,6 +449,7 @@ def build():
     for p in interests:
         print(f"  {p['title']} ({len(p['images'])} images)")
         image_info = process_images(p)
+        copy_page_media(p)
         p["html"] = rewrite_post_images(p["html"], image_info)
         hero = p.get("image", "")
         if hero and hero in image_info:

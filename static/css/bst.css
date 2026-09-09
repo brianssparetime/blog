@@ -93,6 +93,14 @@ img {
   margin-top: 32px;
 }
 
+.post video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+  border-radius: 3px;
+}
+
 p a {
   color: steelblue;
 }
