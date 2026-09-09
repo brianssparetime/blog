@@ -15,7 +15,7 @@ The chassis consists of 3 slats and the cab a stack of 8, laminated before cutti
 
 The light stain is just food-grade mineral oil.
 
-The dark stain is a half-day reduction of gourmet coffee with a bottle of 10 year old Martini Rossi.
+The dark stain is a half-day reduction of gourmet coffee, a bottle of 10 year old Martini Rossi, and even older worcestshire sauce from my fridge.
 
 <img src="IMG_2353_Medium.jpeg" alt="bar">
 <img src="IMG_2354_Medium.jpeg" alt="bar">
