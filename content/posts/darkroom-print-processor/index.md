@@ -134,8 +134,8 @@ These aren't required, but exist on the PCB and are supported in code:
 
 Not supported in code, but available on the PCB for future use or extension:
 
-- header for i2c (and 10k resistor), available for additional sensors and/or future expansion
-- 2 extra 3-pin header for D3 and D4 (each with vcc and ground pins), available for additional sensors and/or future expansion
+- header for i2c (and 10k resistor)
+- 2 extra 3-pin header for D3 and D4 (each with vcc and ground pins)
 
 
 All soldering is through-hole, and can be done with a simple soldering iron in about 15-20 minutes.
