@@ -122,6 +122,8 @@ Connected to the Arduino via the custom pcb are:
 - one 470 uF filtering cap for the stepper driver
 - three 10k resistors for the rotary encoder
 
+I designed the original board in 2023.  In 2025, I made a revision that adds supports for microstepping, removes all but one LED, and suggests a quieter resistor for the piezo buzzer.
+
 
 <img src="IMG_2071_l.jpeg" alt="roller_machine3">
 
