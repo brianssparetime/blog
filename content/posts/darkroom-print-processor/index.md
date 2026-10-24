@@ -16,7 +16,7 @@ I was already unhappy with the trays - you need three, and the only way to fit t
 
 <img src="IMG_7326_l.jpeg" alt="stack">
 
-But if I wanted to change formats, I needed not only another set of 3 trays, but another tray-stacking-shelf.  Changing print formats quickly was impossible, and storing the extra stacks and trays is a pain.
+Worse, if I wanted to change formats, I needed not only another set of 3 trays, but another tray-stacking-shelf.  Changing print formats quickly was impossible, and storing the extra stacks and trays is a pain.
 
 While it is magical to see a print materialize in a tray for the first time, after that, this magic diminishes sharply:  the physical discomfort of having to smell fixer, followed by the intellectual discomfort that the fixer has damaged your brain sufficiently that you no longer smell it.
 
@@ -27,7 +27,7 @@ longer (since it's not sitting open to the air).  And importantly, you're not sm
 
 But if you're doing rotary processing in a drum, it's nice to have a rotary processor better than your hands.
 
-<img src="IMG_9899_l.jpeg" alt="roller_machine">
+<img src="IMG_3083 Large hero.jpeg" alt="roller_machine">
 
 This processor is open source, easy to assemble, and easy to use.  
 
@@ -36,6 +36,8 @@ submerged in a tub and used with an independent sous-vide heater for temperature
 color processing/developing.  
 
 Although I use it for darkroom prints, there's no reason it could not also be used for film development as well.
+
+<img src="IMG_3085 Large.jpeg" alt="roller_machine2">
 
 <img src="IMG_9900_l.jpeg" alt="roller_machine2">
 
@@ -148,6 +150,9 @@ The voltage regulator should work fine with power supplies in the 9-12v range, B
 
 Rather than mess around with connector sizes and polarity, just cut the end off your power cord and 
 solder it onto the PCB.  Check polarity with a multimeter.
+
+
+<img src="IMG_3087 Large.jpeg" alt="roller_machine2">
 
 ## Software
 
