@@ -69,6 +69,28 @@ tags:
 ```
 
 Images referenced in the markdown are automatically optimized into multiple sizes with srcset.
+Images may sit in subfolders of the post directory; reference them as `folder/file.jpg`.
+Spaces in filenames are fine.
+
+### Captions
+
+Add `captions: true` to a post's frontmatter and every standalone
+`![caption](file.jpg)` shows its alt text as a caption beneath the image.
+Posts without the flag render images as before.
+
+### Image galleries
+
+A fenced block with the language `gallery` becomes a gallery: one main image
+with previous/next buttons and a strip of thumbnails beneath it. Put one image
+per line; the alt text is shown as the caption. Text after `gallery` on the
+opening fence is an optional title shown above the main image.
+
+    ```gallery Test shots on the Bronica
+    ![First element roughed out](IMG_0001.jpeg)
+    ![Test shot on the Bronica](IMG_0002.jpeg)
+    ```
+
+Without JavaScript the images simply stack, so nothing is lost.
 
 ## Deployment
 

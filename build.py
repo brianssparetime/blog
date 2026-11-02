@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Static site generator for BST blog."""
 
+import html as html_mod
 import json
 import os
 import re
 import shutil
+from urllib.parse import quote, unquote
 
 import markdown
 import yaml
@@ -22,7 +24,9 @@ SITE_URL = "https://brianssparetime.com"
 SITE_TITLE = "Brian's Spare Time"
 SITE_DESCRIPTION = "I'm Brian and this is some stuff I've done in my spare time..."
 
-IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif"}
+IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif", ".svg"}
+# Copied through untouched; everything else gets resized JPEG versions.
+PASSTHROUGH_EXTS = {".gif", ".svg"}
 MEDIA_EXTS = {".mp4", ".webm", ".mov"}
 OPTIMIZED_WIDTHS = [400, 1000, 2000]
 JPEG_QUALITY = 80
@@ -48,6 +52,95 @@ def convert_v_img_tags(text):
     """Replace <v-img src="X" alt="Y" :dirp="dir"></v-img> with <img src="X" alt="Y">."""
     pattern = r'<v-img\s+src="([^"]*?)"\s+alt="([^"]*?)"[^>]*></v-img>'
     return re.sub(pattern, r'<img src="\1" alt="\2">', text)
+
+GALLERY_BLOCK_RE = re.compile(r"^```gallery(?:[ \t]+(.*?))?[ \t]*\n(.*?)^```[ \t]*$", re.M | re.S)
+GALLERY_IMAGE_RE = re.compile(r"!\[(.*?)\]\((.+?)\)")
+
+CHEVRON_LEFT = (
+    '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">'
+    '<path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" '
+    'stroke-linecap="round" stroke-linejoin="round"/></svg>'
+)
+CHEVRON_RIGHT = (
+    '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">'
+    '<path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" '
+    'stroke-linecap="round" stroke-linejoin="round"/></svg>'
+)
+
+
+def expand_galleries(text):
+    """Turn fenced ```gallery blocks into gallery HTML.
+
+    A gallery block holds one ![caption](file.jpg) per line. It becomes a
+    main image with prev/next buttons and a strip of thumbnails beneath.
+    Text after "gallery" on the opening fence is an optional title shown
+    above the main image. Without JavaScript the figures simply stack, so
+    nothing is lost.
+
+    Returns (text, found) where found says whether any gallery was expanded.
+    """
+    found = False
+
+    def build(match):
+        nonlocal found
+        title = (match.group(1) or "").strip()
+        images = GALLERY_IMAGE_RE.findall(match.group(2))
+        if not images:
+            return match.group(0)
+        found = True
+
+        slides = []
+        thumbs = []
+        for i, (caption, src) in enumerate(images):
+            alt = html_mod.escape(caption, quote=True)
+            src = html_mod.escape(src, quote=True)
+            cap = f"<figcaption>{html_mod.escape(caption)}</figcaption>" if caption else ""
+            slides.append(
+                f'<figure class="gallery-slide"><img src="{src}" alt="{alt}">{cap}</figure>'
+            )
+            thumbs.append(
+                f'<button type="button" class="gallery-thumb-btn" '
+                f'aria-label="Show image {i + 1} of {len(images)}">'
+                f'<img class="gallery-thumb" src="{src}" alt=""></button>'
+            )
+
+        out = ['<div class="gallery">']
+        if title:
+            out.append(f'<div class="gallery-title">{html_mod.escape(title)}</div>')
+        out += [
+            '<div class="gallery-main">',
+            f'<button type="button" class="gallery-prev" aria-label="Previous image" disabled>{CHEVRON_LEFT}</button>',
+            '<div class="gallery-slides">',
+            *slides,
+            "</div>",
+            f'<button type="button" class="gallery-next" aria-label="Next image">{CHEVRON_RIGHT}</button>',
+            "</div>",
+            '<div class="gallery-thumbs">',
+            *thumbs,
+            "</div>",
+            "</div>",
+        ]
+        # Blank lines around the block keep Markdown from wrapping it in <p>.
+        return "\n\n" + "\n".join(out) + "\n\n"
+
+    return GALLERY_BLOCK_RE.sub(build, text), found
+
+
+CAPTION_IMG_RE = re.compile(r"<p>\s*(<img\b[^>]*\balt=\"([^\"]+)\"[^>]*>)\s*</p>")
+
+
+def add_captions(html):
+    """Show each standalone image's alt text as a caption beneath it.
+
+    Applies to posts with `captions: true` in their frontmatter. A paragraph
+    holding nothing but an image with alt text becomes a figure with a
+    figcaption, so the same ![caption](file.jpg) line serves both purposes,
+    as it does inside a gallery block.
+    """
+    return CAPTION_IMG_RE.sub(
+        lambda m: f'<figure class="captioned">{m.group(1)}<figcaption>{m.group(2)}</figcaption></figure>',
+        html,
+    )
 
 
 def render_markdown(text):
@@ -77,18 +170,22 @@ def collect_pages(subdir, page_type):
             print(f"  skipping draft: {name}")
             continue
 
+        if not meta.get("date"):
+            raise ValueError(
+                f"{subdir}/{name}/index.md has no date. "
+                "Published pages are sorted by date, so it is required. "
+                "Set one, or mark the page draft: true."
+            )
+
         body = convert_v_img_tags(body)
+        body, has_gallery = expand_galleries(body)
         html = render_markdown(body)
+        if meta.get("captions"):
+            html = add_captions(html)
 
-        images = [
-            fn for fn in os.listdir(page_dir)
-            if os.path.splitext(fn)[1].lower() in IMAGE_EXTS
-        ]
-
-        media = [
-            fn for fn in os.listdir(page_dir)
-            if os.path.splitext(fn)[1].lower() in MEDIA_EXTS
-        ]
+        files = list_page_files(page_dir)
+        images = [fn for fn in files if os.path.splitext(fn)[1].lower() in IMAGE_EXTS]
+        media = [fn for fn in files if os.path.splitext(fn)[1].lower() in MEDIA_EXTS]
 
         output_dir = os.path.join(subdir, name)
 
@@ -99,6 +196,7 @@ def collect_pages(subdir, page_type):
             "image": meta.get("image", ""),
             "tags": meta.get("tags", []),
             "html": html,
+            "has_gallery": has_gallery,
             "images": images,
             "media": media,
             "source_dir": page_dir,
@@ -109,6 +207,23 @@ def collect_pages(subdir, page_type):
     return pages
 
 
+def list_page_files(page_dir):
+    """Return every file under page_dir as a path relative to it, using '/'.
+
+    Images may live in subfolders (one folder per gallery, say). Hidden files
+    and folders are skipped.
+    """
+    found = []
+    for dirpath, dirnames, filenames in os.walk(page_dir):
+        dirnames[:] = sorted(d for d in dirnames if not d.startswith("."))
+        for fn in sorted(filenames):
+            if fn.startswith("."):
+                continue
+            rel = os.path.relpath(os.path.join(dirpath, fn), page_dir)
+            found.append(rel.replace(os.sep, "/"))
+    return found
+
+
 def copy_page_media(page):
     """Copy video/audio files referenced by a page straight through to dist."""
     if not page["media"]:
@@ -116,7 +231,9 @@ def copy_page_media(page):
     dest_dir = os.path.join(DIST_DIR, page["output_dir"])
     os.makedirs(dest_dir, exist_ok=True)
     for fn in page["media"]:
-        shutil.copy2(os.path.join(page["source_dir"], fn), os.path.join(dest_dir, fn))
+        dest = os.path.join(dest_dir, fn)
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        shutil.copy2(os.path.join(page["source_dir"], fn), dest)
 
 
 def process_images(page):
@@ -136,7 +253,11 @@ def process_images(page):
         stem = os.path.splitext(img_name)[0]
         ext = os.path.splitext(img_name)[1].lower()
 
-        if ext == ".gif":
+        # img_name may include a subfolder; mirror it in dist and the cache.
+        os.makedirs(os.path.dirname(os.path.join(dest_dir, img_name)), exist_ok=True)
+        os.makedirs(os.path.dirname(os.path.join(cache_dir, img_name)), exist_ok=True)
+
+        if ext in PASSTHROUGH_EXTS:
             shutil.copy2(src_path, os.path.join(dest_dir, img_name))
             continue
 
@@ -224,24 +345,35 @@ def rewrite_post_images(html, image_info):
 
     def replace_img(match):
         tag = match.group(0)
-        src = match.group(1)
+        src = unquote(match.group(1))
 
         if src not in image_info:
             return tag
 
         versions = image_info[src]
-        default = versions.get(1000) or versions[max(versions)]
 
-        srcset_parts = []
-        for w in [1000, 2000]:
-            if w in versions:
-                v = versions[w]
-                srcset_parts.append(f"{v['filename']} {v['width']}w")
+        class_match = re.search(r'class="([^"]*)"', tag)
+        cls = class_match.group(1) if class_match else ""
+        is_thumb = "gallery-thumb" in cls.split()
+
+        if is_thumb:
+            # Thumbnails are small, so the 400w version alone is enough.
+            default = versions.get(400) or versions[min(versions)]
+            srcset_parts = []
+        else:
+            default = versions.get(1000) or versions[max(versions)]
+            srcset_parts = []
+            for w in [1000, 2000]:
+                if w in versions:
+                    v = versions[w]
+                    srcset_parts.append(f"{quote(v['filename'])} {v['width']}w")
 
         alt_match = re.search(r'alt="([^"]*)"', tag)
         alt = alt_match.group(1) if alt_match else ""
 
-        new_tag = f'<img src="{default["filename"]}" alt="{alt}"'
+        new_tag = f'<img src="{quote(default["filename"])}" alt="{alt}"'
+        if cls:
+            new_tag += f' class="{cls}"'
         if srcset_parts:
             new_tag += f' srcset="{", ".join(srcset_parts)}"'
             new_tag += ' sizes="(max-width: 1000px) 100vw, 1000px"'
@@ -250,6 +382,20 @@ def rewrite_post_images(html, image_info):
         return new_tag
 
     return re.sub(r'<img\s[^>]*?src="([^"]*?)"[^>]*/?>', replace_img, html)
+
+
+def attach_thumbnail(page, image_info):
+    """Point the page's card at the 400w copy of its hero image, if it has one."""
+    hero = page.get("image", "")
+    if hero and hero in image_info:
+        tn = image_info[hero][400]
+        page["thumbnail"] = quote(tn["filename"])
+        page["thumb_width"] = tn["width"]
+        page["thumb_height"] = tn["height"]
+    else:
+        page["thumbnail"] = quote(hero)
+        page["thumb_width"] = ""
+        page["thumb_height"] = ""
 
 
 def copy_static_assets():
@@ -442,16 +588,7 @@ def build():
         image_info = process_images(p)
         copy_page_media(p)
         p["html"] = rewrite_post_images(p["html"], image_info)
-        hero = p.get("image", "")
-        if hero and hero in image_info:
-            tn = image_info[hero][400]
-            p["thumbnail"] = tn["filename"]
-            p["thumb_width"] = tn["width"]
-            p["thumb_height"] = tn["height"]
-        else:
-            p["thumbnail"] = hero
-            p["thumb_width"] = ""
-            p["thumb_height"] = ""
+        attach_thumbnail(p, image_info)
         render_page(p, env)
 
     print("Collecting interests...")
@@ -461,16 +598,7 @@ def build():
         image_info = process_images(p)
         copy_page_media(p)
         p["html"] = rewrite_post_images(p["html"], image_info)
-        hero = p.get("image", "")
-        if hero and hero in image_info:
-            tn = image_info[hero][400]
-            p["thumbnail"] = tn["filename"]
-            p["thumb_width"] = tn["width"]
-            p["thumb_height"] = tn["height"]
-        else:
-            p["thumbnail"] = hero
-            p["thumb_width"] = ""
-            p["thumb_height"] = ""
+        attach_thumbnail(p, image_info)
         render_page(p, env)
 
     print("Rendering index...")

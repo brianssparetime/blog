@@ -13,4 +13,5 @@
   <h1>{{ page.title }}</h1>
   {{ page.html | safe }}
 </article>
+{% if page.has_gallery %}<script src="/static/js/gallery.js" defer></script>{% endif %}
 {% endblock %}

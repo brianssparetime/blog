@@ -72,6 +72,13 @@ ul li a {
   color: black;
 }
 
+/* The rule above is for the sidebar nav; links inside post lists should
+   look like links. */
+.post li a {
+  color: steelblue;
+  text-decoration: underline;
+}
+
 ul li b {
   font-family: "Vollkorn", serif;
   text-decoration: none;
@@ -169,4 +176,298 @@ p a {
 
 .post-card .tags {
   margin-top: 5px;
+}
+/* Image gallery: one main image, prev/next, thumbnail strip. Without the
+   script the figures simply stack; .is-ready switches on the slideshow. */
+.gallery {
+  margin: 24px 0 32px;
+}
+
+.gallery-title {
+  font-family: "Vollkorn", serif;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.gallery-main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gallery-slides {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.gallery-slide {
+  margin: 0;
+}
+
+.gallery-slide + .gallery-slide {
+  margin-top: 24px;
+}
+
+.post .gallery-slide img {
+  margin: 0;
+}
+
+/* Captions under gallery slides, single captioned images, and the lightbox */
+.gallery-slide figcaption,
+.captioned figcaption,
+.lightbox-caption {
+  font-family: "Montserrat", serif;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* Single captioned image (posts with captions: true) */
+.post .captioned {
+  margin: 24px 0 32px;
+}
+
+.post .captioned img {
+  margin: 0 auto;
+}
+
+.gallery-prev,
+.gallery-next {
+  flex: 0 0 auto;
+  display: none;
+  width: 40px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: #130f40;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+  background: rgba(19, 15, 64, 0.06);
+}
+
+.gallery-prev:disabled,
+.gallery-next:disabled {
+  color: #c4c4c4;
+  background: transparent;
+  cursor: default;
+}
+
+.gallery-thumbs {
+  display: none;
+  gap: 6px;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.gallery-thumb-btn {
+  flex: 0 0 auto;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  line-height: 0;
+}
+
+/* Centre a short row; when the row overflows, auto margins collapse to zero
+   and it scrolls from the left as usual. */
+.gallery-thumb-btn:first-child {
+  margin-left: auto;
+}
+
+.gallery-thumb-btn:last-child {
+  margin-right: auto;
+}
+
+.gallery-thumb-btn.is-active {
+  border-color: steelblue;
+}
+
+.post .gallery-thumb {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  margin: 0;
+  opacity: 0.45;
+  transition: opacity 0.15s ease;
+}
+
+.gallery-thumb-btn:hover .gallery-thumb,
+.gallery-thumb-btn.is-active .gallery-thumb {
+  opacity: 1;
+}
+
+/* Once the script has run, show one slide at a time and reveal the controls. */
+.gallery.is-ready .gallery-slides {
+  aspect-ratio: 3 / 2;
+  max-height: 75vh;
+}
+
+.gallery.is-ready .gallery-slide {
+  display: none;
+  margin-top: 0;
+  height: 100%;
+  flex-direction: column;
+}
+
+.gallery.is-ready .gallery-slide.is-active {
+  display: flex;
+}
+
+.gallery.is-ready .gallery-slide img {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+.gallery.is-ready .gallery-slide figcaption {
+  flex: 0 0 auto;
+}
+
+.gallery.is-ready .gallery-prev,
+.gallery.is-ready .gallery-next,
+.gallery.is-ready .gallery-thumbs {
+  display: flex;
+}
+
+/* The gallery takes focus when the lightbox closes; no ring for that. */
+.gallery:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-prev,
+  .gallery-next {
+    width: 28px;
+  }
+  .post .gallery-thumb {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Lightbox: a gallery image enlarged to fill the viewport. Built by the
+   gallery script; the arrows fade after a moment without pointer movement. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  background: #000;
+  cursor: zoom-out;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox img {
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  flex: 0 0 auto;
+  color: #ccc;
+  margin-top: 0;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.4s ease, background-color 0.15s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.lightbox-close:focus-visible,
+.lightbox-prev:focus-visible,
+.lightbox-next:focus-visible {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.lightbox-close {
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 80px;
+  border-radius: 6px;
+}
+
+.lightbox-prev {
+  left: 8px;
+}
+
+.lightbox-next {
+  right: 8px;
+}
+
+/* At either end the arrow goes away and clicks fall through to the backdrop. */
+.lightbox-prev:disabled,
+.lightbox-next:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lightbox.is-idle .lightbox-prev,
+.lightbox.is-idle .lightbox-next {
+  opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+  }
+  .lightbox-prev {
+    left: 0;
+  }
+  .lightbox-next {
+    right: 0;
+  }
 }

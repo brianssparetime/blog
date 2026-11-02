@@ -34,7 +34,7 @@ BINARY_EXTENSIONS = {
     # Fonts
     ".woff", ".woff2", ".ttf", ".otf", ".eot",
     # Design
-    ".psd", ".ai",
+    ".psd", ".ai", ".xcf",
 }
 
 

@@ -3,3 +3,4 @@ mdx_linkify
 Jinja2
 Pillow
 PyYAML
+git-filter-repo
