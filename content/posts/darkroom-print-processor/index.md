@@ -27,8 +27,6 @@ longer (since it's not sitting open to the air).  And importantly, you're not sm
 
 But if you're doing rotary processing in a drum, it's nice to have a rotary processor better than your hands.
 
-<img src="IMG_3083 Large hero.jpeg" alt="roller_machine">
-
 This processor is open source, easy to assemble, and easy to use.  
 
 All electronics sit on the top, so the base of the processor can easily be 
@@ -37,11 +35,12 @@ color processing/developing.
 
 Although I use it for darkroom prints, there's no reason it could not also be used for film development as well.
 
-<img src="IMG_3085 Large.jpeg" alt="roller_machine2">
-
-<img src="IMG_9900_l.jpeg" alt="roller_machine2">
-
-<img src="IMG_9901_l.jpeg" alt="roller_machine3">
+```gallery
+![The assembled processor](IMG_3083 Large hero.jpeg)
+![The control board](IMG_3085 Large.jpeg)
+![The drive wheel on the drum](IMG_9900_l.jpeg)
+![The drive arm and wheel from the side](IMG_9901_l.jpeg)
+```
 
 A stepper motor and rollerblade wheel drive the drum from above, on a hinged arm.  Speed is about 
 60-75 rpm.  A tilt switch automatically detects drum size (4" or 6"), and adjusts rotation speed to 
@@ -124,6 +123,7 @@ Connected to the Arduino via the custom pcb are:
 
 I designed the original board in 2023.  In 2025, I made a revision that adds supports for microstepping, removes all but one LED, and suggests a quieter resistor for the piezo buzzer.
 
+My experiments with microstepping, however, didn't seem to make things that much quieter, so the code doesn't use microstepping.
 
 <img src="IMG_2071_l.jpeg" alt="roller_machine3">
 
@@ -161,6 +161,7 @@ solder it onto the PCB.  Check polarity with a multimeter.
 Code is based on my [PlantWaterBot](https://github.com/brianssparetime/PlantWaterBot), using a state machine and separate files for each
 sensor/device to keep things organized, understandable, and extendable.
 
+All code was written by me, pre-AI.  If this is the last reasonably complex project I ever fully write, at least I'm pretty proud of it.
 
 ## Build your own?
 
