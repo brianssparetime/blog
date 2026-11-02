@@ -5,12 +5,17 @@ date: 2023-06-13
 image: IMG_8472-hero.jpeg
 tags:
   - arduino
+  - robotics
 ---
 
 
 My friend asked me to care for his plants while he was out of town.
 
 I did my best, and so did the plants, but it wasn't fun for either of us.  I wasn't meant to be a farmer.
+
+<video controls preload="metadata" width="406" src="IMG_9330.mp4">
+Your browser does not support the video tag.
+</video>
 
 I'm much better at making things though, so I decided to build a plant watering robot.
 
@@ -73,10 +78,12 @@ This allows all the electronics to be easily removed as a single unit - just und
 
 The water jug sits inside the trash can, and I added holes and rubber grommets to the back for the exit hoses.
 
+```gallery
+![Positioning the parts on the backplane](IMG_8390-positioning-parts.jpeg)
+![Measuring and templates](IMG_8391-measuring-and-templates.jpeg)
 ![Display and rotary encoder on the backplane](IMG_8429-display-and-re.jpeg)
-
 ![Fully wired](IMG_8442-fully-wired.jpeg)
-
+![Lid template](IMG_8445-lid-template.jpeg)
 ![Lid cut](IMG_8458-lid-cut.jpeg)
-
 ![Lid underside](IMG_8474-lid-underside.jpeg)
+```
