@@ -150,9 +150,9 @@ Absent a retrofocal design, shortening focal length shrinks the image circle, th
 
 Sliding the aperture forward or back moves the astigmatism, which strengthens the smear, weakens it, or flips its direction.
 
-On paper this is a good lever: the focal length, back focus, and depth of the bowl are unaffected; only the astigmatism (and coma) change.  
+On paper this is a clean lever: the focal length, back focus, and depth of the bowl are unaffected; only the astigmatism (and coma) change.  
 
-In practice, aperture position is only secondarily useful.  If you want fancy bokeh, relying on fancy aperture placement means you're not shooting wide-open, which translates to much smaller bokeh artefacts.  I put the stop slot as close to the optimal place as the housing allowed (the optical place was often underneath the ring that grips the S2's bayonet lugs, so the slot had to go either ahead of, or behind the mount-zone), and hoped for the best.
+In practice, aperture position is only secondarily useful.  If you want fancy bokeh, relying on fancy aperture placement means you're not shooting wide-open, which translates to much smaller bokeh artefacts.  I put the stop slot as close to the optimal place as the housing allowed (the optimal place was often underneath the ring that grips the S2's bayonet lugs where it would be impossible to change stop discs, so the slot had to go either ahead of, or behind the mount-zone), and hoped for the best.
 
 However, even when wide open, some part of the lens design (usually an element) is the most constricted optically.  This element effectively becomes the aperture (and the basis for the calculation of f-number (focal length / entrance pupil diameter)).  But now your "effective" stop placement is tied to the position of that lens, which is complicated and yucky if you're also trying to use the stop for bokeh.  Moreover, with aperture governed by the diameter of that element,   increasing it means finding new glass, and decreasing it just sacrifices speed.
 
@@ -179,11 +179,11 @@ as a one-sided teardrop on the edge highlights, the lopsided bokeh of old fast l
 
 Coma competes with astigmatism for the direction of the blur. Astigmatism of the right sign pulls the corners tangential; coma always pulls them radial; whichever is stronger wins. So a lens can have textbook swirl astigmatism and still tie-dye on film.
 
-I think this is why my v13f lens exhibited such strong tie-dye. My calculations of the astigmatism indicated swirl, but the negative element driving astigmatism was a single piece of glass, and a strong negative singlet is also a big source of coma in a simple lens. The coma overpowered the astigmatism, yielding tie-dye.
+I think this is why my v13f lens exhibited such strong tie-dye. My calculations of the astigmatism indicated swirl, but the negative element driving astigmatism was a single piece of glass, and a strong negative singlet is also a big source of coma in a simple lens. The coma (which I wasn't measuring at the time) overpowered the astigmatism, yielding tie-dye.
 
 ![v13f: strong tie-dye outside the sharp center](pos_DSC07696 v13f tiedie.JPG)
 
-The fix is to use a cemented doublet (an achromat) for the negative element instead of a single piece of glass. It has the same negative power but much less coma. My next two lenses took this approach, and both swirl where the earlier one tie-dyed, so I think this is right (though it may be more complicated than just this).
+The fix is to use a cemented doublet (an achromat) for the negative element instead of a single piece of glass, which has the same negative power but much less coma. My next two lenses took this approach. Both swirl where the earlier one tie-dyed, so I think this is right (though it may be more complicated than just this).
 
 The cheap way to swirl happens to also be the cheap way to coma. Concentrating the power onto one or two strong elements produces the steep edge curl that swirls, and the coma comes along with it. The conventional fix, splitting those strong elements into gentler ones, softens the edge curl as well. So it's roughly a pick-two-of-three: a simple lens, one that swirls, and one with little coma. The cemented negative doublet is the one cheat I found that gets you most of all three.
 
@@ -201,7 +201,7 @@ I don't think I can predict the flip in bokeh between the ring and periphery wit
 
 ## Focus distance
 
-The ring of swirl only showed up when I focused close.  Focused on a subject at a normal distance, the same lens at the same aperture read radial from the middle of the frame outward, with no ring at all.  I have one roll showing this and no model for it, so I'll just note that focus distance changes which regime you get, and that I've left it unexplored.
+The ring of swirl only showed up when I focused close.  Focused on a subject at a normal distance, the same lens at the same aperture read radial from the middle of the frame outward, with no ring at all.  I have no model for this, so I'll just note that focus distance changes which regime you get - this is something to explore more in the future.
 
 
 ## Postscript: cat eye vignetting
