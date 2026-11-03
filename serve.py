@@ -72,7 +72,9 @@ def watch_and_rebuild():
             print("\nChange detected, rebuilding...")
             if rebuild():
                 print("Rebuild complete.")
-            prev = get_mtimes()
+            # Compare against the snapshot the build started from, so edits
+            # made while it ran are picked up by the next poll, not swallowed.
+            prev = curr
 
 
 ERROR_PAGE = """<!doctype html>
