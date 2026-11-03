@@ -9,6 +9,7 @@ tags:
   - Bronica
   - lenses
   - optics
+  - 3d-printing
 ---
 
 For quite some time, I've wanted a petzval-like lens for my Bronica S2a.  More specifically, I want a lens that is reasonably fast, delivers swirly bokeh, and has field curvature like a bowl.  And cost less than $500.
