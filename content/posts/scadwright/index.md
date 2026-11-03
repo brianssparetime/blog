@@ -1,6 +1,6 @@
 ---
 title: "SCADwright: I fixed everything wrong with OpenSCAD (except OpenSCAD)."
-description: SCADwright is a Python library for designing 3D parts and assemblies that fixes the annoying limitations of OpenSCAD.
+description: SCADwright is a Python library for designing 3D parts and assemblies that fixes most of the annoying limitations of OpenSCAD.
 date: 2026-05-15
 image: Rocket-hero.png
 tags:
