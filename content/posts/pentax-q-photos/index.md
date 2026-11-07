@@ -5,6 +5,8 @@ image: IMGP7027.jpg
 tags:
   - photography
   - pentax-q
+  - work-in-progress
+  - hidden
 ---
 
 The [Pentax Q](/posts/pentax-q-review) is the camera I wish I'd bought ten year ago.
