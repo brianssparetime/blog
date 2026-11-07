@@ -191,7 +191,14 @@ Center sharpness looks a bit softer than the 15a, though I haven't measured it. 
 ![](v16d_img/pos_DSC07849.JPG)
 ![f/5.6](v16d_img/pos_DSC07842 f5.6.JPG)
 ![](v16d_img/pos_DSC07847.JPG)
+![The same frame cropped to 35mm](v16d_img/v16d_ff_crop.png)
 ```
+
+
+On a 35mm body, this lens would actually be decently swrily, along the lines of a Helios, though it would be comically oversized.
+
+
+
 
 If I were going to keep going, the next step would be to try reducing the edge astigmatism rather than outrunning it.  
 
