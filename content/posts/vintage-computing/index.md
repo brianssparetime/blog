@@ -1,13 +1,10 @@
 ---
 title: Vintage Computing
-date: 2020-12-12
-dirp: vintage-computing  # this much match directory name
+date: 2020-06-05
+image: IMGP7034 labeled.jpg
 tags:
-  - msdos
-  - nextcomputer
-  - mac-68k
-  - mac-ppc
-
+  - vintage-computing
+  - wood-working
 ---
 
 

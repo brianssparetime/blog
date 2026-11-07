@@ -19,3 +19,8 @@
   from = "/api/pair"
   to = "/.netlify/functions/pair"
   status = 200
+
+[[redirects]]
+  from = "/interests/vintage-computing"
+  to = "/posts/vintage-computing/"
+  status = 301
