@@ -19,7 +19,7 @@ This post covers the 3d printed lens housing, the new SCAD language I built to e
 
 ## Project goal recap
 
-My goal was to create a swirly, ~100mm ~f/2.8 lens for the Bronica S2, using only $5-7 elements bought from [SurplusShed](https://www.surplusshed.com/search_lenses.php).
+My goal was to create an art-bokeh, ~100mm ~f/2.8 lens for the Bronica S2, using only $5-7 elements bought from [SurplusShed](https://www.surplusshed.com/search_lenses.php) using 1930s formulas instead of raytracing.
 
 
 In the unlikely event it's not obvious, I have no particular background in optics or lens design.  I am a competent software engineer (though not as a profession), and very good at smelling bullshit.  I'm also patient.
@@ -27,7 +27,7 @@ In the unlikely event it's not obvious, I have no particular background in optic
 
 ## Lens housing goals
 
-A good lens design doesn't do much if you can't hold the elements precisely.  The space between elements needs to be right, the elements all need to stay centered along the optical axis, and they all need to be square to it.
+A good lens optical design isn't much good if you can't hold the elements precisely.  The space between elements needs to be right, the elements all need to stay centered along the optical axis, and they all need to be square to it.
 
 ![The three housings opened up, elements in their grips.  v16d left, v15a top right, v13f bottom right](housing/IMG_2838 v16d left, v13f center, v15a right.jpeg)
 
@@ -48,7 +48,7 @@ I had a lot of things I wanted to improve:
 - can change the aperture without full disassembly
 - more accurate axial spacing
 - tighter grip on elements to keep them centered and perpendicular to the light
-- a design that's relatively independent from the optical design, so if I iterate on the optics, I'm not starting over on the housing
+- and most importantly, a design that's relatively independent from the optical design, so if I iterate on the optics, I'm not starting over on the housing
 
 
 The new housing addresses nearly all of these concerns.
@@ -57,7 +57,7 @@ But getting there wasn't easy....
 
 ## A better way to do CAD
 
-From the first attempt, I knew I was close to the limits of OpenSCAD - not so much in terms of technical features, but in terms of project management.  OpenSCAD's building block modules cannot share attributes, or read from other modules.  As a result, you either have LOTS of really-long-name-constants, or you engage in fragile and extensive shenanigans to circumvent this, so that parts can mate without duplicated dimensions.
+From the first attempt at a lens housing, I knew I was close to the limits of OpenSCAD - not so much in terms of technical features, but in terms of project management.  OpenSCAD's building block modules cannot share attributes, or read from other modules.  As a result, you either have LOTS of really-long-name-constants, or you engage in fragile and extensive shenanigans to circumvent this, so that parts can mate without duplicated dimensions.
 
 Since then, I'd been sketching out ideas for what I really wanted from an OpenSCAD wrapper:
 
@@ -84,16 +84,16 @@ In contrast to the "muzzle-loader" of v1, this design is split down the optical 
 
 Key features:
 
-- mounting ring matches the geometry of both my S2 and EC-TL helicoids (yes they are subtly different)
+- the mounting ring matches the geometry of both my S2 and EC-TL helicoids (yes they are subtly different)
    - mounting ring has a lever-with-tooth style latch.  Making a torsion spring for it from spring steel wire though is surprisingly difficult; I have not fully solved this yet
 - the mount ring snap fits to the two housing halves via a ring/groove with two alignment tabs to keep it angularly aligned
 - the two halves have a snap-fit light-tight seam, designed as a reusable transform
-- accepts a json file containing the lens element names and dimensions, element and stop spacing, focal length, max aperture, field of view, etc and generates all geometry based on that
+- the housing is built from a json file containing the lens element names and dimensions, element and stop spacing, focal length, max aperture, field of view, etc, and generates all geometry based on that
 - STRONG constraints so that designs that aren't manufacturable fail fast
-- apertures are waterhouse stop discs, half sized for the housing's inner diameter, and half sized for the outer.  This way they are easily swappable, and covered by a slot cover
-- one side of the housing has text for the version #, lens element codes used, and the github hash of the most recent commit
+- apertures are waterhouse stop discs, half sized for the housing's inner diameter, and half sized for the outer.  This way they are easily swappable, and covered by a slot cover if outside the mount
+- text on the front bezel and lens hood
+- text on one side of the housing for the version #, lens element codes used, and the github hash of the most recent commit
 - the other side has an engraving of the optical plan (generated by the optical toolkit, at least somewhat based on real measurements and element types)
-- Text on the front bezel and lens hood
 - rapid-iteration fit testers:
    - element gripper ring halves for testing thickness and diameter
    - mount axial fit slice tester for checking lug axial placement
@@ -102,18 +102,22 @@ Key features:
 
 ![All the parts: mount rings, housing halves, waterhouse stop discs and slot covers.  v15a top left, v13f top right, v16d bottom](housing/IMG_2834 v15a top, v13f center, v16d bottom.jpeg)
 
+I have roughly one cubic foot's volume of failed and fucked up prints I've accumulated along the way.
+
+I know someone's going to point out the lack of lens baffles and all the smooth, reflective surfaces.  I didn't want to bother with that complexity until I'd otherwise solved most of the problems, and at this point, I don't really care to.  If I revisit this in the future with a non-art lens that would actually benefit significantly, I probably will add that feature.
+
 
 
 ## Key insight on testing/iteration
 
 
-I spent WAY too much time printing full articles when I should have taken the time to think about smaller testers.  For example, printing the full mount ring made it hard to see how far off my lug grooves were in terms of how deep they are or how far away from the flange they're located.  I wasted a lot of filament before realizing that specific articles for testing each fit was faster than guess/check/hope on the final product.
+I spent WAY too much time printing full articles when I should have taken the time to think about smaller testers.  For example, printing the full mount ring made it hard to see how far off my lug grooves were in terms of how deep they are or how far away from the flange they're located.  I wasted a lot of filament before realizing that a lot of small, specific test articles that only check one dimension of a fit each is faster than a guess/check/hope loop on the final product.
 
-One step at a time.  This design evolved rather than springing fully-formed from my head like Athena.  Months of testing solved problems, created new ones, and solved those.  Good engineering takes time.
+This design evolved slowly, rather than springing fully-formed from my head like Athena.  Months of testing solved problems, created new ones, and solved those.  Good engineering takes time.
 
-SCADwright's constraint system and error messages are a huge boost to AI productivity.  At all levels, I tried (with varying levels of success) to make tools that either work as expected or fail cleanly and specifically, and to avoid the pitfall of "working" in a formalistic sense but producing unintuitive garbage.  This is not easy, and I'm sure there's more work to be done.
+SCADwright's constraint system and error messages are a huge boost to AI productivity.  At all levels, I tried (with varying levels of success) to make tools that either work as expected or fail cleanly and specifically, and to avoid the pitfall of "working" in a formalistic sense but producing unintuitive garbage (which OpenSCAD is happy to do).  This is not easy, and I'm sure there's more work to be done.
 
-But when done right, AI doesn't even need an MCP or skill to understand the physical failures because simply running the model's python script produces error output sufficient for the AI to understand the problem.
+But when done right, simply running the model's python script produces error output sufficient for the AI to understand a lot of problems.
 
 ## Github
 

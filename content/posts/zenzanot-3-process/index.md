@@ -99,6 +99,8 @@ But I've been pushing and testing on this for months, and the proof is in the pu
 
 I don't think these are footsteps worth following, but in the interests of transparency, [here's my design project folder](https://github.com/brianssparetime/bronica_lens_design).
 
+[I have a separate repo for the 3d printed lens housing](https://github.com/brianssparetime/bronica-lens-housing), which is much more useful.
+
 
 
 
