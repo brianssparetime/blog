@@ -29,7 +29,7 @@ Given those issues, why would anyone in their right mind do it?  Ray tracing req
 
 In retrospect, it would have been easier to build a radius measuring tool of my own and just write a ray tracer.  If I do a version 3 of this project, that will be my direction.
 
-I have also taken little care to clean up the code here.  I realized pretty early on that this code has no future for me beyond the culmination of this project, and so my interest in making it beautiful was minimal.  It's good enough for my purposes here.
+I have also taken little care to clean up the code on the optics side (though I've taken much more care on the housing, which I may reuse in the future).  I realized pretty early on that this optics code has no future for me beyond the culmination of this project, and so my interest in making it beautiful was minimal.  It's good enough for my purposes here.
 
 
 ## Process
@@ -97,7 +97,7 @@ But I've been pushing and testing on this for months, and the proof is in the pu
 
 ##  Github
 
-I don't think these are footsteps worth following, but in the interests of transparency, [here's my project folder](https://github.com/brianssparetime/bronica_lens_design).
+I don't think these are footsteps worth following, but in the interests of transparency, [here's my design project folder](https://github.com/brianssparetime/bronica_lens_design).
 
 
 

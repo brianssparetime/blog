@@ -23,7 +23,7 @@ I have no particular training or education in optical engineering, [other than t
 
 ## Constraints
 
-Of course, I (and likely you) are not designing first and foremost for swirl.  Unless you are bonkers, swirl comes only after:
+Of course, I am not designing first and foremost for swirl.  Unless you are bonkers, swirl comes only after:
 
 - physical constraints of back clearance (the lens can't hit your mirror) and diameter (can't have an element that would overlap with the mount's flange or that doesn't fit in the camera)
 

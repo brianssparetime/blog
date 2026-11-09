@@ -57,9 +57,7 @@ But getting there wasn't easy....
 
 ## A better way to do CAD
 
-From the first attempt, I knew I was close to the limits of OpenSCAD - not so much in terms of technical features, but in terms of project management.
-
-OpenSCAD's building block modules cannot share attributes, or read from other modules.  As a result, you either have LOTS of really-long-name-constants, or you engage in fragile and extensive shenanigans to circumvent this, so that parts can mate without duplicated dimensions.
+From the first attempt, I knew I was close to the limits of OpenSCAD - not so much in terms of technical features, but in terms of project management.  OpenSCAD's building block modules cannot share attributes, or read from other modules.  As a result, you either have LOTS of really-long-name-constants, or you engage in fragile and extensive shenanigans to circumvent this, so that parts can mate without duplicated dimensions.
 
 Since then, I'd been sketching out ideas for what I really wanted from an OpenSCAD wrapper:
 
@@ -70,9 +68,7 @@ Since then, I'd been sketching out ideas for what I really wanted from an OpenSC
   - error messages that don't suck donkey balls
   - and like 10 other things that annoyed me
 
-So in parallel to building the lens housing, I built my ideal OpenSCAD emitter ([SCADwright](https://github.com/brianssparetime/SCADwright)).  It's now FAR more than just a wrapper, with new high-level constructs that address all the shortcomings I had with OpenSCAD.
-
-[SCADwright is everything you wished OpenSCAD could be](https://github.com/brianssparetime/SCADwright).  And it's not AI slop either.  I've worked on it for months, extensively refactored its core and feature set, and word-smithed the documentation.  The provided examples are real things that work, and which seem magical compared to their OpenSCAD equivalents.  I've used it on half a dozen other projects since too.
+So in parallel to building the lens housing, I built my ideal OpenSCAD emitter ([SCADwright](https://github.com/brianssparetime/SCADwright)).  It's now FAR more than just a wrapper, with new high-level constructs that address all the shortcomings I had with OpenSCAD.  [SCADwright is everything you wished OpenSCAD could be](https://github.com/brianssparetime/SCADwright).  And it's not AI slop either.  I've worked on it for months, extensively refactored its core and feature set, and word-smithed the documentation.  The provided examples are real things that work, and which seem magical compared to their OpenSCAD equivalents.  I've used it on half a dozen other projects since too.
 
 Out of the time I've spent on this whole swirly lens project over the last 9 months, a bit more than half of the total time has gone into SCADwright.
 
