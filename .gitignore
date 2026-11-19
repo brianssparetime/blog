@@ -8,6 +8,7 @@ __pycache__/
 .claude/
 MASTER-PLAN.md
 CLAUDE.md
+CLAUDE.local.md
 reddit_posts_to_import/
 reddit_posts.txt
 potential_posts.txt
