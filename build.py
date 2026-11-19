@@ -143,9 +143,57 @@ def add_captions(html):
     )
 
 
+LIST_ITEM_RE = re.compile(r"^( *)([-*+]|\d+\.)( +)(.*)$")
+
+
+def normalize_list_indent(text):
+    """Rewrite nested list indentation to the four spaces Python-Markdown needs.
+
+    Posts nest list items with two or three spaces. Python-Markdown treats
+    anything under four spaces as a top-level item, so those sub-items render
+    as siblings of their parent. This pass tracks the indent of each list
+    level as written and re-emits every item at four spaces per level. An item
+    indented at least two spaces deeper than the current level starts a new
+    level; one indented less than the current level closes levels until it
+    fits. A single leading space (the usual style here for top-level items)
+    is left as a top-level item.
+
+    Only list-item lines change. A non-blank, unindented line that is not a
+    list item ends the list. Fenced code blocks are passed through untouched.
+    """
+    out = []
+    levels = []  # indent, as written, of each open list level
+    in_fence = False
+    for line in text.split("\n"):
+        if line.lstrip().startswith("```"):
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if in_fence:
+            out.append(line)
+            continue
+        m = LIST_ITEM_RE.match(line)
+        if not m:
+            if line.strip() and not line.startswith(" "):
+                levels = []
+            out.append(line)
+            continue
+        indent = len(m.group(1))
+        if not levels:
+            levels = [indent]
+        elif indent >= levels[-1] + 2:
+            levels.append(indent)
+        else:
+            while len(levels) > 1 and indent < levels[-1]:
+                levels.pop()
+        depth = len(levels) - 1
+        out.append(" " * (4 * depth) + m.group(2) + m.group(3) + m.group(4))
+    return "\n".join(out)
+
+
 def render_markdown(text):
-    md = markdown.Markdown(extensions=["extra", "mdx_linkify"])
-    return md.convert(text)
+    md = markdown.Markdown(extensions=["extra", "sane_lists", "mdx_linkify"])
+    return md.convert(normalize_list_indent(text))
 
 
 def collect_pages(subdir, page_type):
@@ -195,6 +243,8 @@ def collect_pages(subdir, page_type):
             "description": meta.get("description", ""),
             "image": meta.get("image", ""),
             "tags": meta.get("tags", []),
+            "post_tags": meta.get("post_tags", []),
+            "post_dirs": meta.get("posts", []),
             "html": html,
             "has_gallery": has_gallery,
             "images": images,
@@ -419,6 +469,37 @@ def render_page(page, env):
         f.write(html)
 
 
+def attach_interest_posts(interest, posts):
+    """Give an interest page the posts it lists, newest first.
+
+    A post qualifies when it carries any tag in the page's post_tags or its
+    directory name is in the page's posts list. Hidden posts never qualify.
+    Pages that declare neither key list nothing, so existing interest pages
+    are unaffected.
+    """
+    wanted_tags = set(interest.get("post_tags", []))
+    wanted_dirs = set(interest.get("post_dirs", []))
+    if not wanted_tags and not wanted_dirs:
+        interest["posts"] = []
+        return
+
+    by_dir = {os.path.basename(p["source_dir"]): p for p in posts}
+    missing = wanted_dirs - set(by_dir)
+    if missing:
+        raise ValueError(
+            f"{interest['output_dir']}/index.md lists posts that do not exist: "
+            + ", ".join(sorted(missing))
+        )
+
+    chosen = [
+        p for p in posts
+        if "hidden" not in p.get("tags", [])
+        and (wanted_tags & set(p.get("tags", []))
+             or os.path.basename(p["source_dir"]) in wanted_dirs)
+    ]
+    interest["posts"] = sorted(chosen, key=lambda p: p["date"], reverse=True)
+
+
 def render_index(posts, interests, env):
     template = env.get_template("index.html")
     visible_posts = [
@@ -599,6 +680,7 @@ def build():
         copy_page_media(p)
         p["html"] = rewrite_post_images(p["html"], image_info)
         attach_thumbnail(p, image_info)
+        attach_interest_posts(p, posts)
         render_page(p, env)
 
     print("Rendering index...")

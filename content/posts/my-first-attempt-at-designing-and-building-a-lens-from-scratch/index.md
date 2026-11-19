@@ -58,20 +58,20 @@ Finally, disclaimer:   I did experiment a bit with AI on this project.  I used c
 
 The parts of the lens from the image with the red numbers:
 
-1) f4 stop disc
-2) f5.6 stop disc
-3) f8 stop disc
+1. f4 stop disc
+2. f5.6 stop disc
+3. f8 stop disc
 
-4) [RAF Camera male M57 to female M65 adapter](https://rafcamera.com/adapter-m65x1f-to-m57x1m)
-5) the main barrel of the lens housing.   this has a retaining ring on the front to keep the front element in place, and geometry on the bottom to mate with the RAF camera adapter
+4. [RAF Camera male M57 to female M65 adapter](https://rafcamera.com/adapter-m65x1f-to-m57x1m)
+5. the main barrel of the lens housing.   this has a retaining ring on the front to keep the front element in place, and geometry on the bottom to mate with the RAF camera adapter
 
-6) doubleconvex front element, fl about 125mm, diameter about 42mm
-7) achromat rear element, came housed, fl about 125mm, diameter about 44mm
-8) rear retaining ring, which pressed into the back of the main barrel to keep the everything in place
+6. doubleconvex front element, fl about 125mm, diameter about 42mm
+7. achromat rear element, came housed, fl about 125mm, diameter about 44mm
+8. rear retaining ring, which pressed into the back of the main barrel to keep the everything in place
 
-9) back spacer
-10) front spacer
-11) lens hood
+9. back spacer
+10. front spacer
+11. lens hood
 
 
 Basically, everything stacks into the main barrel.  In order:  front element, front spacer, stop disc, back spacer, rear element, retaining ring.
