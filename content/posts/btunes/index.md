@@ -20,9 +20,11 @@ bTunes is not affiliated with or endorsed by Apple, or by whoever owns Winamp th
 
 ## What this is and why it exists
 
-My iTunes library goes back about 25 years and is primarily organized around playlists.  I can't get my playlists on Spotify, and fuck not owning your music.  One day, this Mac will die, or Apple will turn off its servers.  This has been a simmering problem for a decade.
+My iTunes library goes back about 25 years and is primarily organized around playlists.  My media center mac runs El Cap, and is old enough to have a driver's permit.  One day, it will die, or Apple will turn off its servers.  This has been a simmering problem for a decade.
 
-My media center is a Mac old enough to have a driver's permit; El Capitan is the last OS it will run.
+
+I can't get my playlists on Spotify, and fuck not owning your music. 
+
 
 I want all my playlists and metadata from iTunes, with an interface from when iTunes didn't suck, and I want it to run on my media Mac.
 
@@ -33,7 +35,7 @@ I want all my playlists and metadata from iTunes, with an interface from when iT
  - genre / artist / album browser columns across the top of the library
  - smart playlists, built from rules
  - playlist folders (which iTunes 4 didn't have)
- - imports from an iTunes library: songs, ratings, play counts, date added, and playlists
+ - imports an existing iTunes library: songs, ratings, play counts, date added, and playlists
  - mini mode: a small dark panel with a spectrum analyzer that floats over everything, including full screen apps
  - a ten band equalizer
  - plays audio CDs, and rips them to AAC or Apple Lossless
