@@ -184,6 +184,7 @@ Center sharpness looks a bit softer than the 15a, though I haven't measured it. 
 ![Focused on the tree, wide open](v16d_img/pos_DSC07838 focused on tree, wide open.JPG)
 ![Close focused at f/5.6](v16d_img/pos_DSC07841 close focused at f56.JPG)
 ![Focused on the tree at f/5.6](v16d_img/pos_DSC07840 focused on tree at f5.6.JPG)
+![Wide open, focused past infinity](v16d_img/pos_DSC07859 wide open, focused past infinity.JPG)
 ![](v16d_img/pos_DSC07849.JPG)
 ![f/5.6](v16d_img/pos_DSC07842 f5.6.JPG)
 ![](v16d_img/pos_DSC07847.JPG)
